@@ -11,6 +11,38 @@
 		B82313E12775F0EA00743A42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82313E02775F0EA00743A42 /* ContentView.swift */; };
 		B82313E32775F0EB00743A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82313E22775F0EB00743A42 /* Assets.xcassets */; };
 		B82313E62775F0EB00743A42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82313E52775F0EB00743A42 /* Preview Assets.xcassets */; };
+		B8AE1F912775F60D0090125D /* MarshalPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1F902775F60D0090125D /* MarshalPhoneNumber.swift */; };
+		B8AE1F932775F6430090125D /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1F922775F6430090125D /* CountryList.swift */; };
+		B8AE1F952775F6720090125D /* MarshalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1F942775F6720090125D /* MarshalTextField.swift */; };
+		B8AE1F972775F6D80090125D /* Submit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1F962775F6D80090125D /* Submit.swift */; };
+		B8AE1F9A2775F7190090125D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1F992775F7190090125D /* Login.swift */; };
+		B8AE1F9C2775F7690090125D /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1F9B2775F7690090125D /* Splash.swift */; };
+		B8AE1FA02775F9A90090125D /* CountryCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1F9F2775F9A90090125D /* CountryCodes.swift */; };
+		B8AE1FA22775F9DA0090125D /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1FA12775F9DA0090125D /* Status.swift */; };
+		B8AE1FB527760ECE0090125D /* IRANSansMobileNoEn UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FA427760ECD0090125D /* IRANSansMobileNoEn UltraLight.ttf */; };
+		B8AE1FB627760ECE0090125D /* IRANSansMobileNoEn Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FA527760ECD0090125D /* IRANSansMobileNoEn Medium.ttf */; };
+		B8AE1FB727760ECE0090125D /* IRANSansMobileFaNum UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FA627760ECD0090125D /* IRANSansMobileFaNum UltraLight.ttf */; };
+		B8AE1FB827760ECE0090125D /* Roboto Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FA727760ECD0090125D /* Roboto Light.ttf */; };
+		B8AE1FB927760ECE0090125D /* Roboto Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FA827760ECD0090125D /* Roboto Thin.ttf */; };
+		B8AE1FBA27760ECE0090125D /* Roboto Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FA927760ECD0090125D /* Roboto Black.ttf */; };
+		B8AE1FBB27760ECE0090125D /* IRANSansMobileFaNum Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FAA27760ECD0090125D /* IRANSansMobileFaNum Bold.ttf */; };
+		B8AE1FBC27760ECE0090125D /* Roboto Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FAB27760ECD0090125D /* Roboto Regular.ttf */; };
+		B8AE1FBD27760ECE0090125D /* IRANSansMobileFaNum Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FAC27760ECE0090125D /* IRANSansMobileFaNum Light.ttf */; };
+		B8AE1FBE27760ECE0090125D /* Roboto Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FAD27760ECE0090125D /* Roboto Italic.ttf */; };
+		B8AE1FBF27760ECE0090125D /* IRANSansMobileFaNum Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FAE27760ECE0090125D /* IRANSansMobileFaNum Black.ttf */; };
+		B8AE1FC027760ECE0090125D /* Roboto Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FAF27760ECE0090125D /* Roboto Medium.ttf */; };
+		B8AE1FC127760ECE0090125D /* Roboto Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FB027760ECE0090125D /* Roboto Bold.ttf */; };
+		B8AE1FC227760ECE0090125D /* IRANSansMobileFaNum Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FB127760ECE0090125D /* IRANSansMobileFaNum Medium.ttf */; };
+		B8AE1FC327760ECE0090125D /* IRANSansMobileNoEn Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FB227760ECE0090125D /* IRANSansMobileNoEn Bold.ttf */; };
+		B8AE1FC427760ECE0090125D /* IRANSansMobileNoEn Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FB327760ECE0090125D /* IRANSansMobileNoEn Black.ttf */; };
+		B8AE1FC527760ECE0090125D /* IRANSansMobileNoEn Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AE1FB427760ECE0090125D /* IRANSansMobileNoEn Light.ttf */; };
+		B8AE1FC827760F000090125D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = B8AE1FC727760F000090125D /* SwiftyJSON */; };
+		B8AE1FCB27760F0B0090125D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B8AE1FCA27760F0B0090125D /* Alamofire */; };
+		B8AE1FCD27760F230090125D /* CallApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1FCC27760F230090125D /* CallApi.swift */; };
+		B8AE1FCF2776110D0090125D /* NetworkManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1FCE2776110D0090125D /* NetworkManeger.swift */; };
+		B8AE1FD4277617350090125D /* ProgressViewMarshal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1FD3277617350090125D /* ProgressViewMarshal.swift */; };
+		B8AE1FD6277618E60090125D /* FailedMarshal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1FD5277618E60090125D /* FailedMarshal.swift */; };
+		B8AE1FD8277619990090125D /* NetworkFailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1FD7277619990090125D /* NetworkFailed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +51,37 @@
 		B82313E02775F0EA00743A42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B82313E22775F0EB00743A42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B82313E52775F0EB00743A42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B8AE1F902775F60D0090125D /* MarshalPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalPhoneNumber.swift; sourceTree = "<group>"; };
+		B8AE1F922775F6430090125D /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
+		B8AE1F942775F6720090125D /* MarshalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTextField.swift; sourceTree = "<group>"; };
+		B8AE1F962775F6D80090125D /* Submit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submit.swift; sourceTree = "<group>"; };
+		B8AE1F992775F7190090125D /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		B8AE1F9B2775F7690090125D /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		B8AE1F9F2775F9A90090125D /* CountryCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodes.swift; sourceTree = "<group>"; };
+		B8AE1FA12775F9DA0090125D /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		B8AE1FA427760ECD0090125D /* IRANSansMobileNoEn UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRANSansMobileNoEn UltraLight.ttf"; sourceTree = "<group>"; };
+		B8AE1FA527760ECD0090125D /* IRANSansMobileNoEn Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRANSansMobileNoEn Medium.ttf"; sourceTree = "<group>"; };
+		B8AE1FA627760ECD0090125D /* IRANSansMobileFaNum UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRANSansMobileFaNum UltraLight.ttf"; sourceTree = "<group>"; };
+		B8AE1FA727760ECD0090125D /* Roboto Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Light.ttf"; sourceTree = "<group>"; };
+		B8AE1FA827760ECD0090125D /* Roboto Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Thin.ttf"; sourceTree = "<group>"; };
+		B8AE1FA927760ECD0090125D /* Roboto Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Black.ttf"; sourceTree = "<group>"; };
+		B8AE1FAA27760ECD0090125D /* IRANSansMobileFaNum Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRANSansMobileFaNum Bold.ttf"; sourceTree = "<group>"; };
+		B8AE1FAB27760ECD0090125D /* Roboto Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Regular.ttf"; sourceTree = "<group>"; };
+		B8AE1FAC27760ECE0090125D /* IRANSansMobileFaNum Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRANSansMobileFaNum Light.ttf"; sourceTree = "<group>"; };
+		B8AE1FAD27760ECE0090125D /* Roboto Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Italic.ttf"; sourceTree = "<group>"; };
+		B8AE1FAE27760ECE0090125D /* IRANSansMobileFaNum Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRANSansMobileFaNum Black.ttf"; sourceTree = "<group>"; };
+		B8AE1FAF27760ECE0090125D /* Roboto Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Medium.ttf"; sourceTree = "<group>"; };
+		B8AE1FB027760ECE0090125D /* Roboto Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Bold.ttf"; sourceTree = "<group>"; };
+		B8AE1FB127760ECE0090125D /* IRANSansMobileFaNum Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRANSansMobileFaNum Medium.ttf"; sourceTree = "<group>"; };
+		B8AE1FB227760ECE0090125D /* IRANSansMobileNoEn Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRANSansMobileNoEn Bold.ttf"; sourceTree = "<group>"; };
+		B8AE1FB327760ECE0090125D /* IRANSansMobileNoEn Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRANSansMobileNoEn Black.ttf"; sourceTree = "<group>"; };
+		B8AE1FB427760ECE0090125D /* IRANSansMobileNoEn Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRANSansMobileNoEn Light.ttf"; sourceTree = "<group>"; };
+		B8AE1FCC27760F230090125D /* CallApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallApi.swift; sourceTree = "<group>"; };
+		B8AE1FCE2776110D0090125D /* NetworkManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManeger.swift; sourceTree = "<group>"; };
+		B8AE1FD3277617350090125D /* ProgressViewMarshal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewMarshal.swift; sourceTree = "<group>"; };
+		B8AE1FD5277618E60090125D /* FailedMarshal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedMarshal.swift; sourceTree = "<group>"; };
+		B8AE1FD7277619990090125D /* NetworkFailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFailed.swift; sourceTree = "<group>"; };
+		B8BD264F2775F41D00213CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AE1FC827760F000090125D /* SwiftyJSON in Frameworks */,
+				B8AE1FCB27760F0B0090125D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +116,10 @@
 		B82313DD2775F0EA00743A42 /* Marshal */ = {
 			isa = PBXGroup;
 			children = (
+				B8AE1FA327760EAA0090125D /* font */,
+				B8AE1F9D2775F82E0090125D /* View */,
+				B8AE1F9E2775F84E0090125D /* Model */,
+				B8BD264F2775F41D00213CB8 /* Info.plist */,
 				B82313DE2775F0EA00743A42 /* MarshalApp.swift */,
 				B82313E02775F0EA00743A42 /* ContentView.swift */,
 				B82313E22775F0EB00743A42 /* Assets.xcassets */,
@@ -65,6 +134,73 @@
 				B82313E52775F0EB00743A42 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B8AE1F982775F6FB0090125D /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				B8AE1F902775F60D0090125D /* MarshalPhoneNumber.swift */,
+				B8AE1F922775F6430090125D /* CountryList.swift */,
+				B8AE1F942775F6720090125D /* MarshalTextField.swift */,
+				B8AE1F962775F6D80090125D /* Submit.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		B8AE1F9D2775F82E0090125D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B8AE1F982775F6FB0090125D /* Module */,
+				B8AE1F992775F7190090125D /* Login.swift */,
+				B8AE1F9B2775F7690090125D /* Splash.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B8AE1F9E2775F84E0090125D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B8AE1FD02776155A0090125D /* status */,
+				B8AE1F9F2775F9A90090125D /* CountryCodes.swift */,
+				B8AE1FCC27760F230090125D /* CallApi.swift */,
+				B8AE1FCE2776110D0090125D /* NetworkManeger.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B8AE1FA327760EAA0090125D /* font */ = {
+			isa = PBXGroup;
+			children = (
+				B8AE1FAE27760ECE0090125D /* IRANSansMobileFaNum Black.ttf */,
+				B8AE1FAA27760ECD0090125D /* IRANSansMobileFaNum Bold.ttf */,
+				B8AE1FAC27760ECE0090125D /* IRANSansMobileFaNum Light.ttf */,
+				B8AE1FB127760ECE0090125D /* IRANSansMobileFaNum Medium.ttf */,
+				B8AE1FA627760ECD0090125D /* IRANSansMobileFaNum UltraLight.ttf */,
+				B8AE1FB327760ECE0090125D /* IRANSansMobileNoEn Black.ttf */,
+				B8AE1FB227760ECE0090125D /* IRANSansMobileNoEn Bold.ttf */,
+				B8AE1FB427760ECE0090125D /* IRANSansMobileNoEn Light.ttf */,
+				B8AE1FA527760ECD0090125D /* IRANSansMobileNoEn Medium.ttf */,
+				B8AE1FA427760ECD0090125D /* IRANSansMobileNoEn UltraLight.ttf */,
+				B8AE1FA927760ECD0090125D /* Roboto Black.ttf */,
+				B8AE1FB027760ECE0090125D /* Roboto Bold.ttf */,
+				B8AE1FAD27760ECE0090125D /* Roboto Italic.ttf */,
+				B8AE1FA727760ECD0090125D /* Roboto Light.ttf */,
+				B8AE1FAF27760ECE0090125D /* Roboto Medium.ttf */,
+				B8AE1FAB27760ECD0090125D /* Roboto Regular.ttf */,
+				B8AE1FA827760ECD0090125D /* Roboto Thin.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
+		B8AE1FD02776155A0090125D /* status */ = {
+			isa = PBXGroup;
+			children = (
+				B8AE1FA12775F9DA0090125D /* Status.swift */,
+				B8AE1FD3277617350090125D /* ProgressViewMarshal.swift */,
+				B8AE1FD5277618E60090125D /* FailedMarshal.swift */,
+				B8AE1FD7277619990090125D /* NetworkFailed.swift */,
+			);
+			path = status;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +219,10 @@
 			dependencies = (
 			);
 			name = Marshal;
+			packageProductDependencies = (
+				B8AE1FC727760F000090125D /* SwiftyJSON */,
+				B8AE1FCA27760F0B0090125D /* Alamofire */,
+			);
 			productName = Marshal;
 			productReference = B82313DB2775F0EA00743A42 /* Marshal.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +251,10 @@
 				Base,
 			);
 			mainGroup = B82313D22775F0EA00743A42;
+			packageReferences = (
+				B8AE1FC627760F000090125D /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				B8AE1FC927760F0B0090125D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = B82313DC2775F0EA00743A42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,8 +269,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AE1FBE27760ECE0090125D /* Roboto Italic.ttf in Resources */,
+				B8AE1FB527760ECE0090125D /* IRANSansMobileNoEn UltraLight.ttf in Resources */,
+				B8AE1FB627760ECE0090125D /* IRANSansMobileNoEn Medium.ttf in Resources */,
+				B8AE1FBD27760ECE0090125D /* IRANSansMobileFaNum Light.ttf in Resources */,
 				B82313E62775F0EB00743A42 /* Preview Assets.xcassets in Resources */,
+				B8AE1FBF27760ECE0090125D /* IRANSansMobileFaNum Black.ttf in Resources */,
 				B82313E32775F0EB00743A42 /* Assets.xcassets in Resources */,
+				B8AE1FC127760ECE0090125D /* Roboto Bold.ttf in Resources */,
+				B8AE1FB727760ECE0090125D /* IRANSansMobileFaNum UltraLight.ttf in Resources */,
+				B8AE1FC227760ECE0090125D /* IRANSansMobileFaNum Medium.ttf in Resources */,
+				B8AE1FB927760ECE0090125D /* Roboto Thin.ttf in Resources */,
+				B8AE1FC027760ECE0090125D /* Roboto Medium.ttf in Resources */,
+				B8AE1FBA27760ECE0090125D /* Roboto Black.ttf in Resources */,
+				B8AE1FC327760ECE0090125D /* IRANSansMobileNoEn Bold.ttf in Resources */,
+				B8AE1FC527760ECE0090125D /* IRANSansMobileNoEn Light.ttf in Resources */,
+				B8AE1FBC27760ECE0090125D /* Roboto Regular.ttf in Resources */,
+				B8AE1FB827760ECE0090125D /* Roboto Light.ttf in Resources */,
+				B8AE1FC427760ECE0090125D /* IRANSansMobileNoEn Black.ttf in Resources */,
+				B8AE1FBB27760ECE0090125D /* IRANSansMobileFaNum Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +298,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AE1FD4277617350090125D /* ProgressViewMarshal.swift in Sources */,
+				B8AE1F9A2775F7190090125D /* Login.swift in Sources */,
+				B8AE1F952775F6720090125D /* MarshalTextField.swift in Sources */,
+				B8AE1FD8277619990090125D /* NetworkFailed.swift in Sources */,
+				B8AE1F9C2775F7690090125D /* Splash.swift in Sources */,
+				B8AE1F932775F6430090125D /* CountryList.swift in Sources */,
+				B8AE1FA22775F9DA0090125D /* Status.swift in Sources */,
+				B8AE1FCD27760F230090125D /* CallApi.swift in Sources */,
+				B8AE1F912775F60D0090125D /* MarshalPhoneNumber.swift in Sources */,
+				B8AE1FA02775F9A90090125D /* CountryCodes.swift in Sources */,
+				B8AE1FCF2776110D0090125D /* NetworkManeger.swift in Sources */,
+				B8AE1F972775F6D80090125D /* Submit.swift in Sources */,
+				B8AE1FD6277618E60090125D /* FailedMarshal.swift in Sources */,
 				B82313E12775F0EA00743A42 /* ContentView.swift in Sources */,
 				B82313DF2775F0EA00743A42 /* MarshalApp.swift in Sources */,
 			);
@@ -271,6 +445,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Marshal/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Marshal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +474,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Marshal/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Marshal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +515,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B8AE1FC627760F000090125D /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		B8AE1FC927760F0B0090125D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B8AE1FC727760F000090125D /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8AE1FC627760F000090125D /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		B8AE1FCA27760F0B0090125D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8AE1FC927760F0B0090125D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B82313D32775F0EA00743A42 /* Project object */;
 }
