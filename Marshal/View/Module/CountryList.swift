@@ -38,7 +38,7 @@ struct CountryList: View {
                     }
                 }//: LOOP
             }//:VSTACK
-            .background(Color("marshal_bg"))
+            .background(Color("marshal_darkGrey"))
             
         }//:SCROLLVIEW
         .ignoresSafeArea()
