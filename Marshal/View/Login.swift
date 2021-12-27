@@ -17,18 +17,18 @@ struct Login: View {
 
     //MARK: - BODY
     var body: some View {
-        VStack(spacing: 40){
+        VStack(spacing: 16){
         //: PHONE NUMBER
             MarshalPhoneNumber(phoneNumber: phoneNumber, countryCode: countryCode)
         //: VERIFICATION CODE
             VStack{
                 MarshalTextField(text: $code, title: "کد تایید را وارد کنید", isEn: false, keyboardType: .numberPad)
                 HStack{
-                    
+    
                     Text("\(timeRemaining/60) : \(timeRemaining % 60)")
-                        .padding(.horizontal)
-                        .foregroundColor(Color.white)
-                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 12))
+                        .padding(.leading, 16.0)
+                        .foregroundColor(Color("marshal_White"))
+                        .font(Font.custom("IRANSansMobileFaNum Light", size: 14))
                              .onReceive(timer) { _ in
                                  if timeRemaining > 0 {
                                      timeRemaining -= 1
@@ -44,13 +44,20 @@ struct Login: View {
                 print("press")
             }
             
-        }//: VSTACK
-        .background(Color("marshal_bg"))
+        }
+        .padding(.horizontal, 16.0)//: VSTACK
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .background(Color("marshal_darkGrey"))
     }
+       
 }
 //MARK: - PREVIEW
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        Login()
+        Group {
+            Login()
+                
+            
+        }
     }
 }

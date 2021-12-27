@@ -14,67 +14,100 @@ struct MarshalPhoneNumber: View {
     @State private var isOppenSheet = false
     @State var showText = true
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            HStack{
-                //CONTRY FLAG
-                HStack{
-                    Text(countryFlag)
-                    //DIVIDER
-                    Rectangle()
-                        .background(Color.white)
-                        .foregroundColor(Color.white)
-                        .frame(width: 1 ,height: 50)
-                    //NATIUNALCODE
-                    Text("+\(countryCode)")
-                        .foregroundColor(Color.white)
-                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 12))
+        
+        ZStack {
+
+            ZStack {
+
+                HStack (spacing: 0){
+                    //CONTRY FLAG
+                    HStack{
+                        Text(countryFlag)
+                        //DIVIDER
+                        //Rectangle()
+                            //.background(Color.white)
+                            //.foregroundColor(Color.white)
+                            //.frame(width: 1 ,height: 50)
+                        //NATIUNALCODE
+                        Text("+\(countryCode)")
+                            .foregroundColor(Color("marshal_White"))
+                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
+                        
+                    }//: HSTACK
                     
-                }//: HSTACK
-                .padding(.horizontal)
-                .onTapGesture {
-                    isOppenSheet = true
-                }
-                .sheet(isPresented: $isOppenSheet) {
-                    CountryList(flag: $countryFlag, code: $countryCode)
-                }
-                ZStack(alignment: .trailing){
-                    // TEXT
-                    if showText {
-                        Text("شماره موبایل خود را وارد کنید ")
-                            .foregroundColor(Color("marshal_hint"))
-                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 12))
+                    .padding(.horizontal, 16.0)
+                    .onTapGesture {
+                        isOppenSheet = true
                     }
-                    //TEXTFIELD
-                    TextField("", text: $phoneNumber)
-                        .multilineTextAlignment(.trailing)
-                        .foregroundColor(Color.white)
-                        .onChange(of: phoneNumber) { newValue in
-                            if phoneNumber.isEmpty {
-                                showText = true
-                            }else{
-                                showText = false
-                            }
-                            
-                        }//: ONCHANGE
-                        .disableAutocorrection(true)
-                }//:ZSTACK
-                .padding(.horizontal)
+                    .sheet(isPresented: $isOppenSheet) {
+                        CountryList(flag: $countryFlag, code: $countryCode)
+                    }
+                    ZStack(alignment: .trailing){
+                        // TEXT
+                        if showText {
+                            Text("شماره موبایل خود را وارد کنید ")
+                                .foregroundColor(Color("marshal_White"))
+                                .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
+                                .padding(.horizontal, 16.0)
+                        }
+                        //TEXTFIELD
+                        TextField("", text: $phoneNumber)
+                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 18.0))
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(Color("marshal_White"))
+                            //.padding(.horizontal, 16.0)
+                            .onChange(of: phoneNumber) { newValue in
+                                if phoneNumber.isEmpty {
+                                    showText = true
+                                }else{
+                                    showText = false
+                                }
+                                
+                            }//: ONCHANGE
+                            .disableAutocorrection(true)
+                    }//:ZSTACK
+                    
+                }
+
             }
+            .frame(height: 56)
+            .background(Color("marshal_surfGrey"))
+            .cornerRadius(12)
             .overlay(
             RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.white, lineWidth: 1)
+                .stroke(Color("marshal_White"), lineWidth: 0.5)
             )
-            .background(Color("marshal_bg"))
-            if !showText{
-                //: TEXT TITLE
-                Text("تلفن همراه")
-                    .foregroundColor(.white)
-                    .font(Font.custom("IRANSansMobileFaNum Mediun", size: 10))
-                    .background(Color("marshal_bg"))
-                    .offset(x: -16, y: -5)
-            }
+            .animation(.easeOut, value: showText)
 
-        }.animation(.easeOut, value: showText)
+            HStack {
+                
+                Spacer()
+                
+                if !showText{
+                    //: TEXT TITLE
+                    Text("تلفن همراه")
+                        .padding(.horizontal, 16.0)
+                        .padding(.vertical, 4.0)
+                        .foregroundColor(Color("marshal_White"))
+                        .font(Font.custom("IRANSansMobileFaNum Light", size: 10))
+                        .background(Color("marshal_surfGrey"))
+                        .cornerRadius(8.0)
+                        .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color("marshal_White"), lineWidth:0.5)
+                        )
+                    
+                        
+                }
+                
+            }
+            .padding(.horizontal, 16.0)
+            .offset(y: -28)
+            .animation(.easeIn, value: showText)
+            
+        }
+        
+        
     }
     //MARK: - FUNCTION
 }
