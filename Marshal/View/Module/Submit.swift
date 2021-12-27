@@ -12,10 +12,10 @@ struct Submit: View {
     var body: some View {
         Button(action: onClick) {
             Text(title)
-                .padding(.horizontal ,50)
+                .padding(.horizontal ,56)
                 .frame(height: 40)
-                .foregroundColor(Color.white)
-                .font(Font.custom("IRANSansMobileFaNum Medium", size: 20))
+                .foregroundColor(Color("marshal_White"))
+                .font(Font.custom("IRANSansMobileFaNum Bold", size: 18))
                 .background(Color("marshal_red"))
                 .cornerRadius(12)
                
@@ -26,5 +26,6 @@ struct Submit: View {
 struct Submit_Previews: PreviewProvider {
     static var previews: some View {
         Submit(title: "تایید", onClick: {})
+            .previewLayout(.sizeThatFits)
     }
 }

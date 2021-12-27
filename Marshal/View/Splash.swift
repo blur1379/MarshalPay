@@ -22,16 +22,16 @@ struct Splash: View {
                     Image("marshal_logo")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 189, alignment: .center)
+                        .frame(width: 192, alignment: .center)
                     // DIVIDER
                     Divider()
-                        .frame(width: 189,height: 1.0)
+                        .frame(width: 192,height: 1.0)
                         .background(Color("marshal_red"))
                     
                     //TITLE
-                    Text("بازار آنلاین رمز ارز ها")
-                        .foregroundColor(Color.white)
-                        .font(Font.custom("IRANSansMobileNoEn Medium", size: 21))
+                    Text("بازار آنلاین رمزارز ها")
+                        .foregroundColor(Color("marshal_White"))
+                        .font(Font.custom("IRANSansMobileNoEn Medium", size: 20))
                         
                 }//: VSTACK
                 if networkConnection.isConnected {
@@ -56,7 +56,7 @@ struct Splash: View {
         })
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
         .ignoresSafeArea()
-        .background(Color("marshal_bg"))
+        .background(Color("marshal_darkGrey"))
     }
 }
 //MARK: - PREVIEW

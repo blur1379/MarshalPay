@@ -15,18 +15,21 @@ struct MarshalTextField: View {
     var keyboardType : UIKeyboardType = .default
     //MARK: - BODY
     var body: some View {
-        HStack{
+        //HStack{
             ZStack(alignment: isEn ? .leading : .trailing){
                 // TEXT
                 if showText {
                     Text(title)
-                        .foregroundColor(Color("marshal_hint"))
-                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 12))
+                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
+                        .foregroundColor(Color("marshal_White"))
+                        .padding(.trailing, 16.0)
                 }
                 //TEXTFIELD
                 TextField("", text: $text)
-                    .multilineTextAlignment(.trailing)
-                    .foregroundColor(Color.white)
+                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 18.0))
+                    .padding(.horizontal, 16.0)
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(Color("marshal_White"))
                     .onChange(of: text) { newValue in
                         if text.isEmpty {
                             showText = true
@@ -37,14 +40,18 @@ struct MarshalTextField: View {
                     }//: ONCHANGE
                     .disableAutocorrection(true)
             }//:ZSTACK
-            .padding(.horizontal)
-        }//: HSTACK
-        .frame(height: 50, alignment: .center)
-        .overlay(
-        RoundedRectangle(cornerRadius: 12)
-            .stroke(Color.white, lineWidth: 1)
-        )
-        .background(Color("marshal_bg"))
+            //.padding(.horizontal)
+            
+            .frame(height: 56, alignment: .center)
+            .background(Color("marshal_surfGrey"))
+            .cornerRadius(12)
+            .overlay(RoundedRectangle(cornerRadius: 12)
+                        .stroke(Color.white, lineWidth: 0.5)
+            
+            )
+        //}//: HSTACK
+        
+        //.background(Color("marshal_darkGrey"))
 
     }
 }
