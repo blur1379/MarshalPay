@@ -34,19 +34,19 @@ struct Splash: View {
                         .font(Font.custom("IRANSansMobileNoEn Medium", size: 21))
                         
                 }//: VSTACK
-//                if networkConnection.isConnected {
-//                    if showLogin {
-//                        VStack{
-//                            
-//                        }//: VSTACK
-//                    }else{
-//                        // go to home
-//                        
-//                    }//: END IF
-//                }else{
-//                    // connection failed
-//                    NetworkFailed()
-//                }//: END IF
+                if networkConnection.isConnected {
+                    if showLogin {
+                        VStack{
+                            
+                        }//: VSTACK
+                    }else{
+                        // go to home
+                        
+                    }//: END IF
+                }else{
+                    // connection failed
+                    NetworkFailed()
+                }//: END IF
             }//: VSTACK
         }//: ZSTACK
         .onAppear(perform: {

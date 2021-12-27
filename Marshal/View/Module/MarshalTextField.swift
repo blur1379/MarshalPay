@@ -51,6 +51,6 @@ struct MarshalTextField: View {
 //MARK: - PREVIEW
 struct MarshalTextField_Previews: PreviewProvider {
     static var previews: some View {
-        MarshalTextField(text: .constant(""), title: "عنوان")
+        MarshalTextField(text: .constant(""), title: "عنوان").previewLayout(.sizeThatFits)
     }
 }
