@@ -9,9 +9,9 @@ import SwiftUI
 
 struct Login: View {
     //MARK: - PROPERTIES
-    @State private var phoneNumber : String = ""
-    @State private var countryCode : String = "98"
-    @State private var code : String = ""
+    @State var phoneNumber : String = ""
+    @State var countryCode : String = "98"
+    @State var code : String = ""
     @State var timeRemaining = 120
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 

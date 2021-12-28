@@ -49,22 +49,23 @@ struct MarshalPhoneNumber: View {
                                 .foregroundColor(Color("marshal_White"))
                                 .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
                                 .padding(.horizontal, 16.0)
+                                
                         }
                         //TEXTFIELD
                         TextField("", text: $phoneNumber)
                             .font(Font.custom("IRANSansMobileFaNum Medium", size: 18.0))
                             .multilineTextAlignment(.leading)
                             .foregroundColor(Color("marshal_White"))
-                            //.padding(.horizontal, 16.0)
+                            .keyboardType(.numberPad)
+                            .disableAutocorrection(true)
+                            .disabled(phoneNumber.count < 10 ? false : true)
                             .onChange(of: phoneNumber) { newValue in
                                 if phoneNumber.isEmpty {
                                     showText = true
                                 }else{
                                     showText = false
                                 }
-                                
                             }//: ONCHANGE
-                            .disableAutocorrection(true)
                     }//:ZSTACK
                     
                 }

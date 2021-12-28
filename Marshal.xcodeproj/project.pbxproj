@@ -45,6 +45,7 @@
 		B8AE1FD8277619990090125D /* NetworkFailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1FD7277619990090125D /* NetworkFailed.swift */; };
 		B8D2C1812779D29600F0C207 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2C1802779D29600F0C207 /* User.swift */; };
 		B8D2C183277A411A00F0C207 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2C182277A411A00F0C207 /* Information.swift */; };
+		B8F29240277B1A7C004F75A4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2923F277B1A7C004F75A4 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		B8BD264F2775F41D00213CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B8D2C1802779D29600F0C207 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B8D2C182277A411A00F0C207 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
+		B8F2923F277B1A7C004F75A4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				B8AE1F982775F6FB0090125D /* Module */,
 				B8AE1F992775F7190090125D /* Login.swift */,
 				B8AE1F9B2775F7690090125D /* Splash.swift */,
+				B8F2923F277B1A7C004F75A4 /* Home.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				B8AE1F9A2775F7190090125D /* Login.swift in Sources */,
 				B8AE1F952775F6720090125D /* MarshalTextField.swift in Sources */,
 				B8AE1FD8277619990090125D /* NetworkFailed.swift in Sources */,
+				B8F29240277B1A7C004F75A4 /* Home.swift in Sources */,
 				B8D2C1812779D29600F0C207 /* User.swift in Sources */,
 				B8AE1F9C2775F7690090125D /* Splash.swift in Sources */,
 				B8AE1F932775F6430090125D /* CountryList.swift in Sources */,

@@ -11,6 +11,7 @@ import Alamofire
 struct CallApi{
     public var baceUrl = "https://marshal-pay.iran.liara.run/api/"
     var timeOut = 4
+    // func 
     func SendActivationCode(phoneNumber: String , status : @escaping ((Status)->())){
         var statusApi : Status = .InProgress
         let parameters: [String: Any] = [

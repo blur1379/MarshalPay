@@ -27,6 +27,7 @@ struct MarshalTextField: View {
                 //TEXTFIELD
                 TextField("", text: $text)
                     .font(Font.custom("IRANSansMobileFaNum Medium", size: 18.0))
+                    .keyboardType(keyboardType)
                     .padding(.horizontal, 16.0)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(Color("marshal_White"))
@@ -38,7 +39,6 @@ struct MarshalTextField: View {
                         }
                         
                     }//: ONCHANGE
-                    .disableAutocorrection(true)
             }//:ZSTACK
             //.padding(.horizontal)
             

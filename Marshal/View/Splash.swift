@@ -37,7 +37,7 @@ struct Splash: View {
                 if networkConnection.isConnected {
                     if showLogin {
                         VStack{
-                            
+                            Login().frame(height: 400, alignment: .center)
                         }//: VSTACK
                     }else{
                         // go to home
@@ -50,7 +50,7 @@ struct Splash: View {
             }//: VSTACK
         }//: ZSTACK
         .onAppear(perform: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 7.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                       showLogin = true
                   }
         })
