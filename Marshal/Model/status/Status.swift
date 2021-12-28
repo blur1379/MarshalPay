@@ -6,5 +6,5 @@
 //
 import Foundation
 enum Status{
-    case InProgress,Failure,Successful
+    case InProgress,Failure,Successful,none
 }

@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+
 struct MarshalTextField: View {
     //MARK: - PROPERTIS
+  
     @State var showText : Bool = true
     @Binding var text: String
     let title : String
     var isEn : Bool = false
     var keyboardType : UIKeyboardType = .default
+    var limitedItem : Int?
     //MARK: - BODY
     var body: some View {
         //HStack{
@@ -36,6 +39,13 @@ struct MarshalTextField: View {
                             showText = true
                         }else{
                             showText = false
+                            if limitedItem != 0 {
+                                if limitedItem != nil {
+                                    if text.count > limitedItem! {
+                                        text.removeLast()
+                                    }
+                                }
+                            }
                         }
                         
                     }//: ONCHANGE
