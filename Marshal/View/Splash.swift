@@ -67,6 +67,9 @@ struct Splash: View {
         .onTapGesture {
             hideKeyboard()
         }
+        .gesture(DragGesture().onChanged({ _ in
+            hideKeyboard()
+        }))
     }
 }
 //MARK: - PREVIEW
