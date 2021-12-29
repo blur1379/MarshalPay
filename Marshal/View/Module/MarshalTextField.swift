@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+
 struct MarshalTextField: View {
     //MARK: - PROPERTIS
+  
     @State var showText : Bool = true
     @Binding var text: String
     let title : String
     var isEn : Bool = false
     var keyboardType : UIKeyboardType = .default
+    var limitedItem : Int?
     //MARK: - BODY
     var body: some View {
         //HStack{
@@ -27,6 +30,7 @@ struct MarshalTextField: View {
                 //TEXTFIELD
                 TextField("", text: $text)
                     .font(Font.custom("IRANSansMobileFaNum Medium", size: 18.0))
+                    .keyboardType(keyboardType)
                     .padding(.horizontal, 16.0)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(Color("marshal_White"))
@@ -35,10 +39,16 @@ struct MarshalTextField: View {
                             showText = true
                         }else{
                             showText = false
+                            if limitedItem != 0 {
+                                if limitedItem != nil {
+                                    if text.count > limitedItem! {
+                                        text.removeLast()
+                                    }
+                                }
+                            }
                         }
                         
                     }//: ONCHANGE
-                    .disableAutocorrection(true)
             }//:ZSTACK
             //.padding(.horizontal)
             
@@ -58,6 +68,6 @@ struct MarshalTextField: View {
 //MARK: - PREVIEW
 struct MarshalTextField_Previews: PreviewProvider {
     static var previews: some View {
-        MarshalTextField(text: .constant(""), title: "عنوان")
+        MarshalTextField(text: .constant(""), title: "عنوان").previewLayout(.sizeThatFits)
     }
 }

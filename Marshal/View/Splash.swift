@@ -7,7 +7,12 @@
 
 import SwiftUI
 
-
+extension View {
+    func hideKeyboard() {
+        let resign = #selector(UIResponder.resignFirstResponder)
+        UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
+    }
+}
 struct Splash: View {
     //MARK: - PROPERTIES
     @StateObject var networkConnection = NetworkManeger()
@@ -34,29 +39,34 @@ struct Splash: View {
                         .font(Font.custom("IRANSansMobileNoEn Medium", size: 20))
                         
                 }//: VSTACK
-//                if networkConnection.isConnected {
-//                    if showLogin {
-//                        VStack{
-//                            
-//                        }//: VSTACK
-//                    }else{
-//                        // go to home
-//                        
-//                    }//: END IF
-//                }else{
-//                    // connection failed
-//                    NetworkFailed()
-//                }//: END IF
+                if networkConnection.isConnected {
+                    if showLogin {
+                        VStack{
+                            Login()
+                                .frame(height: 400, alignment: .center)
+                        }//: VSTACK
+                    }else{
+                        // go to home
+                        
+                    }//: END IF
+                }else{
+                    // connection failed
+                    NetworkFailed()
+                }//: END IF
             }//: VSTACK
+            .animation(.easeIn, value: showLogin)
         }//: ZSTACK
         .onAppear(perform: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 7.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                       showLogin = true
                   }
         })
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
         .ignoresSafeArea()
         .background(Color("marshal_darkGrey"))
+        .onTapGesture {
+            hideKeyboard()
+        }
     }
 }
 //MARK: - PREVIEW

@@ -9,11 +9,14 @@ import SwiftUI
 
 struct Login: View {
     //MARK: - PROPERTIES
-    @State private var phoneNumber : String = ""
-    @State private var countryCode : String = "98"
-    @State private var code : String = ""
+    @State var phoneNumber : String = ""
+    @State var countryCode : String = "98"
+    @State var code : String = ""
     @State var timeRemaining = 120
+    @State var isShowCode = false
+    @State var status : Status = .none
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let callapi = CallApi()
 
     //MARK: - BODY
     var body: some View {
@@ -22,30 +25,41 @@ struct Login: View {
             Spacer()
             
         //: PHONE NUMBER
-            MarshalPhoneNumber(phoneNumber: phoneNumber, countryCode: countryCode)
+            MarshalPhoneNumber(phoneNumber: $phoneNumber, countryCode: countryCode)
         //: VERIFICATION CODE
-            VStack{
-                MarshalTextField(text: $code, title: "کد تایید را وارد کنید", isEn: false, keyboardType: .numberPad)
-                
-                HStack{
-    
-                    Text("\(timeRemaining/60) : \(timeRemaining % 60)")
-                        .padding(.leading, 16.0)
-                        .foregroundColor(Color("marshal_White"))
-                        .font(Font.custom("IRANSansMobileFaNum Light", size: 14))
-                             .onReceive(timer) { _ in
-                                 if timeRemaining > 0 {
-                                     timeRemaining -= 1
+            if isShowCode {
+                VStack{
+                    MarshalTextField(text: $code, title: "کد تایید را وارد کنید", isEn: false, keyboardType: .numberPad)
+                    HStack{
+        
+                        Text("\(timeRemaining/60) : \(timeRemaining % 60)")
+                            .padding(.leading, 16.0)
+                            .foregroundColor(Color("marshal_White"))
+                            .font(Font.custom("IRANSansMobileFaNum Light", size: 14))
+                                 .onReceive(timer) { _ in
+                                     if timeRemaining > 0 {
+                                         timeRemaining -= 1
+                                     }
                                  }
-                             }
-                    
-                    Spacer()
-                }//: HSTACK
-            }//: VSTACK
+                        Spacer()
+                    }//: HSTACK
+                }//: VSTACK
+            }// : END IF
         //: SUBMIT BOTTOM
-            Submit(title: "تایید") {
-                //pressboton
-                print("press")
+            Submit(status: $status, title: "تایید") {
+                if phoneNumber.count > 9 {
+                    if isShowCode {
+                        
+                    }else{
+                        callapi.SendActivationCode(phoneNumber: countryCode + phoneNumber) { status in
+                            self.status = status
+                            if status == .Successful {
+                                isShowCode = true
+                            }
+                        }
+                    }
+                }
+            
             }
             
             Spacer()

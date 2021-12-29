@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct MarshalPhoneNumber: View {
-    @State var phoneNumber : String = ""
+    @Binding var phoneNumber : String
     @State var countryCode : String = "98"
     @State var countryFlag : String = "🇮🇷"
     @State private var isOppenSheet = false
     @State var showText = true
     var body: some View {
-        
         ZStack {
 
             ZStack {
@@ -49,22 +48,25 @@ struct MarshalPhoneNumber: View {
                                 .foregroundColor(Color("marshal_White"))
                                 .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
                                 .padding(.horizontal, 16.0)
+                                
                         }
                         //TEXTFIELD
                         TextField("", text: $phoneNumber)
                             .font(Font.custom("IRANSansMobileFaNum Medium", size: 18.0))
                             .multilineTextAlignment(.leading)
                             .foregroundColor(Color("marshal_White"))
-                            //.padding(.horizontal, 16.0)
+                            .keyboardType(.numberPad)
+                            .disableAutocorrection(true)
                             .onChange(of: phoneNumber) { newValue in
                                 if phoneNumber.isEmpty {
                                     showText = true
                                 }else{
                                     showText = false
+                                    if phoneNumber.count > 10 {
+                                        phoneNumber.removeLast()
+                                    }
                                 }
-                                
                             }//: ONCHANGE
-                            .disableAutocorrection(true)
                     }//:ZSTACK
                     
                 }
@@ -96,10 +98,7 @@ struct MarshalPhoneNumber: View {
                         RoundedRectangle(cornerRadius: 12)
                             .stroke(Color("marshal_White"), lineWidth:0.5)
                         )
-                    
-                        
                 }
-                
             }
             .padding(.horizontal, 16.0)
             .offset(y: -28)
@@ -114,7 +113,7 @@ struct MarshalPhoneNumber: View {
 
 struct MarshalPhoneNumber_Previews: PreviewProvider {
     static var previews: some View {
-        MarshalPhoneNumber()
+        MarshalPhoneNumber(phoneNumber: .constant(""))
             .previewLayout(.sizeThatFits)
     }
 }
