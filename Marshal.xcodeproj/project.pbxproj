@@ -46,6 +46,7 @@
 		B8D2C1812779D29600F0C207 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2C1802779D29600F0C207 /* User.swift */; };
 		B8D2C183277A411A00F0C207 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2C182277A411A00F0C207 /* Information.swift */; };
 		B8F29240277B1A7C004F75A4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2923F277B1A7C004F75A4 /* Home.swift */; };
+		CA9FB8D7277C685E006D411C /* MarshalTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		B8D2C1802779D29600F0C207 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B8D2C182277A411A00F0C207 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
 		B8F2923F277B1A7C004F75A4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +151,7 @@
 				B8AE1F922775F6430090125D /* CountryList.swift */,
 				B8AE1F942775F6720090125D /* MarshalTextField.swift */,
 				B8AE1F962775F6D80090125D /* Submit.swift */,
-				CAA99160277B6AAE00E25CA3 /* MarshalTabBar.swift */,
+				CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -310,12 +312,12 @@
 			files = (
 				B8AE1FD4277617350090125D /* ProgressViewMarshal.swift in Sources */,
 				B8AE1F9A2775F7190090125D /* Login.swift in Sources */,
-				CAA99161277B6AAF00E25CA3 /* MarshalTabBar.swift in Sources */,
 				B8AE1F952775F6720090125D /* MarshalTextField.swift in Sources */,
 				B8AE1FD8277619990090125D /* NetworkFailed.swift in Sources */,
 				B8F29240277B1A7C004F75A4 /* Home.swift in Sources */,
 				B8D2C1812779D29600F0C207 /* User.swift in Sources */,
 				B8AE1F9C2775F7690090125D /* Splash.swift in Sources */,
+				CA9FB8D7277C685E006D411C /* MarshalTabBar.swift in Sources */,
 				B8AE1F932775F6430090125D /* CountryList.swift in Sources */,
 				B8AE1FA22775F9DA0090125D /* Status.swift in Sources */,
 				B8AE1FCD27760F230090125D /* CallApi.swift in Sources */,
