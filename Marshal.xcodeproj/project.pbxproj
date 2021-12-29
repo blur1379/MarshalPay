@@ -43,6 +43,7 @@
 		B8AE1FD4277617350090125D /* ProgressViewMarshal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1FD3277617350090125D /* ProgressViewMarshal.swift */; };
 		B8AE1FD6277618E60090125D /* FailedMarshal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1FD5277618E60090125D /* FailedMarshal.swift */; };
 		B8AE1FD8277619990090125D /* NetworkFailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1FD7277619990090125D /* NetworkFailed.swift */; };
+		CAA99161277B6AAF00E25CA3 /* MarshalTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA99160277B6AAE00E25CA3 /* MarshalTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		B8AE1FD5277618E60090125D /* FailedMarshal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedMarshal.swift; sourceTree = "<group>"; };
 		B8AE1FD7277619990090125D /* NetworkFailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFailed.swift; sourceTree = "<group>"; };
 		B8BD264F2775F41D00213CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CAA99160277B6AAE00E25CA3 /* MarshalTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				B8AE1F922775F6430090125D /* CountryList.swift */,
 				B8AE1F942775F6720090125D /* MarshalTextField.swift */,
 				B8AE1F962775F6D80090125D /* Submit.swift */,
+				CAA99160277B6AAE00E25CA3 /* MarshalTabBar.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			files = (
 				B8AE1FD4277617350090125D /* ProgressViewMarshal.swift in Sources */,
 				B8AE1F9A2775F7190090125D /* Login.swift in Sources */,
+				CAA99161277B6AAF00E25CA3 /* MarshalTabBar.swift in Sources */,
 				B8AE1F952775F6720090125D /* MarshalTextField.swift in Sources */,
 				B8AE1FD8277619990090125D /* NetworkFailed.swift in Sources */,
 				B8AE1F9C2775F7690090125D /* Splash.swift in Sources */,
@@ -443,6 +447,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Marshal/Preview Content\"";
+				DEVELOPMENT_TEAM = LRX34D989H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Marshal/Info.plist;
@@ -469,9 +474,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Marshal/Preview Content\"";
+				DEVELOPMENT_TEAM = LRX34D989H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Marshal/Info.plist;
@@ -487,6 +494,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Marshal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

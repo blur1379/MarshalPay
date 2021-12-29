@@ -29,7 +29,7 @@ struct MarshalPhoneNumber: View {
                             //.foregroundColor(Color.white)
                             //.frame(width: 1 ,height: 50)
                         //NATIUNALCODE
-                        Text("+\(countryCode)")
+                        Text("+ \(countryCode)")
                             .foregroundColor(Color("marshal_White"))
                             .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
                         

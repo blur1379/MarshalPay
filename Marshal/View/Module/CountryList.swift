@@ -16,32 +16,56 @@ struct CountryList: View {
     //MARK: - BODY
     var body: some View {
         
-        ScrollView {
-            VStack(alignment: .leading, spacing: 0){
-                ForEach(CountryCodes().countryDictionary.sorted(by: <), id: \.key){ key , value in
-                    HStack{
-                        Text("\(self.flag(country: key))")
-                        
-                        Text("\(self.countryName(countryCode: key) ?? key)")
-                            .foregroundColor(Color.white)
-                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
-                        Spacer()
-                        Text("+\(value)")
-                            .foregroundColor(Color.white)
-                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
-                    }//: HSTACK
-                    .padding()
-                    .onTapGesture {
-                        flag = self.flag(country: key)
-                        code = value
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                }//: LOOP
-            }//:VSTACK
-            .background(Color("marshal_darkGrey"))
+        VStack (spacing: 0){
+            Text("انتخاب نام یا پیش‌شماره کشور")
+            .font(.custom("IRANSansMobileNoEn Bold", size: 18))
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 56, alignment: .trailing)
+            .foregroundColor(Color("marshal_White"))
+            .padding(.horizontal, 16.0)
+            //.padding(.bottom, 8)
+
+            Divider()
+                .frame(height: 0.5).background(Color("marshal_red"))
             
-        }//:SCROLLVIEW
-        .ignoresSafeArea()
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0){
+                    ForEach(CountryCodes().countryDictionary.sorted(by: <), id: \.key){ key , value in
+                        HStack{
+                            Text("\(self.flag(country: key))")
+                            
+                            Text("\(self.countryName(countryCode: key) ?? key)")
+                                .foregroundColor(Color("marshal_White"))
+                                .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
+                            Spacer()
+                            Text("+ \(value)")
+                                .foregroundColor(Color("marshal_White"))
+                                .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
+                        }//: HSTACK
+                        .padding(16.0)
+                        .onTapGesture {
+                            flag = self.flag(country: key)
+                            code = value
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        Divider()
+                            .frame(width: .infinity,height: 0.5)
+                            .background(Color("marshal_red"))
+                            .padding(.horizontal, 16.0)
+                    }//: LOOP
+                }//:VSTACK
+                
+            }//:SCROLLVIEW
+            //.background(Color("marshal_darkGrey"))
+        }
+        .background(Color("marshal_surfGrey"))
+        //.ignoresSafeArea()
+            
+
+            
+
+        
+
+        
     }
     //MARK: - FUNCTION
     func flag(country:String) -> String {

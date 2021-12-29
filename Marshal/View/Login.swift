@@ -18,11 +18,15 @@ struct Login: View {
     //MARK: - BODY
     var body: some View {
         VStack(spacing: 16){
+            
+            Spacer()
+            
         //: PHONE NUMBER
             MarshalPhoneNumber(phoneNumber: phoneNumber, countryCode: countryCode)
         //: VERIFICATION CODE
             VStack{
                 MarshalTextField(text: $code, title: "کد تایید را وارد کنید", isEn: false, keyboardType: .numberPad)
+                
                 HStack{
     
                     Text("\(timeRemaining/60) : \(timeRemaining % 60)")
@@ -44,10 +48,13 @@ struct Login: View {
                 print("press")
             }
             
+            Spacer()
+ 
         }
-        .padding(.horizontal, 16.0)//: VSTACK
+        //: VSTACK
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(Color("marshal_darkGrey"))
+        .edgesIgnoringSafeArea(.all)
     }
        
 }
