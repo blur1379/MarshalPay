@@ -18,11 +18,11 @@ struct MarshalTabBar: View {
                     }) {
                         
                         VStack (alignment: .center, spacing: 8){
-                            Image(systemName: "person.crop.circle.fill")
+                            Image("icon_account_24dp")
                                 .resizable()
                                 .frame(width: 32, height: 32, alignment: .center)
                                 .foregroundColor(Color("marshal_White"))
-                            Text("صفحه کاربری")
+                            Text("کاربر")
                                 .foregroundColor(Color("marshal_White"))
                                 .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
                             
@@ -38,7 +38,7 @@ struct MarshalTabBar: View {
                     }) {
                         
                         VStack (alignment: .center, spacing: 8){
-                            Image(systemName: "person.crop.circle.fill")
+                            Image("icon_wallet_24dp")
                                 .resizable()
                                 .frame(width: 32, height: 32, alignment: .center)
                                 .foregroundColor(Color("marshal_White"))
@@ -58,11 +58,11 @@ struct MarshalTabBar: View {
                     }) {
                         
                         VStack (alignment: .center, spacing: 8){
-                            Image(systemName: "person.crop.circle.fill")
+                            Image("icon_trend_24dp")
                                 .resizable()
                                 .frame(width: 32, height: 32, alignment: .center)
                                 .foregroundColor(Color("marshal_White"))
-                            Text("تاریخچه")
+                            Text("بازار")
                                 .foregroundColor(Color("marshal_White"))
                                 .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
                             
@@ -78,7 +78,7 @@ struct MarshalTabBar: View {
                     }) {
                         
                         VStack (alignment: .center, spacing: 8){
-                            Image(systemName: "person.crop.circle.fill")
+                            Image("icon_marshal_24dp")
                                 .resizable()
                                 .frame(width: 32, height: 32, alignment: .center)
                                 .foregroundColor(Color("marshal_White"))
@@ -95,7 +95,7 @@ struct MarshalTabBar: View {
                     
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
-                .frame(height: 88, alignment: .center)
+                .frame(height: 80, alignment: .center)
                 .background(Color("marshal_surfGrey"))
     }
 }
@@ -103,5 +103,6 @@ struct MarshalTabBar: View {
 struct MarshalTabBar_Previews: PreviewProvider {
     static var previews: some View {
         MarshalTabBar()
+            .previewLayout(.sizeThatFits)
     }
 }

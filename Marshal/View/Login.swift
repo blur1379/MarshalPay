@@ -26,6 +26,7 @@ struct Login: View {
             
         //: PHONE NUMBER
             MarshalPhoneNumber(phoneNumber: $phoneNumber, countryCode: countryCode)
+                .padding(.horizontal, 16)
         //: VERIFICATION CODE
             if isShowCode {
                 VStack{
@@ -44,6 +45,7 @@ struct Login: View {
                         Spacer()
                     }//: HSTACK
                 }//: VSTACK
+                .padding(.horizontal, 16.0)
             }// : END IF
         //: SUBMIT BOTTOM
             Submit(status: $status, title: "تایید") {

@@ -47,6 +47,10 @@
 		B8D2C183277A411A00F0C207 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2C182277A411A00F0C207 /* Information.swift */; };
 		B8F29240277B1A7C004F75A4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2923F277B1A7C004F75A4 /* Home.swift */; };
 		CA9FB8D7277C685E006D411C /* MarshalTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */; };
+		CA9FB8D9277C74B0006D411C /* MarshalWalletTabPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */; };
+		CA9FB8DB277C9661006D411C /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FB8DA277C9660006D411C /* RoundedCorners.swift */; };
+		CA9FB8DD277CE9D8006D411C /* MarshalTrendingListEachRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FB8DC277CE9D7006D411C /* MarshalTrendingListEachRow.swift */; };
+		CAD09B3D277DB1EF000BFC13 /* MarshalTopBarType01.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD09B3C277DB1EF000BFC13 /* MarshalTopBarType01.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +94,10 @@
 		B8D2C182277A411A00F0C207 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
 		B8F2923F277B1A7C004F75A4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTabBar.swift; sourceTree = "<group>"; };
+		CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalWalletTabPageModule.swift; sourceTree = "<group>"; };
+		CA9FB8DA277C9660006D411C /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		CA9FB8DC277CE9D7006D411C /* MarshalTrendingListEachRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTrendingListEachRow.swift; sourceTree = "<group>"; };
+		CAD09B3C277DB1EF000BFC13 /* MarshalTopBarType01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTopBarType01.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +160,9 @@
 				B8AE1F942775F6720090125D /* MarshalTextField.swift */,
 				B8AE1F962775F6D80090125D /* Submit.swift */,
 				CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */,
+				CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */,
+				CA9FB8DC277CE9D7006D411C /* MarshalTrendingListEachRow.swift */,
+				CAD09B3C277DB1EF000BFC13 /* MarshalTopBarType01.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -176,6 +187,7 @@
 				B8AE1FCE2776110D0090125D /* NetworkManeger.swift */,
 				B8D2C1802779D29600F0C207 /* User.swift */,
 				B8D2C182277A411A00F0C207 /* Information.swift */,
+				CA9FB8DA277C9660006D411C /* RoundedCorners.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,12 +328,16 @@
 				B8AE1FD8277619990090125D /* NetworkFailed.swift in Sources */,
 				B8F29240277B1A7C004F75A4 /* Home.swift in Sources */,
 				B8D2C1812779D29600F0C207 /* User.swift in Sources */,
+				CA9FB8D9277C74B0006D411C /* MarshalWalletTabPageModule.swift in Sources */,
 				B8AE1F9C2775F7690090125D /* Splash.swift in Sources */,
 				CA9FB8D7277C685E006D411C /* MarshalTabBar.swift in Sources */,
 				B8AE1F932775F6430090125D /* CountryList.swift in Sources */,
 				B8AE1FA22775F9DA0090125D /* Status.swift in Sources */,
+				CA9FB8DD277CE9D8006D411C /* MarshalTrendingListEachRow.swift in Sources */,
+				CAD09B3D277DB1EF000BFC13 /* MarshalTopBarType01.swift in Sources */,
 				B8AE1FCD27760F230090125D /* CallApi.swift in Sources */,
 				B8AE1F912775F60D0090125D /* MarshalPhoneNumber.swift in Sources */,
+				CA9FB8DB277C9661006D411C /* RoundedCorners.swift in Sources */,
 				B8AE1FA02775F9A90090125D /* CountryCodes.swift in Sources */,
 				B8AE1FCF2776110D0090125D /* NetworkManeger.swift in Sources */,
 				B8AE1F972775F6D80090125D /* Submit.swift in Sources */,

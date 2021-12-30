@@ -9,9 +9,27 @@ import SwiftUI
 
 struct Home: View {
     var body: some View {
-        VStack{
+        VStack(alignment: .center, spacing: 0.0) {
             
+            MarshalTopBarType01()
+            
+            Divider()
+                .frame(height: 1.0).background(Color("marshal_red"))
+            
+            //Spacer()
+            MarshalWalletTabPageModule()
+                .padding(.horizontal, 16.0)
+                .padding(.top, 16.0)
+            
+            Divider()
+                .frame(height: 1.0).background(Color("marshal_red"))
+            
+            MarshalTabBar()
+
         }// VSTACK
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .background(Color("marshal_darkGrey"))
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

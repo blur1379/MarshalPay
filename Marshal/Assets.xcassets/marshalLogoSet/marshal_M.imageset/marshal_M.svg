@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.502" gradientTransform="translate(0.003) scale(0.994 1)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.003" stop-color="#fefefd"/>
+      <stop offset="0.153" stop-color="#f2e5c6"/>
+      <stop offset="0.303" stop-color="#e7d096"/>
+      <stop offset="0.451" stop-color="#dfbf6e"/>
+      <stop offset="0.597" stop-color="#d8b250"/>
+      <stop offset="0.738" stop-color="#d3a83a"/>
+      <stop offset="0.875" stop-color="#d0a22d"/>
+      <stop offset="1" stop-color="#d0a129"/>
+    </radialGradient>
+  </defs>
+  <path id="Path_1532" data-name="Path 1532" d="M495.669,747.244c7.952-.141,14.955,6.848,14.88,15a15,15,0,1,1-30-.064A14.971,14.971,0,0,1,495.669,747.244Zm-.292,17.9c-.259-.281-.678-.765-1.127-1.218-2.559-2.589-5.116-5.18-7.7-7.74a4.106,4.106,0,0,0-1.152-.569,3.793,3.793,0,0,0-.375,1.116c-.017,3.56-.111,7.126.069,10.678a4.6,4.6,0,0,0,3.05,4.107c1.536.629,1.92.368,1.947-1.267.02-1.178,0-2.357,0-3.535l.4-.156q2.04,2.013,4.08,4.024c1.066,1.05,1.386,1.009,2.472-.076,1.454-1.452,2.956-2.856,4.437-4.279,0,.648-.009,1.379,0,2.111.012.786.084,1.572.055,2.356-.045,1.222.567,1.28,1.494.964A5,5,0,0,0,506.4,766.9q.078-4.442,0-8.886a14.12,14.12,0,0,0-.461-2.431,17.121,17.121,0,0,0-1.956,1.386C501.165,759.608,498.378,762.288,495.378,765.144Z" transform="translate(-480.549 -747.24)" fill="url(#radial-gradient)"/>
+</svg>

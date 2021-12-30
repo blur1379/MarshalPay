@@ -44,7 +44,7 @@ struct MarshalPhoneNumber: View {
                     ZStack(alignment: .trailing){
                         // TEXT
                         if showText {
-                            Text("شماره موبایل خود را وارد کنید ")
+                            Text("شماره همراه خود را وارد کنید ")
                                 .foregroundColor(Color("marshal_White"))
                                 .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
                                 .padding(.horizontal, 16.0)
@@ -87,7 +87,7 @@ struct MarshalPhoneNumber: View {
                 
                 if !showText{
                     //: TEXT TITLE
-                    Text("تلفن همراه")
+                    Text("شماره همراه")
                         .padding(.horizontal, 16.0)
                         .padding(.vertical, 4.0)
                         .foregroundColor(Color("marshal_White"))
