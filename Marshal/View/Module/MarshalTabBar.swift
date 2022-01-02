@@ -17,7 +17,7 @@ struct MarshalTabBar: View {
                         //write code 😎
                     }) {
                         
-                        VStack (alignment: .center, spacing: 8){
+                        VStack (alignment: .center, spacing: 4.0){
                             Image("icon_account_24dp")
                                 .resizable()
                                 .frame(width: 32, height: 32, alignment: .center)
@@ -37,7 +37,7 @@ struct MarshalTabBar: View {
                         //write code 😎
                     }) {
                         
-                        VStack (alignment: .center, spacing: 8){
+                        VStack (alignment: .center, spacing: 4.0){
                             Image("icon_wallet_24dp")
                                 .resizable()
                                 .frame(width: 32, height: 32, alignment: .center)
@@ -57,7 +57,7 @@ struct MarshalTabBar: View {
                         //write code 😎
                     }) {
                         
-                        VStack (alignment: .center, spacing: 8){
+                        VStack (alignment: .center, spacing: 4.0){
                             Image("icon_trend_24dp")
                                 .resizable()
                                 .frame(width: 32, height: 32, alignment: .center)
@@ -77,7 +77,7 @@ struct MarshalTabBar: View {
                         //write code 😎
                     }) {
                         
-                        VStack (alignment: .center, spacing: 8){
+                        VStack (alignment: .center, spacing: 4.0){
                             Image("icon_marshal_24dp")
                                 .resizable()
                                 .frame(width: 32, height: 32, alignment: .center)

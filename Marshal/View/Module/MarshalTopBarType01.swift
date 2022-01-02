@@ -40,5 +40,6 @@ struct MarshalTopBarType01: View {
 struct MarshalTopBarType01_Previews: PreviewProvider {
     static var previews: some View {
         MarshalTopBarType01()
+            .previewLayout(.sizeThatFits)
     }
 }

@@ -27,7 +27,7 @@ struct Home: View {
             MarshalTabBar()
 
         }// VSTACK
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("marshal_darkGrey"))
         .edgesIgnoringSafeArea(.bottom)
     }

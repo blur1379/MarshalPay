@@ -160,7 +160,7 @@ struct MarshalWalletTabPageModule: View {
     }
 }
 
-struct MarshalWalletTabPage_Previews: PreviewProvider {
+struct MarshalWalletTabPageModule_Previews: PreviewProvider {
     static var previews: some View {
         MarshalWalletTabPageModule()
     }
