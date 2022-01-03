@@ -8,28 +8,53 @@
 import SwiftUI
 
 struct Home: View {
+    //MARK: - PROPERTIS
+    enum homePages{
+        case Exchange
+        case History
+        case Walet
+        case Profile
+    }
+    @State var Page : homePages = .Exchange
+    //MARK: -BODY
     var body: some View {
-        VStack(alignment: .center, spacing: 0.0) {
+        VStack{
+            // tap view
             
-            MarshalTopBarType01()
-            
-            Divider()
-                .frame(height: 1.0).background(Color("marshal_red"))
-            
-            //Spacer()
-            MarshalWalletTabPageModule()
-                .padding(.horizontal, 16.0)
-                .padding(.top, 16.0)
-            
-            Divider()
-                .frame(height: 1.0).background(Color("marshal_red"))
-            
-            MarshalTabBar()
+            // body
+            switch Page {
+            case .Exchange:
+                Text("exchenge")
+            case .History:
+                Text("history")
+            case .Walet:
+                VStack(alignment: .center, spacing: 0.0) {
+                    
+                    MarshalTopBarType01()
+                    
+                    Divider()
+                        .frame(height: 1.0).background(Color("marshal_red"))
+                    
+                    //Spacer()
+                    MarshalWalletTabPageModule()
+                        .padding(.horizontal, 16.0)
+                        .padding(.top, 16.0)
+                    
+                    Divider()
+                        .frame(height: 1.0).background(Color("marshal_red"))
+                    
+                    MarshalTabBar()
 
-        }// VSTACK
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("marshal_darkGrey"))
-        .edgesIgnoringSafeArea(.bottom)
+                }// VSTACK
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .background(Color("marshal_darkGrey"))
+                .edgesIgnoringSafeArea(.bottom)
+
+            case .Profile:
+                Text("profile")
+            }
+            //tab bar
+        }
     }
 }
 

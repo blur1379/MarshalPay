@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B81807F52782F60300E67616 /* ExchangeTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81807F42782F60200E67616 /* ExchangeTopBar.swift */; };
 		B82313DF2775F0EA00743A42 /* MarshalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82313DE2775F0EA00743A42 /* MarshalApp.swift */; };
 		B82313E12775F0EA00743A42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82313E02775F0EA00743A42 /* ContentView.swift */; };
 		B82313E32775F0EB00743A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82313E22775F0EB00743A42 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B81807F42782F60200E67616 /* ExchangeTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTopBar.swift; sourceTree = "<group>"; };
 		B82313DB2775F0EA00743A42 /* Marshal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marshal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82313DE2775F0EA00743A42 /* MarshalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalApp.swift; sourceTree = "<group>"; };
 		B82313E02775F0EA00743A42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B81807F22782F3BC00E67616 /* completeProfile */ = {
+			isa = PBXGroup;
+			children = (
+				CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */,
+				CA4B9D6E2780390E0070272F /* MarshalCompleteProfileStepBar.swift */,
+				CA4B9D72278057890070272F /* MarshalCompleteProfileStep1Module.swift */,
+				CA4B9D74278189D20070272F /* MarshalCompleteProfileStep2Module.swift */,
+				CA4B9D76278193B80070272F /* MarshalCompleteProfileStep3Module.swift */,
+				CA4B9D782781992C0070272F /* MarshalCompleteProfileStep4Module.swift */,
+				CA4B9D7A27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift */,
+				CA4B9D7C27819EC20070272F /* MarshalCompleteProfileStep6Module.swift */,
+			);
+			path = completeProfile;
+			sourceTree = "<group>";
+		};
+		B81807F32782F41800E67616 /* exchenge */ = {
+			isa = PBXGroup;
+			children = (
+				CA9FB8DC277CE9D7006D411C /* MarshalTrendingListEachRow.swift */,
+				B81807F42782F60200E67616 /* ExchangeTopBar.swift */,
+			);
+			path = exchenge;
+			sourceTree = "<group>";
+		};
 		B82313D22775F0EA00743A42 = {
 			isa = PBXGroup;
 			children = (
@@ -169,21 +195,14 @@
 		B8AE1F982775F6FB0090125D /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				B81807F22782F3BC00E67616 /* completeProfile */,
+				B81807F32782F41800E67616 /* exchenge */,
 				B8AE1F902775F60D0090125D /* MarshalPhoneNumber.swift */,
+				CAD09B3C277DB1EF000BFC13 /* MarshalTopBarType01.swift */,
 				B8AE1F922775F6430090125D /* CountryList.swift */,
 				B8AE1F942775F6720090125D /* MarshalTextField.swift */,
 				B8AE1F962775F6D80090125D /* Submit.swift */,
 				CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */,
-				CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */,
-				CA9FB8DC277CE9D7006D411C /* MarshalTrendingListEachRow.swift */,
-				CAD09B3C277DB1EF000BFC13 /* MarshalTopBarType01.swift */,
-				CA4B9D6E2780390E0070272F /* MarshalCompleteProfileStepBar.swift */,
-				CA4B9D72278057890070272F /* MarshalCompleteProfileStep1Module.swift */,
-				CA4B9D74278189D20070272F /* MarshalCompleteProfileStep2Module.swift */,
-				CA4B9D76278193B80070272F /* MarshalCompleteProfileStep3Module.swift */,
-				CA4B9D782781992C0070272F /* MarshalCompleteProfileStep4Module.swift */,
-				CA4B9D7A27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift */,
-				CA4B9D7C27819EC20070272F /* MarshalCompleteProfileStep6Module.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -364,6 +383,7 @@
 				CA4B9D7B27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift in Sources */,
 				B8AE1F912775F60D0090125D /* MarshalPhoneNumber.swift in Sources */,
 				CA9FB8DB277C9661006D411C /* RoundedCorners.swift in Sources */,
+				B81807F52782F60300E67616 /* ExchangeTopBar.swift in Sources */,
 				B8AE1FA02775F9A90090125D /* CountryCodes.swift in Sources */,
 				B8AE1FCF2776110D0090125D /* NetworkManeger.swift in Sources */,
 				B8AE1F972775F6D80090125D /* Submit.swift in Sources */,
