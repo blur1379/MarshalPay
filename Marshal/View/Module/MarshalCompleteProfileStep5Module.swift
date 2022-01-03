@@ -9,13 +9,11 @@ import SwiftUI
 
 struct MarshalCompleteProfileStep5Module: View {
     
+    @State var statusOfSubmitBottom : Status = .none
     @State var code : String = ""
     
     var body: some View {
         VStack(alignment: .center, spacing: 16.0) {
-            
-            MarshalCompleteProfileStepBar()
-            
             
             
             MarshalTextField(text: $code, title: "نشانی محل کار", isEn: false, keyboardType: .default)
@@ -42,7 +40,9 @@ struct MarshalCompleteProfileStep5Module: View {
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("marshal_White"), lineWidth:0.5))
  
-            //Submit(status: <#T##Status#>, title: <#T##String#>, onClick: <#T##() -> Void#>, body: <#T##View#>)
+            Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
+                print("press")
+            }
  
         }
         .background(Color("marshal_darkGrey"))

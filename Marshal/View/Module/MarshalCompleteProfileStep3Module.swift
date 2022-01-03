@@ -9,13 +9,13 @@ import SwiftUI
 
 struct MarshalCompleteProfileStep3Module: View {
     
+    @State var statusOfSubmitBottom : Status = .none
     @State var code : String = ""
     
     var body: some View {
         
         VStack(alignment: .center, spacing: 16.0) {
             
-            MarshalCompleteProfileStepBar()
             
             HStack(alignment: .center, spacing: 16.0) {
                 MarshalTextField(text: $code, title: "نام خانوادگی", isEn: false, keyboardType: .default)
@@ -55,7 +55,9 @@ struct MarshalCompleteProfileStep3Module: View {
             
             MarshalTextField(text: $code, title: "کد پستی", isEn: false, keyboardType: .numberPad)
             
-            //Submit(status: <#T##Status#>, title: <#T##String#>, onClick: <#T##() -> Void#>, body: <#T##View#>)
+            Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
+                print("press")
+            }
                 
                 
             

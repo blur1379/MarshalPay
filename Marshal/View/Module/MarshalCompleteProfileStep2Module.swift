@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct MarshalCompleteProfileStep2Module: View {
+    
+    @State var statusOfSubmitBottom : Status = .none
+    
     var body: some View {
         VStack(alignment: .center, spacing: 16.0) {
-            
-            MarshalCompleteProfileStepBar()
+
             
             Text("سطح کاربری خود را تعیین کنید")
                 .font(Font.custom("IRANSansMobileFaNum Medium", size: 24.0))
@@ -81,7 +83,9 @@ struct MarshalCompleteProfileStep2Module: View {
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("marshal_red"), lineWidth:0.5))
             
-            //Submit(status: <#T##Status#>, title: <#T##String#>, onClick: <#T##() -> Void#>, body: <#T##View#>)
+            Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
+                print("press")
+            }
                 
                 
             

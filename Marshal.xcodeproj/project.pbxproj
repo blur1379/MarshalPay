@@ -53,6 +53,7 @@
 		CA4B9D792781992C0070272F /* MarshalCompleteProfileStep4Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D782781992C0070272F /* MarshalCompleteProfileStep4Module.swift */; };
 		CA4B9D7B27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D7A27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift */; };
 		CA4B9D7D27819EC20070272F /* MarshalCompleteProfileStep6Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D7C27819EC20070272F /* MarshalCompleteProfileStep6Module.swift */; };
+		CA4B9D7F27830AB80070272F /* CompleteProfileAllStepModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D7E27830AB80070272F /* CompleteProfileAllStepModule.swift */; };
 		CA9FB8D7277C685E006D411C /* MarshalTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */; };
 		CA9FB8D9277C74B0006D411C /* MarshalWalletTabPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */; };
 		CA9FB8DB277C9661006D411C /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FB8DA277C9660006D411C /* RoundedCorners.swift */; };
@@ -107,6 +108,7 @@
 		CA4B9D782781992C0070272F /* MarshalCompleteProfileStep4Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalCompleteProfileStep4Module.swift; sourceTree = "<group>"; };
 		CA4B9D7A27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalCompleteProfileStep5Module.swift; sourceTree = "<group>"; };
 		CA4B9D7C27819EC20070272F /* MarshalCompleteProfileStep6Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalCompleteProfileStep6Module.swift; sourceTree = "<group>"; };
+		CA4B9D7E27830AB80070272F /* CompleteProfileAllStepModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteProfileAllStepModule.swift; sourceTree = "<group>"; };
 		CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTabBar.swift; sourceTree = "<group>"; };
 		CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalWalletTabPageModule.swift; sourceTree = "<group>"; };
 		CA9FB8DA277C9660006D411C /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				CA4B9D782781992C0070272F /* MarshalCompleteProfileStep4Module.swift */,
 				CA4B9D7A27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift */,
 				CA4B9D7C27819EC20070272F /* MarshalCompleteProfileStep6Module.swift */,
+				CA4B9D7E27830AB80070272F /* CompleteProfileAllStepModule.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				B8AE1FD4277617350090125D /* ProgressViewMarshal.swift in Sources */,
 				CA4B9D6F2780390F0070272F /* MarshalCompleteProfileStepBar.swift in Sources */,
 				B8AE1F9A2775F7190090125D /* Login.swift in Sources */,
+				CA4B9D7F27830AB80070272F /* CompleteProfileAllStepModule.swift in Sources */,
 				B8AE1F952775F6720090125D /* MarshalTextField.swift in Sources */,
 				B8AE1FD8277619990090125D /* NetworkFailed.swift in Sources */,
 				B8F29240277B1A7C004F75A4 /* Home.swift in Sources */,

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MarshalCompleteProfileStepBar: View {
+    
+    @State var stepNomber = 1
+    
     var body: some View {
         HStack(alignment: .center, spacing: 0.0) {
             
@@ -17,7 +20,7 @@ struct MarshalCompleteProfileStepBar: View {
                     .font(Font.custom("IRANSansMobileFaNum Bold", size: 20.0))
                     .foregroundColor(Color("marshal_White"))
                     .frame(width: 40.0, height: 40.0, alignment: .center)
-                    //.background(Color("marshal_darkGrey"))
+                    .background(Color(stepNomber == 1 ?  "marshal_pink" : "marshal_darkGrey" ))
                     .clipShape(Circle())
                     .overlay(Circle().strokeBorder(Color("marshal_White"), lineWidth: 4.0))
                 
@@ -30,7 +33,7 @@ struct MarshalCompleteProfileStepBar: View {
                     .font(Font.custom("IRANSansMobileFaNum Bold", size: 20.0))
                     .foregroundColor(Color("marshal_White"))
                     .frame(width: 40.0, height: 40.0, alignment: .center)
-                    //.background(Color("marshal_darkGrey"))
+                    .background(Color(stepNomber == 2 ?  "marshal_pink" : "marshal_darkGrey" ))
                     .clipShape(Circle())
                     .overlay(Circle().strokeBorder(Color("marshal_White"), lineWidth: 4.0))
                 
@@ -43,7 +46,7 @@ struct MarshalCompleteProfileStepBar: View {
                     .font(Font.custom("IRANSansMobileFaNum Bold", size: 20.0))
                     .foregroundColor(Color("marshal_White"))
                     .frame(width: 40.0, height: 40.0, alignment: .center)
-                    //.background(Color("marshal_darkGrey"))
+                    .background(Color(stepNomber == 3 ?  "marshal_pink" : "marshal_darkGrey" ))
                     .clipShape(Circle())
                     .overlay(Circle().strokeBorder(Color("marshal_White"), lineWidth: 4.0))
  
@@ -61,7 +64,7 @@ struct MarshalCompleteProfileStepBar: View {
                     .font(Font.custom("IRANSansMobileFaNum Bold", size: 20.0))
                     .foregroundColor(Color("marshal_White"))
                     .frame(width: 40.0, height: 40.0, alignment: .center)
-                    //.background(Color("marshal_darkGrey"))
+                    .background(Color(stepNomber == 4 ?  "marshal_pink" : "marshal_darkGrey" ))
                     .clipShape(Circle())
                     .overlay(Circle().strokeBorder(Color("marshal_White"), lineWidth: 4.0))
                 
@@ -74,7 +77,7 @@ struct MarshalCompleteProfileStepBar: View {
                     .font(Font.custom("IRANSansMobileFaNum Bold", size: 20.0))
                     .foregroundColor(Color("marshal_White"))
                     .frame(width: 40.0, height: 40.0, alignment: .center)
-                    //.background(Color("marshal_darkGrey"))
+                    .background(Color(stepNomber == 5 ?  "marshal_pink" : "marshal_darkGrey" ))
                     .clipShape(Circle())
                     .overlay(Circle().strokeBorder(Color("marshal_White"), lineWidth: 4.0))
                 
@@ -87,7 +90,7 @@ struct MarshalCompleteProfileStepBar: View {
                     .font(Font.custom("IRANSansMobileFaNum Bold", size: 20.0))
                     .foregroundColor(Color("marshal_White"))
                     .frame(width: 40.0, height: 40.0, alignment: .center)
-                    //.background(Color("marshal_darkGrey"))
+                    .background(Color(stepNomber == 6 ?  "marshal_pink" : "marshal_darkGrey" ))
                     .clipShape(Circle())
                     .overlay(Circle().strokeBorder(Color("marshal_White"), lineWidth: 4.0))
  

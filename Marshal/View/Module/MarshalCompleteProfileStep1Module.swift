@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct MarshalCompleteProfileStep1Module: View {
+    
+    @State var statusOfSubmitBottom : Status = .none
+    
     var body: some View {
         VStack(alignment: .center, spacing: 16.0) {
-            
-            MarshalCompleteProfileStepBar()
             
             VStack(alignment: .center, spacing: 24.0) {
                 Image("icon_add_a_photo_24dp")
@@ -25,8 +26,7 @@ struct MarshalCompleteProfileStep1Module: View {
                     .foregroundColor(Color("marshal_White"))
 
             }
-            .frame(maxWidth: .infinity)
-            .frame(height: 240.0)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 2/3)
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("marshal_White"), lineWidth:0.5))
             
@@ -42,12 +42,13 @@ struct MarshalCompleteProfileStep1Module: View {
                     .foregroundColor(Color("marshal_White"))
 
             }
-            .frame(maxWidth: .infinity)
-            .frame(height: 240.0)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 2/3)
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("marshal_White"), lineWidth:0.5))
             
-            
+            Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
+                print("press")
+            }
                 
                 
             
