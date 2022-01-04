@@ -15,7 +15,7 @@ struct Home: View {
         case Walet
         case Profile
     }
-    @State var Page : homePages = .Exchange
+    @State var Page : homePages = .Walet
     //MARK: -BODY
     var body: some View {
         VStack{
@@ -36,9 +36,16 @@ struct Home: View {
                         .frame(height: 1.0).background(Color("marshal_red"))
                     
                     //Spacer()
-                    MarshalWalletTabPageModule()
-                        .padding(.horizontal, 16.0)
+                    
+                    CompleteProfileAllStepModule()
+                        //.padding(.horizontal, 16.0)
                         .padding(.top, 16.0)
+                    
+                    
+                    
+//                    MarshalWalletTabPageModule()
+//                        .padding(.horizontal, 16.0)
+//                        .padding(.top, 16.0)
                     
                     Divider()
                         .frame(height: 1.0).background(Color("marshal_red"))

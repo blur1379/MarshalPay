@@ -33,7 +33,8 @@ struct ExchangeTopBar: View {
                     .padding(.vertical, 8)
             }//:GROUP
             .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-        }.background(Color("marshal_darkGrey"))
+        }
+        .background(Color("marshal_darkGrey"))
     }
 }
 //MARK: -PREVIEW

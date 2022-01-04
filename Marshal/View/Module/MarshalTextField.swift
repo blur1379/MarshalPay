@@ -82,7 +82,7 @@ struct MarshalTextField: View {
                 }
             }
             .padding(.horizontal, 16.0)
-            .offset(y: -28)
+            .offset(y: -24)
             .animation(.easeIn, value: showText)
 
             

@@ -47,10 +47,10 @@ struct CountryList: View {
                             code = value
                             presentationMode.wrappedValue.dismiss()
                         }
-                        Divider()
-                            .frame(width: .infinity,height: 0.5)
-                            .background(Color("marshal_red"))
-                            .padding(.horizontal, 16.0)
+//                        Divider()
+//                            .frame(width: .infinity,height: 0.5)
+//                            .background(Color("marshal_red"))
+//                            .padding(.horizontal, 16.0)
                     }//: LOOP
                 }//:VSTACK
                 
