@@ -28,7 +28,7 @@ struct CountryList: View {
                 .frame(height: 0.5).background(Color("marshal_red"))
             
             ScrollView {
-                VStack(alignment: .leading, spacing: 0){
+                LazyVStack(alignment: .leading, spacing: 0){
                     ForEach(CountryCodes().countryDictionary.sorted(by: <), id: \.key){ key , value in
                         HStack{
                             Text("\(self.flag(country: key))")

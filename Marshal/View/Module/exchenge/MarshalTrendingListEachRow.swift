@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct MarshalTrendingListEachRow: View {
+    let currency : Currency
     var body: some View {
         HStack (spacing: 8){
             
-            Text("- ۰۰,۰۰ %")
+            Text("\(currency.name) %")
                 .foregroundColor(Color("marshal_White"))
                 .font(Font.custom("IRANSansMobileFaNum Bold", size: 16))
                 .padding(.horizontal, 16.0)
@@ -58,7 +59,7 @@ struct MarshalTrendingListEachRow: View {
 
 struct MarshalTrendingListEachRow_Previews: PreviewProvider {
     static var previews: some View {
-        MarshalTrendingListEachRow()
+        MarshalTrendingListEachRow(currency: Currency())
             .previewLayout(.sizeThatFits)
     }
 }
