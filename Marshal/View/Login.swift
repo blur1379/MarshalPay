@@ -79,6 +79,7 @@ struct Login_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             Login()
+                .background(Color("marshal_darkGrey"))
                 
             
         }

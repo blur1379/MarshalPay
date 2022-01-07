@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MarshalTabBar: View {
     var body: some View {
+
         HStack(alignment: .center, spacing: 0) {
                     
                     //Spacer()
@@ -97,6 +98,9 @@ struct MarshalTabBar: View {
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .frame(height: 80, alignment: .center)
                 .background(Color("marshal_surfGrey"))
+                //.background(.clear)
+                
+                
     }
 }
 

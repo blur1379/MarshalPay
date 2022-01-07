@@ -38,14 +38,11 @@ struct Home: View {
                     //Spacer()
                     
                     CompleteProfileAllStepModule()
-                        //.padding(.horizontal, 16.0)
-                        .padding(.top, 16.0)
-                    
-                    
-                    
-//                    MarshalWalletTabPageModule()
-//                        .padding(.horizontal, 16.0)
-//                        .padding(.top, 16.0)
+
+                    //MarshalTrendTabPageModule()
+
+                    //MarshalWalletTabPageModule()
+
                     
                     Divider()
                         .frame(height: 1.0).background(Color("marshal_red"))
@@ -68,5 +65,6 @@ struct Home: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
+            .background(Color("marshal_darkGrey"))
     }
 }
