@@ -9,57 +9,48 @@ import SwiftUI
 
 struct Home: View {
     //MARK: - PROPERTIS
-    enum homePages{
-        case Exchange
-        case History
-        case Walet
-        case Profile
-    }
-    @State var Page : homePages = .Walet
+
+    @State var page : homePages = .Exchange
     //MARK: -BODY
     var body: some View {
         VStack{
             // tap view
-            
+            VStack(alignment: .center, spacing: 0.0) {
+                
+                MarshalTopBarType01(page: $page)
+                    
+                
+                Divider()
+                    .frame(height: 1.0).background(Color("marshal_red"))
+                
             // body
-            switch Page {
+            switch page {
             case .Exchange:
-                Text("exchenge")
+                MarshalExchangeTabPageModule()
             case .History:
                 Text("history")
             case .Walet:
-                VStack(alignment: .center, spacing: 0.0) {
-                    
-                    MarshalTopBarType01()
-                    
-                    Divider()
-                        .frame(height: 1.0).background(Color("marshal_red"))
-                    
+            
                     //Spacer()
-                    
-                    CompleteProfileAllStepModule()
-                        //.padding(.horizontal, 16.0)
+                    MarshalWalletTabPageModule()
+                        .padding(.horizontal, 16.0)
                         .padding(.top, 16.0)
                     
-                    
-                    
-//                    MarshalWalletTabPageModule()
-//                        .padding(.horizontal, 16.0)
-//                        .padding(.top, 16.0)
-                    
-                    Divider()
-                        .frame(height: 1.0).background(Color("marshal_red"))
-                    
-                    MarshalTabBar()
-
-                }// VSTACK
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                .background(Color("marshal_darkGrey"))
-                .edgesIgnoringSafeArea(.bottom)
-
             case .Profile:
-                Text("profile")
+                CompleteProfileAllStepModule()
+                //.padding(.horizontal, 16.0)
+                    .padding(.top, 16.0)
+                                 
             }
+                Divider()
+                    .frame(height: 1.0).background(Color("marshal_red"))
+                
+                MarshalTabBar(pages: $page)
+
+            }// VSTACK
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .background(Color("marshal_darkGrey"))
+            .edgesIgnoringSafeArea(.bottom)
             //tab bar
         }
     }

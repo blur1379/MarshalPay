@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CompleteProfileAllStepModule: View {
     
-    @State var stepNomber = 6
+    @State var stepNomber = 1
     
     var body: some View {
         

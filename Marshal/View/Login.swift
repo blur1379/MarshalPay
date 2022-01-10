@@ -57,7 +57,7 @@ struct Login: View {
             Submit(status: $status, title: "تایید") {
                 submit()
             }
-            Spacer()
+            
          }
         //: VSTACK
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)

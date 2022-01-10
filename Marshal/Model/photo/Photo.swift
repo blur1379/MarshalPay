@@ -19,11 +19,20 @@ class Photo : Identifiable ,ObservableObject{
     //MARK: - FUNCTION
     func upload(){
         let callApi = CallApi()
-        callApi.uploadImage(photo: self) { photo in
-            self.id = photo.id
-            self.fileName = photo.fileName
-        } status: { status in
-            self.uploadStatus = status
+//        callApi.uploadImage(photo: self) { photo in
+//            self.id = photo.id
+//            self.fileName = photo.fileName
+//        } status: { status in
+//            self.uploadStatus = status
+//        }
+        DispatchQueue.main.async {
+            callApi.apiForUploadImagePostman(image: self.uiImage) { Status in
+            self.uploadStatus = Status
+        } fileName: { fileName in
+            self.fileName = fileName
+        }
+        
+
         }
 
     }

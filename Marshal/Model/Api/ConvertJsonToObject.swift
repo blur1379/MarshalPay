@@ -59,13 +59,19 @@ struct ConvertJsonToObject {
     
     func convertJsonToCurrenies(_ json: JSON) -> [Currency]{
         var currenciesApi = [Currency]()
-        if json.array!.count > 0 {
-            let currenciesJson = json.array!
-            for currencyJson in currenciesJson {
-                let newCurency =  convertJsonToCurrency(currencyJson)
-                currenciesApi.append(newCurency)
+        print("---------------helloooo")
+        print(json)
+        print("---------------goodby")
+        if json.exists(){
+            if json.array!.count > 0 {
+                let currenciesJson = json.array!
+                for currencyJson in currenciesJson {
+                    let newCurency =  convertJsonToCurrency(currencyJson)
+                    currenciesApi.append(newCurency)
+                }
             }
         }
+
         return currenciesApi
     }
 }

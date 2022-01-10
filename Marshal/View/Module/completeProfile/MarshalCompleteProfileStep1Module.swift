@@ -36,10 +36,24 @@ struct MarshalCompleteProfileStep1Module: View {
                         Text("عکس  خود را وارد کنید")
                             .font(Font.custom("IRANSansMobileFaNum Medium", size: 16.0))
                             .foregroundColor(Color("marshal_White"))
+                            
 
                     }
                 }else{
-                    AsyncImage(url: ConstantData().stringToURLForImage(url: personalImage.fileName))
+                    AsyncImage(url: ConstantData().stringToURLForImage(url: personalImage.fileName)){ phase in
+                        if let image = phase.image {
+                            image // Displays the loaded image.
+                        } else if phase.error != nil {
+                            Color.red // Indicates an error.
+                        } else {
+                            ProgressView()// Acts as a placeholder.
+                        }
+                    }
+                    .onAppear{
+                        print(ConstantData().stringToURLForImage(url: personalImage.fileName))
+                    }
+                        .scaledToFit()
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 2/3)
                 }
             }
             .onTapGesture {

@@ -17,6 +17,8 @@
 		B82313E12775F0EA00743A42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82313E02775F0EA00743A42 /* ContentView.swift */; };
 		B82313E32775F0EB00743A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82313E22775F0EB00743A42 /* Assets.xcassets */; };
 		B82313E62775F0EB00743A42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82313E52775F0EB00743A42 /* Preview Assets.xcassets */; };
+		B886A944278899EB007879EB /* HomePages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886A943278899EB007879EB /* HomePages.swift */; };
+		B88AFABF278883DC00E6B450 /* ExchangeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88AFABE278883DC00E6B450 /* ExchangeList.swift */; };
 		B8AE1F912775F60D0090125D /* MarshalPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1F902775F60D0090125D /* MarshalPhoneNumber.swift */; };
 		B8AE1F932775F6430090125D /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1F922775F6430090125D /* CountryList.swift */; };
 		B8AE1F952775F6720090125D /* MarshalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1F942775F6720090125D /* MarshalTextField.swift */; };
@@ -83,6 +85,8 @@
 		B82313E02775F0EA00743A42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B82313E22775F0EB00743A42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B82313E52775F0EB00743A42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B886A943278899EB007879EB /* HomePages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePages.swift; sourceTree = "<group>"; };
+		B88AFABE278883DC00E6B450 /* ExchangeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeList.swift; sourceTree = "<group>"; };
 		B8AE1F902775F60D0090125D /* MarshalPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalPhoneNumber.swift; sourceTree = "<group>"; };
 		B8AE1F922775F6430090125D /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
 		B8AE1F942775F6720090125D /* MarshalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTextField.swift; sourceTree = "<group>"; };
@@ -154,7 +158,6 @@
 		B81807F22782F3BC00E67616 /* completeProfile */ = {
 			isa = PBXGroup;
 			children = (
-				CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */,
 				CA4B9D6E2780390E0070272F /* MarshalCompleteProfileStepBar.swift */,
 				CA4B9D72278057890070272F /* MarshalCompleteProfileStep1Module.swift */,
 				CA4B9D74278189D20070272F /* MarshalCompleteProfileStep2Module.swift */,
@@ -172,6 +175,7 @@
 				CA9FB8DC277CE9D7006D411C /* MarshalTrendingListEachRow.swift */,
 				B81807F42782F60200E67616 /* ExchangeTopBar.swift */,
 				CA745B9727845727009CF62A /* MarshalExchangeTabPageModule.swift */,
+				B88AFABE278883DC00E6B450 /* ExchangeList.swift */,
 			);
 			path = exchenge;
 			sourceTree = "<group>";
@@ -225,9 +229,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B886A9452788AD1C007879EB /* wallet */ = {
+			isa = PBXGroup;
+			children = (
+				CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */,
+			);
+			path = wallet;
+			sourceTree = "<group>";
+		};
 		B8AE1F982775F6FB0090125D /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				B886A9452788AD1C007879EB /* wallet */,
 				B81807F22782F3BC00E67616 /* completeProfile */,
 				B81807F32782F41800E67616 /* exchenge */,
 				B8AE1F902775F60D0090125D /* MarshalPhoneNumber.swift */,
@@ -267,6 +280,7 @@
 				B80FC7BF27858CA100EAEB40 /* ConstantData.swift */,
 				B8F6D2D52786E51800121964 /* Extentions.swift */,
 				B8F6D2D727871F1E00121964 /* Currency.swift */,
+				B886A943278899EB007879EB /* HomePages.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -418,10 +432,12 @@
 				B818C8422784B50800740769 /* ImageCropper.swift in Sources */,
 				CA4B9D7F27830AB80070272F /* CompleteProfileAllStepModule.swift in Sources */,
 				B80FC7C027858CA100EAEB40 /* ConstantData.swift in Sources */,
+				B88AFABF278883DC00E6B450 /* ExchangeList.swift in Sources */,
 				B8AE1F952775F6720090125D /* MarshalTextField.swift in Sources */,
 				B8AE1FD8277619990090125D /* NetworkFailed.swift in Sources */,
 				B8F6D2D62786E51800121964 /* Extentions.swift in Sources */,
 				B8F6D2DA2787210000121964 /* ConvertJsonToObject.swift in Sources */,
+				B886A944278899EB007879EB /* HomePages.swift in Sources */,
 				B8F29240277B1A7C004F75A4 /* Home.swift in Sources */,
 				B8D2C1812779D29600F0C207 /* User.swift in Sources */,
 				CA9FB8D9277C74B0006D411C /* MarshalWalletTabPageModule.swift in Sources */,
@@ -580,10 +596,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Marshal/Preview Content\"";
-				DEVELOPMENT_TEAM = LRX34D989H;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Marshal/Info.plist;
@@ -599,6 +616,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Marshal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -614,7 +632,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Marshal/Preview Content\"";
-				DEVELOPMENT_TEAM = LRX34D989H;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Marshal/Info.plist;
