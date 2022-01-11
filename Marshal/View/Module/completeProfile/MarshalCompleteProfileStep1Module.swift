@@ -14,6 +14,9 @@ struct MarshalCompleteProfileStep1Module: View {
     var body: some View {
         VStack(alignment: .center, spacing: 16.0) {
             
+            Spacer()
+                .frame(height: 0.0)
+            
             VStack(alignment: .center, spacing: 24.0) {
                 Image("icon_add_a_photo_24dp")
                     .resizable()
@@ -26,7 +29,9 @@ struct MarshalCompleteProfileStep1Module: View {
                     .foregroundColor(Color("marshal_White"))
 
             }
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 2/3)
+            .frame(width: UIScreen.main.bounds.width - 32, height: (UIScreen.main.bounds.width - 32) * 2/3)
+            .background(Color("marshal_surfGrey"))
+            .cornerRadius(12.0)
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("marshal_White"), lineWidth:0.5))
             
@@ -42,7 +47,9 @@ struct MarshalCompleteProfileStep1Module: View {
                     .foregroundColor(Color("marshal_White"))
 
             }
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 2/3)
+            .frame(width: UIScreen.main.bounds.width - 32, height: (UIScreen.main.bounds.width - 32) * 2/3)
+            .background(Color("marshal_surfGrey"))
+            .cornerRadius(12.0)
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("marshal_White"), lineWidth:0.5))
             
@@ -50,11 +57,11 @@ struct MarshalCompleteProfileStep1Module: View {
                 print("press")
             }
                 
-                
+            Spacer().frame(height: 4.0)
             
         }
         //.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-        .background(Color("marshal_darkGrey"))
+        
     }
 }
 
@@ -62,5 +69,6 @@ struct MarshalCompleteProfileStep1Module_Previews: PreviewProvider {
     static var previews: some View {
         MarshalCompleteProfileStep1Module()
             .previewLayout(.sizeThatFits)
+            .background(Color("marshal_darkGrey"))
     }
 }

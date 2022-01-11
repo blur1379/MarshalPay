@@ -13,8 +13,9 @@ struct MarshalCompleteProfileStep2Module: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 16.0) {
-
             
+            Spacer().frame(height: 0.0)
+
             Text("سطح کاربری خود را تعیین کنید")
                 .font(Font.custom("IRANSansMobileFaNum Medium", size: 24.0))
                 .foregroundColor(Color("marshal_White"))
@@ -38,6 +39,8 @@ struct MarshalCompleteProfileStep2Module: View {
             .padding(.horizontal, 16.0)
             .frame(maxWidth: .infinity)
             .frame(height: 56.0)
+            .background(Color("marshal_surfGrey"))
+            .cornerRadius(12.0)
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("marshal_red"), lineWidth:0.5))
             
@@ -59,6 +62,8 @@ struct MarshalCompleteProfileStep2Module: View {
             .padding(.horizontal, 16.0)
             .frame(maxWidth: .infinity)
             .frame(height: 56.0)
+            .background(Color("marshal_surfGrey"))
+            .cornerRadius(12.0)
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("marshal_red"), lineWidth:0.5))
             
@@ -80,22 +85,26 @@ struct MarshalCompleteProfileStep2Module: View {
             .padding(.horizontal, 16.0)
             .frame(maxWidth: .infinity)
             .frame(height: 56.0)
+            .background(Color("marshal_surfGrey"))
+            .cornerRadius(12.0)
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("marshal_red"), lineWidth:0.5))
             
             Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
                 print("press")
             }
-                
-                
             
+            Spacer().frame(height: 4.0)
+ 
         }
-        .background(Color("marshal_darkGrey"))
+        .padding(.horizontal, 16.0)
+        
     }
 }
 
 struct MarshalCompleteProfileStep2Module_Previews: PreviewProvider {
     static var previews: some View {
         MarshalCompleteProfileStep2Module()
+            .previewLayout(.sizeThatFits)
     }
 }

@@ -138,6 +138,13 @@
 		B81807F22782F3BC00E67616 /* completeProfile */ = {
 			isa = PBXGroup;
 			children = (
+				CA4B9D6E2780390E0070272F /* MarshalCompleteProfileStepBar.swift */,
+				CA4B9D72278057890070272F /* MarshalCompleteProfileStep1Module.swift */,
+				CA4B9D74278189D20070272F /* MarshalCompleteProfileStep2Module.swift */,
+				CA4B9D76278193B80070272F /* MarshalCompleteProfileStep3Module.swift */,
+				CA4B9D782781992C0070272F /* MarshalCompleteProfileStep4Module.swift */,
+				CA4B9D7A27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift */,
+				CA4B9D7C27819EC20070272F /* MarshalCompleteProfileStep6Module.swift */,
 			);
 			path = completeProfile;
 			sourceTree = "<group>";
@@ -145,6 +152,7 @@
 		B81807F32782F41800E67616 /* exchenge */ = {
 			isa = PBXGroup;
 			children = (
+				CA9FB8DC277CE9D7006D411C /* MarshalTrendingListEachRow.swift */,
 				B81807F42782F60200E67616 /* ExchangeTopBar.swift */,
 				CA745B9727845727009CF62A /* MarshalExchangeTabPageModule.swift */,
 			);
@@ -193,6 +201,7 @@
 		B8AE1F982775F6FB0090125D /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				CA54ED03278D5DDB009FD281 /* wallet */,
 				B81807F22782F3BC00E67616 /* completeProfile */,
 				B81807F32782F41800E67616 /* exchenge */,
 				B8AE1F902775F60D0090125D /* MarshalPhoneNumber.swift */,
@@ -200,16 +209,7 @@
 				B8AE1F942775F6720090125D /* MarshalTextField.swift */,
 				B8AE1F962775F6D80090125D /* Submit.swift */,
 				CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */,
-				CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */,
-				CA9FB8DC277CE9D7006D411C /* MarshalTrendingListEachRow.swift */,
 				CAD09B3C277DB1EF000BFC13 /* MarshalTopBarType01.swift */,
-				CA4B9D6E2780390E0070272F /* MarshalCompleteProfileStepBar.swift */,
-				CA4B9D72278057890070272F /* MarshalCompleteProfileStep1Module.swift */,
-				CA4B9D74278189D20070272F /* MarshalCompleteProfileStep2Module.swift */,
-				CA4B9D76278193B80070272F /* MarshalCompleteProfileStep3Module.swift */,
-				CA4B9D782781992C0070272F /* MarshalCompleteProfileStep4Module.swift */,
-				CA4B9D7A27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift */,
-				CA4B9D7C27819EC20070272F /* MarshalCompleteProfileStep6Module.swift */,
 				CA4B9D7E27830AB80070272F /* CompleteProfileAllStepModule.swift */,
 				CA745B99278457F7009CF62A /* MarshalTrendTabPageModule.swift */,
 			);
@@ -274,6 +274,14 @@
 				B8AE1FD7277619990090125D /* NetworkFailed.swift */,
 			);
 			path = status;
+			sourceTree = "<group>";
+		};
+		CA54ED03278D5DDB009FD281 /* wallet */ = {
+			isa = PBXGroup;
+			children = (
+				CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */,
+			);
+			path = wallet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

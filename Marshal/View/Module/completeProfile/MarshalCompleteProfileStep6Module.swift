@@ -15,7 +15,8 @@ struct MarshalCompleteProfileStep6Module: View {
     var body: some View {
         VStack(alignment: .center, spacing: 16.0) {
             
-            
+            Spacer().frame(height: 0.0)
+
             VStack(alignment: .center, spacing: 16.0) {
                 
                 HStack {
@@ -29,10 +30,10 @@ struct MarshalCompleteProfileStep6Module: View {
                     
                 }
                 
+                .padding(.horizontal, 16.0)
+                
                 HStack(alignment: .center, spacing: 16.0) {
-                    
-                    
-                    
+
                     HStack(alignment: .center) {
                         
                         HStack {
@@ -56,7 +57,7 @@ struct MarshalCompleteProfileStep6Module: View {
                         .frame(maxWidth: .infinity)
                         
                         HStack {
-                            Text("دانشجو")
+                            Text("فارغ تحصیل")
                                 .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
                                 .foregroundColor(Color("marshal_White"))
                                 .multilineTextAlignment(.trailing)
@@ -65,24 +66,23 @@ struct MarshalCompleteProfileStep6Module: View {
                         }
                         .frame(maxWidth: .infinity)
                     }
-                    
-                   
-                    
-
-                    
+ 
                 }
                 
+                .padding(.horizontal, 16.0)
+                
             }
-            
 
-            
             MarshalTextField(text: $code, title: "آخرین مدرک تحصیلی", isEn: false, keyboardType: .default)
+                .padding(.horizontal, 16.0)
             
             
 
             MarshalTextField(text: $code, title: "رشته تحصیلی", isEn: false, keyboardType: .numberPad)
+                .padding(.horizontal, 16.0)
             
             MarshalTextField(text: $code, title: "آخرین دانشگاه محل تحصیل", isEn: false, keyboardType: .numberPad)
+                .padding(.horizontal, 16.0)
             
             
             VStack(alignment: .center, spacing: 24.0) {
@@ -97,17 +97,20 @@ struct MarshalCompleteProfileStep6Module: View {
                     .foregroundColor(Color("marshal_White"))
 
             }
-            .frame(maxWidth: .infinity)
-            .frame(height: 240.0)
+            .frame(width: UIScreen.main.bounds.width - 32, height: (UIScreen.main.bounds.width - 32) * 2/3)
+            .background(Color("marshal_surfGrey"))
+            .cornerRadius(12.0)
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("marshal_White"), lineWidth:0.5))
  
             Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
                 print("press")
             }
+            
+            Spacer().frame(height: 4.0)
  
         }
-        .background(Color("marshal_darkGrey"))
+        //.background(Color("marshal_darkGrey"))
 
     }
 }

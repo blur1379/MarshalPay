@@ -15,6 +15,7 @@ struct MarshalCompleteProfileStep4Module: View {
     var body: some View {
         VStack(alignment: .center, spacing: 16.0) {
             
+            Spacer().frame(height: 0.0)
             
             HStack(alignment: .center, spacing: 16.0) {
                 MarshalTextField(text: $code, title: "Name", isEn: true, keyboardType: .default)
@@ -54,14 +55,19 @@ struct MarshalCompleteProfileStep4Module: View {
             
             MarshalTextField(text: $code, title: "Postal code", isEn: true, keyboardType: .numberPad)
             
-            Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
-                print("press")
+            Group {
+                
+                Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
+                    print("press")
+                }
+                    
+                Spacer().frame(height: 4.0)
+                
             }
-                
-                
             
         }
-        .background(Color("marshal_darkGrey"))
+        .padding(.horizontal, 16.0)
+        //.background(Color("marshal_darkGrey"))
 
     }
 }

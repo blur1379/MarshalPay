@@ -95,13 +95,13 @@ struct MarshalCompleteProfileStepBar: View {
                     .overlay(Circle().strokeBorder(Color("marshal_White"), lineWidth: 4.0))
  
             }
-            
-            
-            
-            
-                
+    
         }
+        .padding(16.0)
+        //.padding(.bottom, 16.0)
         .frame(maxWidth: .infinity)
+        .background(LinearGradient(gradient: Gradient(colors: [Color("marshal_darkGrey"),Color("marshal_red")]), startPoint: .top, endPoint: .bottom))
+        
         //.background(Color("marshal_darkGrey"))
     }
 }
