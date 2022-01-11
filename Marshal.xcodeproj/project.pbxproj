@@ -68,7 +68,6 @@
 		CA745B9827845727009CF62A /* MarshalExchangeTabPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA745B9727845727009CF62A /* MarshalExchangeTabPageModule.swift */; };
 		CA745B9A278457F7009CF62A /* MarshalTrendTabPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA745B99278457F7009CF62A /* MarshalTrendTabPageModule.swift */; };
 		CA9FB8D7277C685E006D411C /* MarshalTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */; };
-		CA9FB8D9277C74B0006D411C /* MarshalWalletTabPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */; };
 		CA9FB8DB277C9661006D411C /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FB8DA277C9660006D411C /* RoundedCorners.swift */; };
 		CA9FB8DD277CE9D8006D411C /* MarshalTrendingListEachRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FB8DC277CE9D7006D411C /* MarshalTrendingListEachRow.swift */; };
 		CAD09B3D277DB1EF000BFC13 /* MarshalTopBarType01.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD09B3C277DB1EF000BFC13 /* MarshalTopBarType01.swift */; };
@@ -135,7 +134,6 @@
 		CA745B9727845727009CF62A /* MarshalExchangeTabPageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalExchangeTabPageModule.swift; sourceTree = "<group>"; };
 		CA745B99278457F7009CF62A /* MarshalTrendTabPageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTrendTabPageModule.swift; sourceTree = "<group>"; };
 		CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTabBar.swift; sourceTree = "<group>"; };
-		CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalWalletTabPageModule.swift; sourceTree = "<group>"; };
 		CA9FB8DA277C9660006D411C /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		CA9FB8DC277CE9D7006D411C /* MarshalTrendingListEachRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTrendingListEachRow.swift; sourceTree = "<group>"; };
 		CAD09B3C277DB1EF000BFC13 /* MarshalTopBarType01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTopBarType01.swift; sourceTree = "<group>"; };
@@ -229,18 +227,9 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		B886A9452788AD1C007879EB /* wallet */ = {
-			isa = PBXGroup;
-			children = (
-				CA9FB8D8277C74B0006D411C /* MarshalWalletTabPageModule.swift */,
-			);
-			path = wallet;
-			sourceTree = "<group>";
-		};
 		B8AE1F982775F6FB0090125D /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				B886A9452788AD1C007879EB /* wallet */,
 				B81807F22782F3BC00E67616 /* completeProfile */,
 				B81807F32782F41800E67616 /* exchenge */,
 				B8AE1F902775F60D0090125D /* MarshalPhoneNumber.swift */,
@@ -440,7 +429,6 @@
 				B886A944278899EB007879EB /* HomePages.swift in Sources */,
 				B8F29240277B1A7C004F75A4 /* Home.swift in Sources */,
 				B8D2C1812779D29600F0C207 /* User.swift in Sources */,
-				CA9FB8D9277C74B0006D411C /* MarshalWalletTabPageModule.swift in Sources */,
 				CA4B9D75278189D20070272F /* MarshalCompleteProfileStep2Module.swift in Sources */,
 				B8AE1F9C2775F7690090125D /* Splash.swift in Sources */,
 				CA4B9D732780578A0070272F /* MarshalCompleteProfileStep1Module.swift in Sources */,
