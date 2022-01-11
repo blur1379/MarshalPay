@@ -18,7 +18,8 @@ struct Home: View {
     @State var Page : homePages = .Walet
     //MARK: -BODY
     var body: some View {
-        VStack{
+        
+        ZStack{
             // tap view
             
             // body
@@ -37,11 +38,11 @@ struct Home: View {
                     
                     //Spacer()
                     
-                    CompleteProfileAllStepModule()
+                    //CompleteProfileAllStepModule()
 
                     //MarshalTrendTabPageModule()
 
-                    //MarshalWalletTabPageModule()
+                    MarshalWalletTabPageModule()
 
                     
                     Divider()
@@ -58,6 +59,8 @@ struct Home: View {
                 Text("profile")
             }
             //tab bar
+            
+            
         }
     }
 }
@@ -65,6 +68,6 @@ struct Home: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
-            .background(Color("marshal_darkGrey"))
+            //.background(Color("marshal_darkGrey"))
     }
 }
