@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MarshalTabBar: View {
+    @Binding var pages : homePages
     var body: some View {
 
         HStack(alignment: .center, spacing: 0) {
@@ -18,6 +19,7 @@ struct MarshalTabBar: View {
                     
                     Button(action: {
                         //write code 😎
+                        pages = .Profile
                     }) {
                         
                         VStack (alignment: .center, spacing: 4.0){
@@ -38,6 +40,7 @@ struct MarshalTabBar: View {
                     
                     Button(action: {
                         //write code 😎
+                        pages = .Walet
                     }) {
                         
                         VStack (alignment: .center, spacing: 4.0){
@@ -58,6 +61,7 @@ struct MarshalTabBar: View {
                     
                     Button(action: {
                         //write code 😎
+                        pages = .History
                     }) {
                         
                         VStack (alignment: .center, spacing: 4.0){
@@ -78,6 +82,7 @@ struct MarshalTabBar: View {
                     
                     Button(action: {
                         //write code 😎
+                        pages = .Exchange
                     }) {
                         
                         VStack (alignment: .center, spacing: 4.0){
@@ -107,7 +112,7 @@ struct MarshalTabBar: View {
 
 struct MarshalTabBar_Previews: PreviewProvider {
     static var previews: some View {
-        MarshalTabBar()
+        MarshalTabBar(pages: .constant(.Exchange))
             .previewLayout(.sizeThatFits)
     }
 }

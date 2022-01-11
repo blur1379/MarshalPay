@@ -11,7 +11,9 @@ import SwiftUI
 struct MarshalApp: App {
     var body: some Scene {
         WindowGroup {
-           Splash()
+//           Splash()
+//            MarshalExchangeTabPageModule()
+            Home()
         }
     }
 }

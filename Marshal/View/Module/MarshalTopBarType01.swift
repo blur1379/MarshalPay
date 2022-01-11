@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MarshalTopBarType01: View {
+    @Binding var page : homePages
     var body: some View {
         HStack(alignment: .center) {
             
@@ -17,7 +18,9 @@ struct MarshalTopBarType01: View {
                 .foregroundColor(Color("marshal_red"))
                 .imageScale(.large)
             
-            Text("عنوان صفحه")
+            
+            
+            Text(ConstantData().homePageTitle(page: page))
                 
                 .foregroundColor(Color("marshal_White"))
                 .font(Font.custom("IRANSansMobileFaNum Bold", size: 18))
@@ -39,7 +42,7 @@ struct MarshalTopBarType01: View {
 
 struct MarshalTopBarType01_Previews: PreviewProvider {
     static var previews: some View {
-        MarshalTopBarType01()
+        MarshalTopBarType01(page: .constant(.Exchange))
             .previewLayout(.sizeThatFits)
     }
 }

@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct MarshalTrendingListEachRow: View {
+    let currency : Currency
     var body: some View {
         HStack (spacing: 8){
             
-            Text("- ۰۰,۰۰ %")
+            Text(currency.getpersent())
                 .foregroundColor(Color("marshal_White"))
                 .font(Font.custom("IRANSansMobileFaNum Bold", size: 16))
                 .padding(.horizontal, 16.0)
@@ -20,17 +21,18 @@ struct MarshalTrendingListEachRow: View {
                 .frame(height: 32.0)
                 .background(Color("marshal_red"))
                 .cornerRadius(6.0)
-                
+                .padding(.vertical ,16)
+            Spacer()
 
-            Text("۰۰۰,۰۰۰")
+            Text(currency.getCurrentValue())
                 .foregroundColor(Color("marshal_White"))
-                .font(Font.custom("IRANSansMobileFaNum Bold", size: 24))
+                .font(Font.custom("IRANSansMobileFaNum Bold", size: 18))
                 .padding(8.0)
-            
+
             Spacer()
             
             HStack (spacing: 4){
-                Text("مارشال")
+                Text(currency.key)
                     .foregroundColor(Color("marshal_White"))
                     .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
                 
@@ -38,7 +40,7 @@ struct MarshalTrendingListEachRow: View {
                     .foregroundColor(Color("marshal_White"))
                     .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
                 
-                Text("نام ارز")
+                Text(currency.name)
                     .foregroundColor(Color("marshal_White"))
                     .font(Font.custom("IRANSansMobileFaNum Bold", size: 16))
             }
@@ -58,7 +60,7 @@ struct MarshalTrendingListEachRow: View {
 
 struct MarshalTrendingListEachRow_Previews: PreviewProvider {
     static var previews: some View {
-        MarshalTrendingListEachRow()
+        MarshalTrendingListEachRow(currency: Currency())
             .previewLayout(.sizeThatFits)
     }
 }

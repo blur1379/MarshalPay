@@ -15,22 +15,25 @@ struct Login: View {
     @State var timeRemaining = 120
     @State var isShowCode = false
     @State var status : Status = .none
+    @State var alertText : String = ""
+    @State var showAlert : Bool = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let callapi = CallApi()
 
     //MARK: - BODY
     var body: some View {
         VStack(spacing: 16){
-            
-            Spacer()
-            
+
         //: PHONE NUMBER
             MarshalPhoneNumber(phoneNumber: $phoneNumber, countryCode: countryCode)
                 .padding(.horizontal, 16)
+                .alert(alertText, isPresented: $showAlert) {
+                    Button("باشه", role: .cancel) { }
+                }
         //: VERIFICATION CODE
             if isShowCode {
                 VStack{
-                    MarshalTextField(text: $code, title: "کد تایید را وارد کنید", isEn: false, keyboardType: .numberPad)
+                    MarshalTextField(text: $code, title: "کد تایید را وارد کنید", isEn: false, keyboardType: .numberPad,limitedItem: 6)
                     HStack{
         
                         Text("\(timeRemaining/60) : \(timeRemaining % 60)")
@@ -46,33 +49,61 @@ struct Login: View {
                     }//: HSTACK
                 }//: VSTACK
                 .padding(.horizontal, 16.0)
+                .onChange(of: phoneNumber) { newValue in
+                    isShowCode = false
+                }
             }// : END IF
         //: SUBMIT BOTTOM
             Submit(status: $status, title: "تایید") {
-                if phoneNumber.count > 9 {
-                    if isShowCode {
-                        
-                    }else{
-                        callapi.SendActivationCode(phoneNumber: countryCode + phoneNumber) { status in
-                            self.status = status
-                            if status == .Successful {
-                                isShowCode = true
-                            }
-                        }
-                    }
-                }
-            
+                submit()
             }
-  
-            Spacer()
- 
-        }
+            
+         }
         //: VSTACK
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(Color("marshal_darkGrey"))
         .edgesIgnoringSafeArea(.all)
     }
-       
+    //MARK: -FUNCTION
+    func submit() {
+        if phoneNumber.count > 9 {
+            if isShowCode {
+              enterCode()
+            }else{
+             enterPhoneNumber()
+            }
+        }else{
+            faildAlert(alertText: "شماره خود را به درستی وارد کنید.")
+        }
+    }
+    
+    func enterPhoneNumber(){
+        status = .InProgress
+        callapi.SendActivationCode(phoneNumber: countryCode + phoneNumber) { status in
+            self.status = status
+            if status == .Successful {
+                isShowCode = true
+            }else if status == .Failure {
+                faildAlert(alertText: "لطفا مجدد تلاش کنید")
+            }
+        }
+    }
+    func enterCode(){
+        status = .InProgress
+        callapi.sendVerificstionCode(phoneNumber:countryCode + phoneNumber, verificationCode: code) { status in
+            self.status = status
+            if status == .Successful{
+                // go to home
+            }else if status == .Failure {
+                faildAlert(alertText: "کد اشتباه است یا منقضی شده است")
+            }
+        }
+    }
+    func faildAlert(alertText: String ){
+        self.alertText = alertText
+        showAlert = true
+        
+    }
 }
 //MARK: - PREVIEW
 struct Login_Previews: PreviewProvider {
