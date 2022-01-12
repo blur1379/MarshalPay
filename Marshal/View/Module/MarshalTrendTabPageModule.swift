@@ -51,15 +51,10 @@ struct MarshalTrendTabPageModule: View {
             
             Divider()
                 .frame(height: 1.0).background(Color("marshal_White"))
-
-            ScrollView {
-                VStack {
-                    Text("اسکرول ویو ↓")
-                        .foregroundColor(Color("marshal_White"))
-                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 20))
-                }
-            }
-            .padding(.top, 16.0)
+            
+                ExchangeList()
+            
+           
 
         }
         .background(Color("marshal_darkGrey"))

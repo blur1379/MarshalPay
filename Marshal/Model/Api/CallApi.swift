@@ -117,11 +117,25 @@ struct CallApi{
     }
     
     // for uploads file
-    func uploadImage(photo: Photo,apiPhoto : @escaping((Photo)->()),status : @escaping ((Status)->())) -> () {
+    func uploadImage(image : UIImage,apiPhoto : @escaping((Photo)->()),status : @escaping ((Status)->())) -> () {
+        let innerPhoto : Photo = Photo()
+        let parameters: [String: Any] = [
+            "key": "file",
+            "src": "/Users/blur/Downloads/WhatsApp Image 2022-01-04 at 2.54.35 PM.jpeg",
+            "type": "file"
+        ]
+        var headers: HTTPHeaders?
+        
+        headers = [
+            "Authorization": "Bearer U2FsdGVkX1+Cci6wP3Vx126n0LHtdWDgcypPY78mQXMZM3xm+UIbNY8TpUQ+oa9HEK2FzyClFHNon8/0HRmXEXhmLzS8Vlz1ODulrVfuBHhBNiKAET1U1dhitIUF5DiWmGZzL7rdcapPmTElMPsLqNd0EsLSNZRtd5kv8b5pIiSEaG1/LE/TO/f7LoNlOKTbxJl2kfnSgTjjlw3c1snVBa5nBkcTS37gzSUV8zegABvW/uQlMb2EwFjZAAz24/ITExuEg1Y+zL7NjtgqjYCxjavW8eb8MXMz5ozhA2EcxzGxjg4er6MCIZwvs0ANvy6kWbgQX+Xevsrzy8e8isYfBM+8KZXAnrr5vQt8JV+0+ruqsMW3CZrB2GhXRVW3arU0LTTo0fvDCxnow+jhgV9I09hZeKr4xSa/rpGCH6lKDii+IUakOJ0YQFwUBbVA/ehU6n5eCGMLkihvWvUni6QVjRLbegPpnC3H+5Pc5Ik5wbT3wqJ2WnuR/HkNzz7PnbnYecS7s/DLKGQedQSAKkZOtXrngA2Ph5RQY13BG6Cgi/Ku3/aizFxfrXcylvGeuH2EV/m+QqxhSQPIfkPEEPT3N33TpYpRURw/rwODbyV7d4L18rc9csYhoCT4DozaN2YN9o8zZw7Kbqpz8rWRECI9C9CPxEyprN4sIZp9jsfEaSm2fDAi9+FO2Egdyy8/r0ZIhGxnM4eAt6McOdoLEvN6TBFXcrfrN1dAefeaAWBUpB1bmdjpWCLTt2BRhJg/ER8mrOQ1qFMS7motG0g6irCOgUQNqS2p2KPwXurViUOzws0="
+        ]
     status(.InProgress)
     AF.upload(multipartFormData: { multipartFormData in
-        multipartFormData.append(photo.uiImage.compress(to: 200), withName: "photo", fileName: "a.jpeg", mimeType: "image/jpg")
-    }, to: baceUrl + "v1/files/upload", method: .post){urlRequest in urlRequest.timeoutInterval = TimeInterval(CallApi.uploadTimeOut)}
+        multipartFormData.append(image.compress(to: 200), withName: "photo", fileName: "a.jpeg", mimeType: "image/jpg")
+        for (key, val) in parameters {
+            multipartFormData.append((val as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
+        }
+    }, to: baceUrl + "v1/files/upload", method: .post , headers: headers){urlRequest in urlRequest.timeoutInterval = Double.infinity }
     .response { response in
         do {
             switch response.result {
@@ -133,13 +147,13 @@ struct CallApi{
                 if response.response?.statusCode == 201 || response.response?.statusCode == 200 {
                     if json["data"].exists() {
                         if json["data"]["_id"].exists() {
-                            photo.fileName = json["data"]["_id"].string!
+                            innerPhoto.fileName = json["data"]["_id"].string!
                         }
                         if json["data"]["filename"].exists() {
-                            photo.id = json["data"]["filename"].string!
+                            innerPhoto.id = json["data"]["filename"].string!
                         }
                     }
-                    apiPhoto(photo)
+                    apiPhoto(innerPhoto)
                     status(.Successful)
             
                 }else {

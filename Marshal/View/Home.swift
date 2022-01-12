@@ -27,16 +27,12 @@ struct Home: View {
             // body
             switch page {
             case .Exchange:
-                MarshalExchangeTabPageModule()
+                MarshalTrendTabPageModule()
             case .History:
                 Text("history")
             case .Walet:
             
-
-
-                    MarshalTrendTabPageModule()
-
-//                    MarshalWalletTabPageModule()
+                    MarshalWalletTabPageModule()
 
                     
                     Divider()

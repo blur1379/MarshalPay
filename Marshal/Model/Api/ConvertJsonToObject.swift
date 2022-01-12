@@ -11,6 +11,9 @@ import SwiftyJSON
 struct ConvertJsonToObject {
     func convertJsonToCurrency (_ json :JSON) -> Currency{
         let castedCurrency = Currency()
+        if json["lastChange"].exists(){
+            castedCurrency.lastChange = json["lastChange"].int!
+        }
         if json["_id"].exists(){
             castedCurrency._id = json["_id"].string!
         }
@@ -23,12 +26,7 @@ struct ConvertJsonToObject {
         if json["marshalKey"].exists(){
             castedCurrency.marshalKey = json["marshalKey"].string!
         }
-        if json["lastDayValue"].exists(){
-            castedCurrency.lastDayValue = json["lastDayValue"].int!
-        }
-        if json["previousValue"].exists(){
-            castedCurrency.previousValue = json["previousValue"].int!
-        }
+   
         if json["currentValue"].exists(){
             castedCurrency.currentValue = json["currentValue"].int!
         }
