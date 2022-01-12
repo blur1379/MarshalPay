@@ -1,14 +1,13 @@
 //
-//  MarshalWalletTabPage.swift
+//  MarshalWalletTabPageModule.swift
 //  Marshal
 //
-//  Created by kasra ebrahimi on 10/8/1400 AP.
+//  Created by Blur on 10/21/1400 AP.
 //
 
 import SwiftUI
 
 struct MarshalWalletTabPageModule: View {
-    
     @State var code : String = ""
     
     @State var statusOfSubmitBottom : Status = .none
@@ -320,9 +319,9 @@ struct MarshalWalletTabPageModule: View {
     }
 }
 
+
 struct MarshalWalletTabPageModule_Previews: PreviewProvider {
     static var previews: some View {
         MarshalWalletTabPageModule()
-            .background(Color("marshal_darkGrey"))
     }
 }

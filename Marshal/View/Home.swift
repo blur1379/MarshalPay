@@ -32,13 +32,11 @@ struct Home: View {
                 Text("history")
             case .Walet:
             
-                    //Spacer()
-                    
-                    //CompleteProfileAllStepModule()
 
-                    //MarshalTrendTabPageModule()
 
-                    MarshalWalletTabPageModule()
+                    MarshalTrendTabPageModule()
+
+//                    MarshalWalletTabPageModule()
 
                     
                     Divider()
