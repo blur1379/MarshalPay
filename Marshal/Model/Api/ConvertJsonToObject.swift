@@ -57,9 +57,6 @@ struct ConvertJsonToObject {
     
     func convertJsonToCurrenies(_ json: JSON) -> [Currency]{
         var currenciesApi = [Currency]()
-        print("---------------helloooo")
-        print(json)
-        print("---------------goodby")
         if json.exists(){
             if json.array!.count > 0 {
                 let currenciesJson = json.array!
@@ -71,5 +68,53 @@ struct ConvertJsonToObject {
         }
 
         return currenciesApi
+    }
+    
+    func convertJsonToWalletCurrency(_ json: JSON)-> WalletCurrency{
+        let walletCurrency = WalletCurrency()
+        if json.exists(){
+            if json["currency"].exists(){
+                walletCurrency.currency = convertJsonToCurrency(json["currency"])
+            }
+            if json["amount"].exists(){
+                walletCurrency.amount = json["amount"].int!
+            }
+        }
+        return walletCurrency
+    }
+    
+    func convertJsonToWalletCurrencies(_ json: JSON)-> [WalletCurrency]{
+        var walletCurrencies = [WalletCurrency]()
+        if json.exists(){
+            if json.array!.count > 0 {
+                let currenciesJson = json.array!
+                for currencyJson in currenciesJson {
+                    let newCurency = convertJsonToWalletCurrency(currencyJson)
+                    walletCurrencies.append(newCurency)
+                }
+            }
+        }
+        return walletCurrencies
+    }
+    
+    func convrtJsonToWallet(_ json: JSON) -> WalletModel{
+        let walletModel = WalletModel()
+        if json.exists(){
+            if json["inventory"].exists(){
+                if json["currentCredit"].exists(){
+                    walletModel.currentCredit = json["currentCredit"].int!
+                }
+                if json["validityCredit"].exists(){
+                    walletModel.validityCredit = json["validityCredit"].int!
+                }
+                if json["debtCredit"].exists(){
+                    walletModel.debtCredit = json["debtCredit"].int!
+                }
+            }
+            if json["currencies"].exists(){
+                walletModel.walletCurency = convertJsonToWalletCurrencies(json["currencies"])
+            }
+        }
+        return WalletModel()
     }
 }

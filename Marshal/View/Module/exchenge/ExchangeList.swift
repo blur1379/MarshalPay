@@ -14,11 +14,12 @@ struct ExchangeList: View {
     @State var sortMode = ""
     @State var searchText = ""
     @State var statusOfPage : Status = .none
+    @State var loading: Bool = false
     let callApi = CallApi()
     //MARK: - BODY
     var body: some View {
         if statusOfPage != .Failure{
-            ScrollView{
+            RefreshableScrollView(height: 70, refreshing: $loading){
                 LazyVStack(spacing: 0){
                     ForEach(currencies , id: \._id){currency in
                         MarshalTrendingListEachRow(currency: currency)
@@ -33,6 +34,12 @@ struct ExchangeList: View {
                 }//:LAZYVSTACK
                 .padding(.top , 8)
             }//:SCROLLVIEW
+            .onChange(of: loading, perform: { newValue in
+                if loading == true {
+                    
+                    onCreate()
+                }
+            })
             .onAppear {
                 onCreate()
             }
@@ -52,12 +59,19 @@ struct ExchangeList: View {
         numberOfPage += 1
         callApi.searchCurrency(numberOfPage: numberOfPage, sortMode: sortMode, searchText: "") { status in
             statusOfPage = status
+            if loading {
+                if status == .Successful || status == .Failure {
+                    loading = false
+                }
+            }
+           
         } currencies: { currencies in
             self.currencies += currencies
         }
 
     }
     func onCreate(){
+        numberOfPage = 0
         currencies = []
         loadMore()
     }
