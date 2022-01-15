@@ -17,7 +17,7 @@ struct CallApi{
     var timeOut = 20
     public static var uploadTimeOut = 30
     let converter = ConvertJsonToObject()
- 
+    @AppStorage("acc") var acceceToken = "U2FsdGVkX18U2sMmMDwpsOZpGposc1CrkPxnT21NrbP3OK0knhgYTcnz871oBsoUsy6DGjdZIWkRw40F2Wp3tY1L0rJScEi3aBwxu8mu1y6C8C6pcP0aBLHSsI2OKnmh6bKvG8WfZJ+5RtPL710b3HYKglNBmC0lFNwn4CTy8H/rjuoZAOP/e4XOwhZlbFYZWg/fPgQcTMBQwe0nDgFJZswbHqSBc8w/YXV5sjOaC8D/ELbhymSbLA2qy8pv+WV7RsIAS8r95zXqvVrQXJ+W/aOAI4sLz1jz/ve3/xr5eIxj1JVreRhOy3V4vYnQsXVlkCw4P847Z+5xCpxw/T4qXbKj4QYVvAyxxwfpL2mB5HPopBxP0byP49koypZVt/PxOrr1NCcj7Q7ETKMjztLgKSBdxP+cAJXvcMjPybuYz94YwRiCnXJZBTDoik4rKh07EyfnUa1X5LZhWGQfbgAjA92zI64IeEw5yRbuKewUuaDdlwu36lURfjhFkSQK4ChKmi8EFj7BwMPV6EpUSTmECf50wU+16vHly4oRctcpTQIK3I8an2zPBsd5QjR+tDLnOVcOsLsZ33LXx7AiBIy5jI/q2tOC/52QxxHJ+yX9FlX/g7LN+HEHAwBDMjv+Ay4QKnD+tnvKUxcPwa9XuMeBHWtt2bCjh4c6lrJLjm+eTOEZBzWNRlVbzOWbqEI0elfNR6gjfwuCJ3wKuQh12OLfkQaxrjnopR8eoyy3OigExSFBCjeO5GoC9XVZ+Tbpq0n72KwGEA0i8Nf/UWtoE29BoQgVaZNea5m/Kx9H0zWjp8o="
     // for send code
     func SendActivationCode(phoneNumber: String , status : @escaping ((Status)->())){
         var statusApi : Status = .InProgress
@@ -313,5 +313,53 @@ struct CallApi{
         task.resume()
         semaphore.wait()
 
+    }
+    
+    func getWallet(wallet: @escaping ((WalletModel)->Void), status: @escaping((Status)->Void)){
+        let url = "v1/transactions/get-user-wallet"
+        let headers: HTTPHeaders?
+        
+        headers = [
+            "Authorization": "Bearer \(acceceToken)"
+        ]
+        AF.request(baceUrl + url, method: .get, encoding: JSONEncoding.default,headers: headers){urlRequest in urlRequest.timeoutInterval = TimeInterval(timeOut)}.responseJSON { response in
+            do {
+                switch response.result {
+                case .success :
+                    let json = try JSON(data: response.data!)
+                    print("------ send code")
+                    print(json)
+                    print("------- send code")
+                    if response.response?.statusCode == 200 || response.response?.statusCode == 201  {
+                        let apiWallet = converter.convrtJsonToWallet(json["data"]["docs"])
+                        wallet(apiWallet)
+                        status(.Successful)
+                    }else{
+                        status(.Failure)
+                    }
+                    print(baceUrl + "v1/users/validation-activation-code")
+                    print(response.response?.statusCode ?? 0)
+
+                    break
+                case let .failure(error):
+                    print(baceUrl + "v1/users/validation-activation-code")
+                    status(.Failure)
+                    if response.response != nil {
+                        print(response.response?.statusCode ?? 0 )
+                    }
+                    print("failed")
+                    print(error)
+                    break
+                }
+            }catch{
+                print(baceUrl + "v1/users/validation-activation-code")
+                status(.Failure)
+                if response.response != nil {
+                    print(response.response?.statusCode ?? 0)
+                }
+                print("nil response")
+            }
+            
+        }
     }
 }

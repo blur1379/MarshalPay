@@ -112,7 +112,7 @@ struct ConvertJsonToObject {
                 }
             }
             if json["currencies"].exists(){
-                walletModel.walletCurency = convertJsonToWalletCurrencies(json["currencies"])
+                walletModel.walletCurencies = convertJsonToWalletCurrencies(json["currencies"])
             }
         }
         return WalletModel()

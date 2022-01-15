@@ -6,7 +6,8 @@
 //
 
 import Foundation
-class WalletCurrency {
+class WalletCurrency :Identifiable {
+    var id = UUID()
     var currency = Currency()
     var amount = 0
     func getAmount()->String {

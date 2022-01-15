@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct MarshalWalletTabPageModule: View {
+    enum pageOfWallet{
+        case withdraw
+        case deposit
+        case transfer
+    }
     @State var code : String = ""
-    
+    @State var wallet = WalletModel()
     @State var statusOfSubmitBottom : Status = .none
     
     var tabsOnTop: some View {
@@ -90,7 +95,7 @@ struct MarshalWalletTabPageModule: View {
                 .frame(width: 120)
                 .background(RoundedCorners(color: Color("marshal_White"), tl: 12, tr: 0, bl: 12, br: 0))
 
-                Text("۰۰۰,۰۰۰,۰۰۰")
+                Text(wallet.getCurrentCredit())
                     .foregroundColor(Color("marshal_White"))
                     .font(Font.custom("IRANSansMobileFaNum Bold", size: 24))
                     .frame(minWidth: 0, maxWidth: .infinity)
@@ -110,7 +115,7 @@ struct MarshalWalletTabPageModule: View {
             HStack (spacing: 8){
                 
                 HStack(spacing: 8) {
-                    Text("۰۰۰,۰۰۰")
+                    Text(wallet.getDebtCredit())
                         .foregroundColor(Color("marshal_White"))
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
 
@@ -129,7 +134,7 @@ struct MarshalWalletTabPageModule: View {
                 )
                 
                 HStack(spacing: 8) {
-                    Text("۰۰۰,۰۰۰")
+                    Text(wallet.getValidityCredit())
                         .foregroundColor(Color("marshal_White"))
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
                         
@@ -162,10 +167,10 @@ struct MarshalWalletTabPageModule: View {
     var priceList: some View {
 
         ScrollView {
-            VStack {
-                Text("اسکرول ویو ↓")
-                    .foregroundColor(Color("marshal_White"))
-                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 20))
+            LazyVStack {
+                ForEach(wallet.walletCurencies){walletCurrency in
+                    WalletRowModule(walletCurrency: walletCurrency)
+                }
             }
         }
     }
@@ -304,7 +309,7 @@ struct MarshalWalletTabPageModule: View {
             
             tabsOnTop
             balaceBlock
-            //priceList
+            priceList
             //withdrawTab
             //depositTab
             //transferTab

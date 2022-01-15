@@ -10,5 +10,29 @@ class WalletModel {
     var currentCredit : Int = 0
     var validityCredit = 0
     var debtCredit = 0
-    var walletCurency = [WalletCurrency]()
+    var walletCurencies = [WalletCurrency]()
+    func getCurrentCredit()->String {
+        if currentCredit != 0 {
+            let duration = String(format: "%.01f", currentCredit)
+            return duration
+        }else {
+            return "0"
+        }
+    }
+    func getValidityCredit()->String {
+        if validityCredit != 0 {
+            let duration = String(format: "%.01f", validityCredit)
+            return duration
+        }else {
+            return "0"
+        }
+    }
+    func getDebtCredit()->String {
+        if debtCredit != 0 {
+            let duration = String(format: "%.01f", debtCredit)
+            return duration
+        }else {
+            return "0"
+        }
+    }
 }
