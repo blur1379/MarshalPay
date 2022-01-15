@@ -12,7 +12,6 @@ struct MarshalApp: App {
     var body: some Scene {
         WindowGroup {
 //           Splash()
-//            MarshalExchangeTabPageModule()
             Home()
         }
     }

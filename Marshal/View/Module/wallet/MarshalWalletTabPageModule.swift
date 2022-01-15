@@ -9,20 +9,22 @@ import SwiftUI
 
 struct MarshalWalletTabPageModule: View {
     enum pageOfWallet{
+        case wallet
         case withdraw
         case deposit
         case transfer
     }
     @State var code : String = ""
     @State var wallet = WalletModel()
-    @State var statusOfSubmitBottom : Status = .none
-    
+    @State var statusOfPage : Status = .none
+    @State var selectedPage : pageOfWallet = .wallet
+    let callApi = CallApi()
     var tabsOnTop: some View {
         
         HStack(alignment: .center, spacing: 8.0) {
             
             Button(action: {
-                //write code 😎
+                selectedPage = .transfer
             }) {
                     Text("انتقال")
                         .foregroundColor(Color("marshal_White"))
@@ -38,7 +40,7 @@ struct MarshalWalletTabPageModule: View {
             }
             
             Button(action: {
-                //write code 😎
+                selectedPage = .deposit
             }) {
                     Text("واریز")
                         .foregroundColor(Color("marshal_White"))
@@ -54,7 +56,7 @@ struct MarshalWalletTabPageModule: View {
             }
             
             Button(action: {
-                //write code 😎
+                selectedPage = .withdraw
             }) {
                     Text("برداشت")
                         .foregroundColor(Color("marshal_White"))
@@ -163,163 +165,59 @@ struct MarshalWalletTabPageModule: View {
         .background(LinearGradient(gradient: Gradient(colors: [Color("marshal_darkGrey"),Color("marshal_Grey")]), startPoint: .top, endPoint: .bottom))
         
     }
-    
-    var priceList: some View {
 
-        ScrollView {
-            LazyVStack {
-                ForEach(wallet.walletCurencies){walletCurrency in
-                    WalletRowModule(walletCurrency: walletCurrency)
-                }
-            }
-        }
-    }
-    
-    var withdrawTab: some View {
-        
-        VStack(alignment: .center, spacing: 16.0) {
-            HStack(alignment: .center, spacing: 16.0) {
-                
-                MarshalTextField(text: $code, title: "انتخاب ارز", isEn: false, keyboardType: .default)
-                
-                MarshalTextField(text: $code, title: "نام بانک", isEn: false, keyboardType: .default)
-            }
-            
-            MarshalTextField(text: $code, title: "نام صاحب حساب", isEn: false, keyboardType: .default)
-            
-            MarshalTextField(text: $code, title: "شماره حساب", isEn: false, keyboardType: .default)
-            
-            MarshalTextField(text: $code, title: "مبلغ", isEn: false, keyboardType: .default)
-
-            Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
-                print("press")
-            }
-            //Spacer()
-        }
- 
-    }
-    
-    var depositTab: some View {
-        
-        VStack(alignment: .center, spacing: 16.0) {
-            
-            VStack(alignment: .center, spacing: 24.0) {
-                Image("icon_add_a_photo_24dp")
-                    .resizable()
-                    .frame(width: 56.0, height: 56.0, alignment: .center)
-                    .scaledToFit()
-                    .foregroundColor(Color("marshal_White"))
-                    
-                Text("عکس کارت ملی خود را وارد کنید")
-                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 16.0))
-                    .foregroundColor(Color("marshal_White"))
-            }
-            .frame(width: UIScreen.main.bounds.width - 32, height: (UIScreen.main.bounds.width - 32) * 2/3)
-            .background(Color("marshal_surfGrey"))
-            .cornerRadius(12.0)
-            .overlay(RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color("marshal_White"), lineWidth:0.5))
-            
-            Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
-                print("press")
-            }
-            //Spacer()
-            
-        }
-
-    }
-    
-    var transferTab: some View {
-        
-        VStack(alignment: .center, spacing: 16.0) {
-            
-            MarshalTextField(text: $code, title: "نوع ارز", isEn: false, keyboardType: .default)
-            
-            MarshalTextField(text: $code, title: "مبلغ", isEn: false, keyboardType: .default)
-            
-            MarshalTextField(text: $code, title: "نشانی کیف پول مقصد", isEn: false, keyboardType: .default)
-
-            Submit(status: $statusOfSubmitBottom, title: "تایید") {
-                print("press")
-            }
-            
-            VStack(alignment: .center, spacing: 32.0) {
-                
-                HStack(alignment: .center, spacing: 16.0) {
-                    
-                    Spacer()
-                    
-                    Text("نام و نام خانوادگی حساب")
-                        .foregroundColor(Color("marshal_soWhite"))
-                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 18.0))
-                    
-                    Text("به حساب :")
-                        .foregroundColor(Color("marshal_White"))
-                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
-     
-                }
-                
-                HStack {
-                    
-                    HStack(alignment: .center, spacing: 16.0) {
-                        
-                        Text("۰۰۰,۰۰۰")
-                            .foregroundColor(Color("marshal_soWhite"))
-                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 18.0))
-                        
-                        Text("مانده حساب :")
-                            .foregroundColor(Color("marshal_red"))
-                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
-                    }
-                    
-                    Spacer()
-                    
-                    HStack(alignment: .center, spacing: 16.0) {
-                        
-                        Text("۰۰۰,۰۰۰")
-                            .foregroundColor(Color("marshal_soWhite"))
-                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 18.0))
-                        
-                        Text("کارمزد :")
-                            .foregroundColor(Color("marshal_red"))
-                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
-                    }
- 
-            }
-    
-            }
-            .padding(.all, 24.0)
-            .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color("marshal_red"), lineWidth:0.5)
-            )
-            //.offset(y: 16)
-            
-            Submit(status: $statusOfSubmitBottom, title: "انتقال ارز") {
-                print("press")
-            }
-            
-            //Spacer()
-        }
-    }
     
     
     var body: some View {
-        VStack (alignment: .center, spacing: 32.0){
-            
-            tabsOnTop
-            balaceBlock
-            priceList
-            //withdrawTab
-            //depositTab
-            //transferTab
-            
-            Spacer()
- 
+        
+        ZStack{
+            if statusOfPage == .Successful {
+                VStack (alignment: .center, spacing: 32.0){
+                    if selectedPage == .wallet {
+                        tabsOnTop
+                    }
+                    balaceBlock
+                    switch selectedPage {
+                    case .wallet:
+                        WalletPriceList(waletCorencies: wallet.walletCurencies)
+                    case.deposit:
+                        WalletDeposit()
+                    case.transfer:
+                        WalletTransfer()
+                    case.withdraw:
+                        WalletWithdraw()
+                    }
+
+                    Spacer()
+         
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .padding(.horizontal, 16.0)
+                .padding(.top, 16.0)
+            }else if statusOfPage == .InProgress {
+                ZStack(alignment: .center) {
+                    ProgressViewMarshal()
+                }
+            }else if statusOfPage == .Failure {
+                ZStack(alignment: .center) {
+                    FailedMarshal {
+                        onCreate()
+                    }
+                }
+            }
+          
         }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-        .padding(.horizontal, 16.0)
-        .padding(.top, 16.0)
+        .onAppear {
+            callApi.getWallet { wallet in
+                self.wallet = wallet
+            } status: { status in
+                self.statusOfPage = status
+            }
+
+        }
+        
+    }
+    func onCreate(){
         
     }
 }
