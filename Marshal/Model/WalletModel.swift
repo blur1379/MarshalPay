@@ -6,14 +6,14 @@
 //
 
 import Foundation
-class WalletModel {
-    var currentCredit : Int = 0
-    var validityCredit = 0
-    var debtCredit = 0
-    var walletCurencies = [WalletCurrency]()
+class WalletModel : ObservableObject {
+    @Published var currentCredit : Int = 0
+    @Published var validityCredit = 0
+    @Published var debtCredit = 0
+    @Published var walletCurencies = [WalletCurrency]()
     func getCurrentCredit()->String {
         if currentCredit != 0 {
-            let duration = String(format: "%.01f", currentCredit)
+            let duration = ConstantData().decimalFormat(text: String(currentCredit))
             return duration
         }else {
             return "0"
@@ -21,7 +21,7 @@ class WalletModel {
     }
     func getValidityCredit()->String {
         if validityCredit != 0 {
-            let duration = String(format: "%.01f", validityCredit)
+            let duration = ConstantData().decimalFormat(text: String( validityCredit))
             return duration
         }else {
             return "0"
@@ -29,7 +29,7 @@ class WalletModel {
     }
     func getDebtCredit()->String {
         if debtCredit != 0 {
-            let duration = String(format: "%.01f", debtCredit)
+            let duration = ConstantData().decimalFormat(text: String(debtCredit))
             return duration
         }else {
             return "0"

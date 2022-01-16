@@ -331,7 +331,7 @@ struct CallApi{
                     print(json)
                     print("------- send code")
                     if response.response?.statusCode == 200 || response.response?.statusCode == 201  {
-                        let apiWallet = converter.convrtJsonToWallet(json["data"]["docs"])
+                        let apiWallet = converter.convrtJsonToWallet(json["data"])
                         wallet(apiWallet)
                         status(.Successful)
                     }else{

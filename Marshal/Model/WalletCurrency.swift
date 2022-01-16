@@ -12,7 +12,7 @@ class WalletCurrency :Identifiable {
     var amount = 0
     func getAmount()->String {
         if amount != 0 {
-            let duration = String(format: "%.01f", amount)
+            let duration = ConstantData().decimalFormat(text: String(amount))
             return duration
         }else {
             return "0"

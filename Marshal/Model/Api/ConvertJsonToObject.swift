@@ -101,20 +101,20 @@ struct ConvertJsonToObject {
         let walletModel = WalletModel()
         if json.exists(){
             if json["inventory"].exists(){
-                if json["currentCredit"].exists(){
-                    walletModel.currentCredit = json["currentCredit"].int!
+                if json["inventory"]["currentCredit"].exists(){
+                    walletModel.currentCredit = json["inventory"]["currentCredit"].int!
                 }
-                if json["validityCredit"].exists(){
-                    walletModel.validityCredit = json["validityCredit"].int!
+                if json["inventory"]["validityCredit"].exists(){
+                    walletModel.validityCredit = json["inventory"]["validityCredit"].int!
                 }
-                if json["debtCredit"].exists(){
-                    walletModel.debtCredit = json["debtCredit"].int!
+                if json["inventory"]["debtCredit"].exists(){
+                    walletModel.debtCredit = json["inventory"]["debtCredit"].int!
                 }
             }
             if json["currencies"].exists(){
                 walletModel.walletCurencies = convertJsonToWalletCurrencies(json["currencies"])
             }
         }
-        return WalletModel()
+        return walletModel
     }
 }

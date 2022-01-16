@@ -29,7 +29,7 @@ struct ConstantData {
         return s == "0" ? text : s
     }
     //homepage -> title
-    func homePageTitle(page : homePages) -> String {
+    func homePageTitle(page : HomePages) -> String {
         switch page{
         case .Exchange:
             return "صرافی"
@@ -39,6 +39,20 @@ struct ConstantData {
             return "کیف پول"
         case .Profile:
             return "حساب کاربری"
+        }
+        
+    }
+    //wallet page -> title
+    func walletPageTitle(page : WalletPages) -> String {
+        switch page{
+        case .wallet:
+            return "صرافی"
+        case .withdraw:
+            return "برداشت از حساب"
+        case .deposit:
+            return "واریز  به  حساب"
+        case .transfer:
+            return "انتقال ارز"
         }
         
     }

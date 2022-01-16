@@ -18,7 +18,7 @@ struct WalletRowModule: View {
             Text("مارشال")
                 .foregroundColor(Color("marshal_red"))
                 .font(Font.custom("IRANSansMobileFaNum Bold", size: 16))
-                .padding(.horizontal, 16.0)
+                .padding(.trailing, 16.0)
                 .cornerRadius(12.0)
                 .frame(height: 32.0)
                 .padding(.vertical ,16)
@@ -32,8 +32,8 @@ struct WalletRowModule: View {
             
             HStack (spacing: 4){
                 Text("مارشال")
-                    .foregroundColor(Color("marshal_White"))
-                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                    .foregroundColor(Color("marshal_darkPink"))
+                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
                 
                 Text("/")
                     .foregroundColor(Color("marshal_White"))
@@ -45,7 +45,7 @@ struct WalletRowModule: View {
             }
   
         }
-        .padding(.horizontal, 12.0)
+        .padding(.horizontal, 16.0)
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 56)
         .background(Color("marshal_surfGrey"))
         .cornerRadius(12)

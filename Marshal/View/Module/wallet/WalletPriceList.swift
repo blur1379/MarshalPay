@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WalletPriceList: View {
     //MARK: -PROPERTIES
+    
     @State var waletCorencies = [WalletCurrency]()
     //MARK: -BODY
     var body: some View {
@@ -16,8 +17,10 @@ struct WalletPriceList: View {
             LazyVStack {
                 ForEach(waletCorencies){walletCurrency in
                     WalletRowModule(walletCurrency: walletCurrency)
+                        .padding([.trailing,.leading] , 8)
                 }//: ENDLOOP
             }//:LAZYVSTACK
+            .padding(.top , 16)
         }//:SCROLLVIEW
     }
 }

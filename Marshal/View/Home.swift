@@ -9,34 +9,33 @@ import SwiftUI
 
 struct Home: View {
     //MARK: - PROPERTIS
-
-    @State var page : homePages = .Exchange
+    @AppStorage("showTabBar") var showTabBar : Bool = true
+    @State var page : HomePages = .Exchange
     //MARK: -BODY
     var body: some View {
         
         ZStack{
             // tap view
             VStack(alignment: .center, spacing: 0.0) {
+                if showTabBar {
+                    MarshalTopBarType01(page: $page)
+                    Divider()
+                        .frame(height: 1.0).background(Color("marshal_red"))
+                }
                 
-                MarshalTopBarType01(page: $page)
-                    
-                
-                Divider()
-                    .frame(height: 1.0).background(Color("marshal_red"))
+               
                 
             // body
             switch page {
             case .Exchange:
                 MarshalTrendTabPageModule()
+                
             case .History:
-                Text("history")
+                Spacer()
             case .Walet:
             
                     MarshalWalletTabPageModule()
 
-                    
-                    Divider()
-                        .frame(height: 1.0).background(Color("marshal_red"))
                     
             case .Profile:
                 CompleteProfileAllStepModule()
@@ -57,6 +56,10 @@ struct Home: View {
             
             
         }
+        .onAppear{
+            showTabBar = true
+        }
+        
     }
 }
 

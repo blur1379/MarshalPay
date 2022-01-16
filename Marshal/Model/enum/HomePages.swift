@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum homePages{
+enum HomePages{
     case Exchange
     case History
     case Walet

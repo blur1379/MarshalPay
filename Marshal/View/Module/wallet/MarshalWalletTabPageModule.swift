@@ -8,16 +8,12 @@
 import SwiftUI
 
 struct MarshalWalletTabPageModule: View {
-    enum pageOfWallet{
-        case wallet
-        case withdraw
-        case deposit
-        case transfer
-    }
+  
     @State var code : String = ""
-    @State var wallet = WalletModel()
+    @StateObject var wallet = WalletModel()
     @State var statusOfPage : Status = .none
-    @State var selectedPage : pageOfWallet = .wallet
+    @State var selectedPage : WalletPages = .wallet
+    @AppStorage("showTabBar") var showTabBar = true
     let callApi = CallApi()
     var tabsOnTop: some View {
         
@@ -72,7 +68,6 @@ struct MarshalWalletTabPageModule: View {
             }
             
         }
-        //.padding(.horizontal, 16.0)
         
     }
     
@@ -110,7 +105,7 @@ struct MarshalWalletTabPageModule: View {
             .frame(minWidth: 0.0, maxWidth: .infinity)
             .overlay(
             RoundedRectangle(cornerRadius: 12)
-                .stroke(Color("marshal_red"), lineWidth: 2.0)
+                .stroke(Color("marshal_red"), lineWidth: 1.0)
             )
             .padding(.horizontal, 32.0)
             
@@ -120,10 +115,13 @@ struct MarshalWalletTabPageModule: View {
                     Text(wallet.getDebtCredit())
                         .foregroundColor(Color("marshal_White"))
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
-
+                        .padding(.leading)
+                    Spacer()
                     Text("بدهی")
                         .foregroundColor(Color("marshal_red"))
                         .font(Font.custom("IRANSansMobileFaNum Bold", size: 14))
+                        .padding(.trailing)
+
                 }
                 .cornerRadius(12.0)
                 .frame(minWidth: 0.0, maxWidth: .infinity)
@@ -139,11 +137,14 @@ struct MarshalWalletTabPageModule: View {
                     Text(wallet.getValidityCredit())
                         .foregroundColor(Color("marshal_White"))
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
-                        
+                        .padding(.leading)
+                        Spacer()
                     
                     Text("اعتبار")
                         .foregroundColor(Color("marshal_red"))
                         .font(Font.custom("IRANSansMobileFaNum Bold", size: 14))
+                        .padding(.trailing)
+
 
                 }
                 .cornerRadius(12.0)
@@ -171,35 +172,71 @@ struct MarshalWalletTabPageModule: View {
     var body: some View {
         
         ZStack{
+            Spacer()
             if statusOfPage == .Successful {
-                VStack (alignment: .center, spacing: 32.0){
+                VStack (alignment: .center, spacing: 0){
+                    if !showTabBar {
+                        MarshalWalletTabBar(page: $selectedPage){
+                            selectedPage = .wallet
+                        }
+                            
+                        Divider()
+                            .frame(height: 1.0).background(Color("marshal_red"))
+                            .padding(.bottom)
+                    }
                     if selectedPage == .wallet {
                         tabsOnTop
+                            .padding([.top, .horizontal])
+                            .padding(.bottom , 16)
                     }
+                    
                     balaceBlock
                     switch selectedPage {
                     case .wallet:
                         WalletPriceList(waletCorencies: wallet.walletCurencies)
+                            .onAppear{
+                                showTabBar = true
+                            }
                     case.deposit:
                         WalletDeposit()
+                            .padding(.top, 16.0)
+                            .onAppear{
+                                showTabBar = false
+                            }
                     case.transfer:
                         WalletTransfer()
+                            .padding(.top, 16.0)
+                            .onAppear{
+                                showTabBar = false
+                            }
                     case.withdraw:
                         WalletWithdraw()
+                            .padding(.top, 16.0)
+                            .onAppear{
+                                showTabBar = false
+                            }
                     }
 
                     Spacer()
          
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                .padding(.horizontal, 16.0)
-                .padding(.top, 16.0)
+               
+             
+                .animation(
+                    .easeIn
+                    , value: selectedPage
+                )
+                
             }else if statusOfPage == .InProgress {
                 ZStack(alignment: .center) {
+                    
                     ProgressViewMarshal()
                 }
             }else if statusOfPage == .Failure {
+                
                 ZStack(alignment: .center) {
+                    Spacer()
                     FailedMarshal {
                         onCreate()
                     }
@@ -208,9 +245,14 @@ struct MarshalWalletTabPageModule: View {
           
         }
         .onAppear {
+            statusOfPage = .InProgress
             callApi.getWallet { wallet in
-                self.wallet = wallet
+                self.wallet.validityCredit = wallet.validityCredit
+                self.wallet.walletCurencies = wallet.walletCurencies
+                self.wallet.currentCredit = wallet.currentCredit
+                self.wallet.debtCredit = wallet.debtCredit
             } status: { status in
+                
                 self.statusOfPage = status
             }
 

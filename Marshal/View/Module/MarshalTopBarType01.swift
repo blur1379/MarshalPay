@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct MarshalTopBarType01: View {
-    @Binding var page : homePages
+    @Binding var page : HomePages
     var body: some View {
         HStack(alignment: .center) {
-            
-            Image (systemName: "arrow.backward")
-                //.resizable()
-                .frame(width: 40, height: 40, alignment: .leading)
-                .foregroundColor(Color("marshal_red"))
-                .imageScale(.large)
-            
-            
-            
+//            Image (systemName: "arrow.backward")
+//                .frame(width: 40, height: 40, alignment: .leading)
+//                .foregroundColor(Color("marshal_red"))
+//                .imageScale(.large)
+
             Text(ConstantData().homePageTitle(page: page))
                 
                 .foregroundColor(Color("marshal_White"))

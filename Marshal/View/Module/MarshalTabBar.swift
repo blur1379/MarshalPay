@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MarshalTabBar: View {
-    @Binding var pages : homePages
+    @Binding var pages : HomePages
+    @AppStorage("showTabBar") var showTabBar = true
     var body: some View {
 
         HStack(alignment: .center, spacing: 0) {
@@ -20,6 +21,7 @@ struct MarshalTabBar: View {
                     Button(action: {
                         //write code 😎
                         pages = .Profile
+                        showTabBar = true
                     }) {
                         
                         VStack (alignment: .center, spacing: 4.0){
@@ -41,6 +43,7 @@ struct MarshalTabBar: View {
                     Button(action: {
                         //write code 😎
                         pages = .Walet
+                        showTabBar = true
                     }) {
                         
                         VStack (alignment: .center, spacing: 4.0){
@@ -62,6 +65,7 @@ struct MarshalTabBar: View {
                     Button(action: {
                         //write code 😎
                         pages = .History
+                        showTabBar = true
                     }) {
                         
                         VStack (alignment: .center, spacing: 4.0){
@@ -83,6 +87,7 @@ struct MarshalTabBar: View {
                     Button(action: {
                         //write code 😎
                         pages = .Exchange
+                        showTabBar = true
                     }) {
                         
                         VStack (alignment: .center, spacing: 4.0){
