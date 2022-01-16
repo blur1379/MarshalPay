@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		540B0B97279451950001F3C0 /* UserLevelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B0B96279451950001F3C0 /* UserLevelRow.swift */; };
+		540B0B9A279452940001F3C0 /* UserLevelPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B0B99279452940001F3C0 /* UserLevelPages.swift */; };
+		540B0B9C2794537F0001F3C0 /* UserLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B0B9B2794537F0001F3C0 /* UserLevelModel.swift */; };
 		5421EA4527900B6E00DCA41B /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5421EA4427900B6E00DCA41B /* RefreshableScrollView.swift */; };
 		5421EA472790288800DCA41B /* WalletRowModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5421EA462790288800DCA41B /* WalletRowModule.swift */; };
 		5421EA4927902ADC00DCA41B /* WalletCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5421EA4827902ADC00DCA41B /* WalletCurrency.swift */; };
@@ -86,6 +88,8 @@
 
 /* Begin PBXFileReference section */
 		540B0B96279451950001F3C0 /* UserLevelRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelRow.swift; sourceTree = "<group>"; };
+		540B0B99279452940001F3C0 /* UserLevelPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelPages.swift; sourceTree = "<group>"; };
+		540B0B9B2794537F0001F3C0 /* UserLevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelModel.swift; sourceTree = "<group>"; };
 		5421EA4427900B6E00DCA41B /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		5421EA462790288800DCA41B /* WalletRowModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletRowModule.swift; sourceTree = "<group>"; };
 		5421EA4827902ADC00DCA41B /* WalletCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCurrency.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 			children = (
 				B886A943278899EB007879EB /* HomePages.swift */,
 				5482F9B427941570004772A4 /* WalletPages.swift */,
+				540B0B99279452940001F3C0 /* UserLevelPages.swift */,
 			);
 			path = enum;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				B8F6D2D727871F1E00121964 /* Currency.swift */,
 				5421EA4827902ADC00DCA41B /* WalletCurrency.swift */,
 				5421EA4A27902FC800DCA41B /* WalletModel.swift */,
+				540B0B9B2794537F0001F3C0 /* UserLevelModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -488,6 +494,7 @@
 				B8F6D2DA2787210000121964 /* ConvertJsonToObject.swift in Sources */,
 				5489A4ED2792F01B0068E122 /* WalletTransfer.swift in Sources */,
 				B886A944278899EB007879EB /* HomePages.swift in Sources */,
+				540B0B9A279452940001F3C0 /* UserLevelPages.swift in Sources */,
 				B8F29240277B1A7C004F75A4 /* Home.swift in Sources */,
 				5489A4EB2792EEED0068E122 /* WalletDeposit.swift in Sources */,
 				B8D2C1812779D29600F0C207 /* User.swift in Sources */,
@@ -512,6 +519,7 @@
 				CA9FB8DB277C9661006D411C /* RoundedCorners.swift in Sources */,
 				5421EA4927902ADC00DCA41B /* WalletCurrency.swift in Sources */,
 				5421EA4527900B6E00DCA41B /* RefreshableScrollView.swift in Sources */,
+				540B0B9C2794537F0001F3C0 /* UserLevelModel.swift in Sources */,
 				B81807F52782F60300E67616 /* ExchangeTopBar.swift in Sources */,
 				B8AE1FA02775F9A90090125D /* CountryCodes.swift in Sources */,
 				B8AE1FCF2776110D0090125D /* NetworkManeger.swift in Sources */,

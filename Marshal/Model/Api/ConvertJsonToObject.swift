@@ -117,4 +117,57 @@ struct ConvertJsonToObject {
         }
         return walletModel
     }
+    
+    func convertJsonToUserLevel (_ json: JSON) -> UserLevelModel{
+        let userLevelModel = UserLevelModel()
+        if json.exists(){
+            if json["registerLevels"].exists(){
+                if json["registerLevels"]["persianLevel"].exists(){
+                    if json["registerLevels"]["persianLevel"].bool! {
+                        userLevelModel.registerLevels.append(.persianLevel)
+                    }
+                }
+                if json["registerLevels"]["englishLevel"].exists(){
+                    if json["registerLevels"]["englishLevel"].bool! {
+                        userLevelModel.registerLevels.append(.englishLevel)
+                    }
+                }
+                if json["registerLevels"]["imagesLevel"].exists(){
+                    if json["registerLevels"]["imagesLevel"].bool! {
+                        userLevelModel.registerLevels.append(.imagesLevel)
+                    }
+                }
+                if json["registerLevels"]["educationLevel"].exists(){
+                    if json["registerLevels"]["educationLevel"].bool! {
+                        userLevelModel.registerLevels.append(.educationLevel)
+                    }
+                }
+                if json["registerLevels"]["jobLevel"].exists(){
+                    if json["registerLevels"]["jobLevel"].bool! {
+                        userLevelModel.registerLevels.append(.jobLevel)
+                    }
+                }
+            }
+            if json["_id"].exists(){
+                userLevelModel._id = json["_id"].string!
+            }
+            if json["name"].exists(){
+                userLevelModel.name = json["name"].string!
+            }
+            if json["label"].exists(){
+                userLevelModel.label = json["label"].string!
+            }
+            if json["description"].exists(){
+                userLevelModel.description = json["description"].string!
+            }
+            if json["credit"].exists(){
+                userLevelModel.credit = json["credit"].int!
+            }
+        }
+        return userLevelModel
+    }
+    func convertJsonToUserLevels (_ json: JSON) -> UserLevelModel{
+        return UserLevelModel()
+    }
+    
 }
