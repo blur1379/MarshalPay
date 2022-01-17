@@ -9,6 +9,7 @@ import Foundation
 import SwiftyJSON
 
 struct ConvertJsonToObject {
+    
     func convertJsonToCurrency (_ json :JSON) -> Currency{
         let castedCurrency = Currency()
         if json["lastChange"].exists(){
@@ -166,8 +167,19 @@ struct ConvertJsonToObject {
         }
         return userLevelModel
     }
-    func convertJsonToUserLevels (_ json: JSON) -> UserLevelModel{
-        return UserLevelModel()
+    
+    func convertJsonToUserLevels (_ json: JSON) -> [UserLevelModel]{
+        var userLevelsModel = [UserLevelModel]()
+        if json.exists(){
+            if json.array!.count > 0 {
+                let userLevelsJson = json.array!
+                for userLevelJson in userLevelsJson {
+                    let newUserLevel = convertJsonToUserLevel(userLevelJson)
+                    userLevelsModel.append(newUserLevel)
+                }
+            }
+        }
+        return userLevelsModel
     }
     
 }

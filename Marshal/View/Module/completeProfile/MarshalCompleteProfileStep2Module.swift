@@ -10,7 +10,7 @@ import SwiftUI
 struct MarshalCompleteProfileStep2Module: View {
     
     @State var statusOfSubmitBottom : Status = .none
-    
+    @State var userLevels = [UserLevelModel]()
     var body: some View {
         VStack(alignment: .center, spacing: 16.0) {
             
@@ -21,54 +21,11 @@ struct MarshalCompleteProfileStep2Module: View {
                 .foregroundColor(Color("marshal_White"))
                 .multilineTextAlignment(.trailing)
                 
-            HStack(alignment: .center, spacing: 16.0) {
+            ForEach(userLevels){ item in
                 
-                Spacer()
+                UserLevelRow(userLevel: item)
                 
-                Text("نقره‌ای")
-                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 20.0))
-                    .foregroundColor(Color("marshal_White"))
-                    .multilineTextAlignment(.trailing)
-                
-                Image("icon_badge_24dp")
-                    .resizable()
-                    .frame(width: 32.0, height: 32.0, alignment: .center)
-                
-   
             }
-            .padding(.horizontal, 16.0)
-            .frame(maxWidth: .infinity)
-            .frame(height: 56.0)
-            .background(Color("marshal_surfGrey"))
-            .cornerRadius(12.0)
-            .overlay(RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color("marshal_red"), lineWidth:0.5))
-            .shadow(color: .black, radius: 5, x: 8, y: 8)
-            HStack(alignment: .center, spacing: 16.0) {
-                
-                Spacer()
-                
-                Text("طلایی")
-                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 20.0))
-                    .foregroundColor(Color("marshal_White"))
-                    .multilineTextAlignment(.trailing)
-                
-                Image("icon_badge_24dp")
-                    .resizable()
-                    .frame(width: 32.0, height: 32.0, alignment: .center)
-                
-   
-            }
-            .padding(.horizontal, 16.0)
-            .frame(maxWidth: .infinity)
-            .frame(height: 56.0)
-            .background(Color("marshal_surfGrey"))
-            .cornerRadius(12.0)
-            .overlay(RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color("marshal_red"), lineWidth:0.5))
-            .shadow(color: .black, radius: 5, x: 8, y: 8)
-            
-            
 
             Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
                 print("press")

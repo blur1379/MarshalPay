@@ -365,8 +365,8 @@ struct CallApi{
     
     
     // get user levels
-    func getUserLevels(wallet: @escaping (([UserLevelModel])->Void), status: @escaping((Status)->Void)){
-        let url = "v1/transactions/get-user-wallet"
+    func getUserLevels(userLevels: @escaping (([UserLevelModel])->Void), status: @escaping((Status)->Void)){
+        let url = "v1/user-level/search"
         let headers: HTTPHeaders?
         
         headers = [
@@ -380,9 +380,10 @@ struct CallApi{
                     print("------ send code")
                     print(json)
                     print("------- send code")
+                    
                     if response.response?.statusCode == 200 || response.response?.statusCode == 201  {
-                        let apiWallet = converter.convrtJsonToWallet(json["data"])
-                        
+                        let apiUserLevels = converter.convertJsonToUserLevels(json["data"]["docs"])
+                        userLevels(apiUserLevels)
                         status(.Successful)
                     }else{
                         status(.Failure)

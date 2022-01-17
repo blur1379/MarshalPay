@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class UserLevelModel{
+class UserLevelModel : Identifiable{
     var _id = ""
     var name = ""
     var label = ""

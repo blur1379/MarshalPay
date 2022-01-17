@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct UserLevelRow: View {
+    //MARK: -PROPERTIES
+    let userLevel : UserLevelModel
+    //MARK: -BODY
     var body: some View {
         HStack(alignment: .center, spacing: 16.0) {
             
             Spacer()
             
-            Text("طلایی")
+            Text(userLevel.label)
                 .font(Font.custom("IRANSansMobileFaNum Medium", size: 20.0))
                 .foregroundColor(Color("marshal_White"))
                 .multilineTextAlignment(.trailing)
@@ -35,9 +38,9 @@ struct UserLevelRow: View {
         
     }
 }
-
+//MARK: -PREVIEW
 struct UserLevelRow_Previews: PreviewProvider {
     static var previews: some View {
-        UserLevelRow()
+        UserLevelRow(userLevel: UserLevelModel())
     }
 }
