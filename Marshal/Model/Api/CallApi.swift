@@ -33,10 +33,10 @@ struct CallApi{
                     print(json)
                     print("------- send code ")
                     if response.response?.statusCode == 200 || response.response?.statusCode == 201  {
-                        statusApi = .Successful
+                        status(.Successful)
                         
                     }else{
-                        statusApi = .Failure
+                        status(.Failure)
                     }
                     
                                         
@@ -47,7 +47,7 @@ struct CallApi{
                     break
                 case let .failure(error):
                     print(baceUrl + "v2/Authentication/Home")
-                    statusApi = .Failure
+                    status(.Failure)
                     if response.response != nil {
                         print(response.response?.statusCode ?? 0 )
                     }
@@ -57,7 +57,7 @@ struct CallApi{
                 }
             }catch{
                 print(baceUrl + "v2/Authentication/Home")
-                statusApi = .Failure
+                status(.Failure)
                 if response.response != nil {
                     print(response.response?.statusCode ?? 0)
                 }
@@ -65,7 +65,7 @@ struct CallApi{
             }
             
         }
-        status(statusApi)
+        
     }
     
     // for validation code
