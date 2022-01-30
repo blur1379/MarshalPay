@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct MarshalCompleteProfileStep2Module: View {
-    
+    @State var statusOfPage : Status = .none
     @State var statusOfSubmitBottom : Status = .none
     @State var userLevels = [UserLevelModel]()
+    let callApi = CallApi()
     var body: some View {
         VStack(alignment: .center, spacing: 16.0) {
             
@@ -35,7 +36,17 @@ struct MarshalCompleteProfileStep2Module: View {
  
         }
         .padding(.horizontal, 16.0)
-        
+        .onAppear {
+            onCreate()
+        }
+    }
+    func onCreate(){
+        callApi.getUserLevels { userLevels in
+            self.userLevels = userLevels
+        } status: { Status in
+            self.statusOfPage = Status
+        }
+
     }
 }
 

@@ -38,10 +38,12 @@ struct Home: View {
 
                     
             case .Profile:
-                CompleteProfileAllStepModule()
+//                CompleteProfileAllStepModule()
                 //.padding(.horizontal, 16.0)
-                    .padding(.top, 16.0)
-                                 
+//                    .padding(.top, 16.0)
+                
+                MarshalCompleteProfileStep2Module()
+                Spacer()
             }
                 Divider()
                     .frame(height: 1.0).background(Color("marshal_red"))
