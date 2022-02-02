@@ -13,7 +13,7 @@ struct ExchangeList: View {
     @State var numberOfPage = 0
     @State var sortMode = ""
     @State var searchText = ""
-    @State var statusOfPage : Status = .none
+    @State var statusOfPage : Status = .Successful
     @State var loading: Bool = false
     let callApi = CallApi()
     //MARK: - BODY
@@ -22,8 +22,18 @@ struct ExchangeList: View {
             RefreshableScrollView(height: 70, refreshing: $loading){
                 LazyVStack(spacing: 0){
                     ForEach(currencies , id: \._id){currency in
-                        MarshalTrendingListEachRow(currency: currency)
-                            .padding(4)
+                        
+                            
+                                NavigationLink {
+                                    ExchangePage()
+                                        .navigationBarHidden(true)
+                                } label: {
+                                    MarshalTrendingListEachRow(currency: currency)
+                                        .padding(4)
+                                }
+                              
+
+                            
                     }//ENDLOOP
                     if statusOfPage == .InProgress {
                         ProgressViewMarshal()

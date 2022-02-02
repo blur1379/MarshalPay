@@ -16,7 +16,7 @@ struct MarshalTextField: View {
     var isEn : Bool = false
     var keyboardType : UIKeyboardType = .default
     var limitedItem : Int?
-    
+    var heightOfBox : CGFloat = 56
     
     //MARK: - BODY
     var body: some View {
@@ -53,7 +53,7 @@ struct MarshalTextField: View {
                     }//: ONCHANGE
             }//:ZSTACK
 
-            .frame(height: 56, alignment: .center)
+            .frame(height: heightOfBox, alignment: .center)
             .background(Color("marshal_surfGrey"))
             .cornerRadius(12)
             .overlay(RoundedRectangle(cornerRadius: 12)

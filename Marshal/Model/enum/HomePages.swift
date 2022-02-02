@@ -11,4 +11,5 @@ enum HomePages{
     case History
     case Walet
     case Profile
+    case Invest
 }

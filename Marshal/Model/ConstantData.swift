@@ -39,6 +39,8 @@ struct ConstantData {
             return "کیف پول"
         case .Profile:
             return "حساب کاربری"
+        case .Invest:
+            return "سرمایه گذاری"
         }
         
     }

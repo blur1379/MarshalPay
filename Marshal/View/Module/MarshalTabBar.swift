@@ -47,7 +47,7 @@ struct MarshalTabBar: View {
                     }) {
                         
                         VStack (alignment: .center, spacing: 4.0){
-                            Image("icon_wallet_24dp")
+                            Image("kifpol")
                                 .resizable()
                                 .frame(width: 32, height: 32, alignment: .center)
                                 .foregroundColor(Color("marshal_White"))
@@ -69,7 +69,7 @@ struct MarshalTabBar: View {
                     }) {
                         
                         VStack (alignment: .center, spacing: 4.0){
-                            Image("icon_trend_24dp")
+                            Image("tarakonesh")
                                 .resizable()
                                 .frame(width: 32, height: 32, alignment: .center)
                                 .foregroundColor(Color("marshal_White"))
@@ -91,7 +91,7 @@ struct MarshalTabBar: View {
                     }) {
                         
                         VStack (alignment: .center, spacing: 4.0){
-                            Image("icon_marshal_24dp")
+                            Image("dolar")
                                 .resizable()
                                 .frame(width: 32, height: 32, alignment: .center)
                                 .foregroundColor(Color("marshal_White"))
@@ -105,6 +105,26 @@ struct MarshalTabBar: View {
                     }
                     
                     //Spacer()
+            Button(action: {
+                //write code 😎
+                pages = .Exchange
+                showTabBar = true
+            }) {
+                
+                VStack (alignment: .center, spacing: 4.0){
+                    Image("icon_marshal_24dp")
+                        .resizable()
+                        .frame(width: 32, height: 32, alignment: .center)
+                        .foregroundColor(Color("marshal_White"))
+                    Text("سرمایه گذاری")
+                        .foregroundColor(Color("marshal_White"))
+                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
+                    
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                
+            }
+
                     
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
