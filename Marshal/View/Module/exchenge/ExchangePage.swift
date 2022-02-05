@@ -10,6 +10,7 @@ import Alamofire
 import SwiftyJSON
 struct ExchangePage: View {
     //MARK: -PROPERTIES
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let currencyId : String
     @State var wallet = WalletModel()
     @State var currency = Currency()
@@ -22,6 +23,41 @@ struct ExchangePage: View {
         self.currencyId = currencyId
         UIPageControl.appearance().currentPageIndicatorTintColor = .red
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.white
+    }
+    
+    var topBar : some View {
+        HStack(alignment: .center) {
+            Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Image (systemName: "arrow.backward")
+                    .frame(width: 40, height: 40, alignment: .leading)
+                    .foregroundColor(Color("marshal_red"))
+                    .imageScale(.large)
+            }
+
+  
+
+            Spacer()
+            
+            Text("صرافی")
+                
+                .foregroundColor(Color("marshal_White"))
+                .font(Font.custom("IRANSansMobileFaNum Bold", size: 18))
+            
+            
+            
+            
+//            Image ("marshal_logo-wings")
+//                .resizable()
+//                .frame(width: 96, height: 22, alignment: .center)
+//                .scaledToFit()
+            
+  
+        }
+        .padding(.horizontal, 16.0)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 56)
+
     }
     
     var walletTitle : some View {
@@ -55,7 +91,7 @@ struct ExchangePage: View {
                             .frame(width: 1)
                             .frame(minHeight: 0, maxHeight: .infinity)
                             .foregroundColor(Color.white)
-                        Text("36,000")
+                        Text(wallet.getCurrentCredit())
                             .frame(width: 110, alignment: .center)
                             .foregroundColor(Color.white)
                             .font(Font.custom("IRANSansMobileFaNum Bold", size: 14))
@@ -80,7 +116,7 @@ struct ExchangePage: View {
                             .frame(width: 1)
                             .frame(minHeight: 0, maxHeight: .infinity)
                             .foregroundColor(Color.white)
-                        Text("36,000.000")
+                        Text(getWalletInventory())
                             .frame(width: 110, alignment: .center)
                             .foregroundColor(Color.white)
                             .font(Font.custom("IRANSansMobileFaNum Bold", size: 14))
@@ -382,29 +418,35 @@ struct ExchangePage: View {
     }
     
     var body: some View {
-        VStack{
-            if status == .Successful{
-                walletTitle
-                walletBalence
-                exchangeToMarshal
-                    .padding(.bottom , 8)
-                marshalToCurrency
-            }else if status == . Failure {
-                FailedMarshal {
-                    getCurrencyInfo()
+        VStack(spacing: 0){
+            topBar
+            Divider()
+                .frame(height: 1.0).background(Color("marshal_red"))
+            VStack{
+                if status == .Successful{
+                    
+                    walletTitle
+                    walletBalence
+                    exchangeToMarshal
+                        .padding(.bottom , 8)
+                    marshalToCurrency
+                }else if status == . Failure {
+                    FailedMarshal {
+                        getWalletApi()
+                    }
+                }else {
+                    ProgressViewMarshal()
                 }
-            }else {
-                ProgressViewMarshal()
+                Spacer()
+            }//:VSTACK
+            .padding()
+           
+            .onAppear{
+                getWalletApi()
             }
-            Spacer()
-        }//:VSTACK
-        .padding()
-        .background(Color("marshal_Grey"))
-        .onAppear{
-            getCurrencyInfo()
+            
         }
-        
-        
+        .background(Color("marshal_Grey"))
     }
     
     //MARK: -FUNCTION
@@ -463,7 +505,25 @@ struct ExchangePage: View {
             }
         }
     
+    func getWalletApi(){
+        CallApi().getWallet { wallet in
+            self.wallet = wallet
+        } status: { status in
+            if status == .Successful {
+                getCurrencyInfo()
+            }else if status == .Failure {
+                self.status = .Failure
+            }else{
+                self.status = .Successful
+            }
+        }
+
+    }
     
+    func getWalletInventory() -> String{
+        let amount = wallet.walletCurencies.first(where: {$0.currency._id == currencyId})?.getAmount() ?? "0"
+        return amount
+    }
     
 }
 //MARK: -PREVIEW
