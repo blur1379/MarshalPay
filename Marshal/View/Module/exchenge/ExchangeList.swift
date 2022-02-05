@@ -25,7 +25,7 @@ struct ExchangeList: View {
                         
                             
                                 NavigationLink {
-                                    ExchangePage()
+                                    ExchangePage(currencyId: currency._id)
                                         .navigationBarHidden(true)
                                 } label: {
                                     MarshalTrendingListEachRow(currency: currency)
