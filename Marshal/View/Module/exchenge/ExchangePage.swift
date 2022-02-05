@@ -6,7 +6,8 @@
 //
 
 import SwiftUI
-
+import Alamofire
+import SwiftyJSON
 struct ExchangePage: View {
     //MARK: -PROPERTIES
     let currencyId : String
@@ -16,11 +17,13 @@ struct ExchangePage: View {
     @State var amountForBuy = ""
     @State var status : Status = .none
     @State var pageIndex = 0
+    
     init(currencyId  : String) {
         self.currencyId = currencyId
         UIPageControl.appearance().currentPageIndicatorTintColor = .red
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.white
     }
+    
     var walletTitle : some View {
         HStack{
             Rectangle()
@@ -37,6 +40,7 @@ struct ExchangePage: View {
                 .foregroundColor(Color.white)
         }//:HSTACK
     }
+    
     var walletBalence : some View {
         
         VStack {
@@ -63,7 +67,7 @@ struct ExchangePage: View {
                             .stroke(Color.white, lineWidth:0.5)
                     )
                     .frame( height: 40)
-                .background(Color("marshal_Grey"))
+                    .background(Color("marshal_Grey"))
                     
                     Spacer()
                 }.tag(0)
@@ -88,7 +92,7 @@ struct ExchangePage: View {
                             .stroke(Color.white, lineWidth:0.5)
                     )
                     .frame( height: 40)
-                .background(Color("marshal_Grey"))
+                    .background(Color("marshal_Grey"))
                     
                     Spacer()
                 }.tag(1)
@@ -98,7 +102,7 @@ struct ExchangePage: View {
                 .tabViewStyle(PageTabViewStyle())
             
             
-           
+            
             
             HStack (spacing: 8){
                 
@@ -163,14 +167,14 @@ struct ExchangePage: View {
             HStack{
                 Spacer()
                 VStack(spacing: 0){
-                    Text("1")
+                    Text("\(currency.currentValue)")
                         .foregroundColor(Color.white)
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
                     Image("arow")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 32, height: 60, alignment: .center)
-                    Text("\(currency.currentValue)")
+                    Text("1")
                         .foregroundColor(Color.white)
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
                 }//:VSTACK
@@ -266,20 +270,19 @@ struct ExchangePage: View {
         .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color("marshal_red") , lineWidth: 1))
     }
     
-    
     var marshalToCurrency : some View{
         VStack{
             HStack{
                 Spacer()
                 VStack(spacing: 0){
-                    Text("\(currency.currentValue)")
+                    Text("1")
                         .foregroundColor(Color.white)
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
                     Image("arow")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 32, height: 60, alignment: .center)
-                    Text("1")
+                    Text("\(currency.currentValue)")
                         .foregroundColor(Color.white)
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
                 }//:VSTACK
@@ -288,7 +291,7 @@ struct ExchangePage: View {
                 
                 VStack(alignment: .trailing){
                     
-            
+                    
                     
                     HStack {
                         Text("\(currency.name)")
@@ -380,16 +383,28 @@ struct ExchangePage: View {
     
     var body: some View {
         VStack{
-            walletTitle
-            walletBalence
-            exchangeToMarshal
-                .padding(.bottom , 8)
-            marshalToCurrency
-          
+            if status == .Successful{
+                walletTitle
+                walletBalence
+                exchangeToMarshal
+                    .padding(.bottom , 8)
+                marshalToCurrency
+            }else if status == . Failure {
+                FailedMarshal {
+                    getCurrencyInfo()
+                }
+            }else {
+                ProgressViewMarshal()
+            }
             Spacer()
         }//:VSTACK
         .padding()
         .background(Color("marshal_Grey"))
+        .onAppear{
+            getCurrencyInfo()
+        }
+        
+        
     }
     
     //MARK: -FUNCTION
@@ -405,6 +420,51 @@ struct ExchangePage: View {
         let lastedPrice = String((doubleFirstPrice / doubleSecendPrice).isNaN ? 0 : (doubleFirstPrice / doubleSecendPrice))
         return ConstantData().decimalFormat(text: lastedPrice)
     }
+    
+    func getCurrencyInfo(){
+            let url = "v1/currencies/get/\(currencyId)"
+        AF.request(CallApi().baceUrl + url, method: .get, encoding: JSONEncoding.default){urlRequest in urlRequest.timeoutInterval = TimeInterval(CallApi().timeOut)}.responseJSON { response in
+                do {
+                    switch response.result {
+                    case .success :
+                        let json = try JSON(data: response.data!)
+                        print("------ send code")
+                        print(json)
+                        print("------- send code")
+                        if response.response?.statusCode == 200 || response.response?.statusCode == 201  {
+                            currency = ConvertJsonToObject().convertJsonToCurrency(json["data"])
+                            self.status = .Successful
+                        }else{
+                            status = .Failure
+                        }
+                        print("v1/users/validation-activation-code")
+                        print(response.response?.statusCode ?? 0)
+                        
+                        break
+                    case let .failure(error):
+                        status = .Failure
+                        print(url)
+                        if response.response != nil {
+                            print(response.response?.statusCode ?? 0 )
+                        }
+                        print("failed")
+                        print(error)
+                        break
+                    }
+                }catch{
+                    status = .Failure
+                    print(url)
+                    if response.response != nil {
+                        print(response.response?.statusCode ?? 0)
+                    }
+                    print("nil response")
+                }
+                
+            }
+        }
+    
+    
+    
 }
 //MARK: -PREVIEW
 struct ExchangePage_Previews: PreviewProvider {
