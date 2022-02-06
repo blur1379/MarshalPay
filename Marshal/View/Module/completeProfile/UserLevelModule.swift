@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MarshalCompleteProfileStep2Module: View {
+struct UserLevelModule: View {
     @State var statusOfPage : Status = .none
     @State var statusOfSubmitBottom : Status = .none
     @State var userLevels = [UserLevelModel]()
@@ -50,9 +50,9 @@ struct MarshalCompleteProfileStep2Module: View {
     }
 }
 
-struct MarshalCompleteProfileStep2Module_Previews: PreviewProvider {
+struct UserLevelModule_Previews: PreviewProvider {
     static var previews: some View {
-        MarshalCompleteProfileStep2Module()
+        UserLevelModule()
             .previewLayout(.sizeThatFits)
     }
 }

@@ -6,10 +6,10 @@
 //
 
 import Foundation
-enum UserLevelPages {
-    case persianLevel
-    case englishLevel
-    case imagesLevel
-    case educationLevel
-    case jobLevel
+class UserLevelPages {
+    var persianLevel = false
+    var englishLevel = false
+    var imagesLevel = false
+    var educationLevel = false
+    var jobLevel = false
 }

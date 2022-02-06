@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MarshalCompleteProfileStep3Module: View {
+struct PertianImformationStep: View {
     
     @State var statusOfSubmitBottom : Status = .none
     @State var code : String = ""
@@ -72,7 +72,7 @@ struct MarshalCompleteProfileStep3Module: View {
 
 struct MarshalCompleteProfileStep3Module_Previews: PreviewProvider {
     static var previews: some View {
-        MarshalCompleteProfileStep3Module()
+        PertianImformationStep()
             .previewLayout(.sizeThatFits)
     }
 }

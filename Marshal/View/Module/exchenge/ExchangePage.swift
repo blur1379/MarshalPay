@@ -421,38 +421,50 @@ struct ExchangePage: View {
     }
     
     var body: some View {
+
         VStack(spacing: 0){
             topBar
             Divider()
                 .frame(height: 1.0).background(Color("marshal_red"))
-            VStack{
-                if status == .Successful{
-                    
-                    walletTitle
-                    walletBalence
-                    exchangeToMarshal
-                        .padding(.bottom , 8)
-                    marshalToCurrency
-                }else if status == . Failure {
-                    FailedMarshal {
-                        getWalletApi()
+            ScrollView(showsIndicators: false){
+                VStack{
+                    if status == .Successful{
+                        
+                        walletTitle
+                        walletBalence
+                        exchangeToMarshal
+                            .padding(.bottom , 8)
+                        marshalToCurrency
+                    }else if status == . Failure {
+                        FailedMarshal {
+                            getWalletApi()
+                        }
+                    }else {
+                        ProgressViewMarshal()
                     }
-                }else {
-                    ProgressViewMarshal()
+                    Spacer()
+                }//:VSTACK
+                .padding()
+                .disabled(statusOfBotton == .InProgress)
+                .alert(isPresented: $showAlert ) {
+                    Alert(title: Text(""), message: Text(textAlert), dismissButton: .default(Text("باشه")) )
                 }
-                Spacer()
-            }//:VSTACK
-            .padding()
-            .disabled(statusOfBotton == .InProgress)
-            .alert(isPresented: $showAlert ) {
-                Alert(title: Text(""), message: Text(textAlert), dismissButton: .default(Text("باشه")) )
+                .onAppear{
+                    getWalletApi()
+                }
+
             }
-            .onAppear{
-                getWalletApi()
-            }
-            
+//            .gesture(
+//                DragGesture().onChanged({ _ in
+//                    hideKeyboard()
+//                })
+//            )
         }
         .background(Color("marshal_Grey"))
+        .onTapGesture {
+            hideKeyboard()
+        }
+     
     }
     
     //MARK: -FUNCTION
