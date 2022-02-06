@@ -12,5 +12,5 @@ class UserLevelModel : Identifiable{
     var label = ""
     var description = ""
     var credit = 0
-    var registerLevels = [UserLevelPages]()
+    var registerLevels = UserLevelPages()
 }

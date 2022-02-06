@@ -73,12 +73,12 @@
 		B8F6D2D827871F1E00121964 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F6D2D727871F1E00121964 /* Currency.swift */; };
 		B8F6D2DA2787210000121964 /* ConvertJsonToObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F6D2D92787210000121964 /* ConvertJsonToObject.swift */; };
 		CA4B9D6F2780390F0070272F /* MarshalCompleteProfileStepBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D6E2780390E0070272F /* MarshalCompleteProfileStepBar.swift */; };
-		CA4B9D732780578A0070272F /* MarshalCompleteProfileStep1Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D72278057890070272F /* MarshalCompleteProfileStep1Module.swift */; };
-		CA4B9D75278189D20070272F /* MarshalCompleteProfileStep2Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D74278189D20070272F /* MarshalCompleteProfileStep2Module.swift */; };
-		CA4B9D77278193B80070272F /* MarshalCompleteProfileStep3Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D76278193B80070272F /* MarshalCompleteProfileStep3Module.swift */; };
-		CA4B9D792781992C0070272F /* MarshalCompleteProfileStep4Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D782781992C0070272F /* MarshalCompleteProfileStep4Module.swift */; };
-		CA4B9D7B27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D7A27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift */; };
-		CA4B9D7D27819EC20070272F /* MarshalCompleteProfileStep6Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D7C27819EC20070272F /* MarshalCompleteProfileStep6Module.swift */; };
+		CA4B9D732780578A0070272F /* UploadImageStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D72278057890070272F /* UploadImageStep.swift */; };
+		CA4B9D75278189D20070272F /* UserLevelModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D74278189D20070272F /* UserLevelModule.swift */; };
+		CA4B9D77278193B80070272F /* PertianImformationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D76278193B80070272F /* PertianImformationStep.swift */; };
+		CA4B9D792781992C0070272F /* EnglishInformationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D782781992C0070272F /* EnglishInformationStep.swift */; };
+		CA4B9D7B27819C1E0070272F /* WorkInformationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D7A27819C1E0070272F /* WorkInformationStep.swift */; };
+		CA4B9D7D27819EC20070272F /* EducationInformationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D7C27819EC20070272F /* EducationInformationStep.swift */; };
 		CA4B9D7F27830AB80070272F /* CompleteProfileAllStepModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D7E27830AB80070272F /* CompleteProfileAllStepModule.swift */; };
 		CA745B9A278457F7009CF62A /* MarshalTrendTabPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA745B99278457F7009CF62A /* MarshalTrendTabPageModule.swift */; };
 		CA9FB8D7277C685E006D411C /* MarshalTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */; };
@@ -153,12 +153,12 @@
 		B8F6D2D727871F1E00121964 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		B8F6D2D92787210000121964 /* ConvertJsonToObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertJsonToObject.swift; sourceTree = "<group>"; };
 		CA4B9D6E2780390E0070272F /* MarshalCompleteProfileStepBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalCompleteProfileStepBar.swift; sourceTree = "<group>"; };
-		CA4B9D72278057890070272F /* MarshalCompleteProfileStep1Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalCompleteProfileStep1Module.swift; sourceTree = "<group>"; };
-		CA4B9D74278189D20070272F /* MarshalCompleteProfileStep2Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalCompleteProfileStep2Module.swift; sourceTree = "<group>"; };
-		CA4B9D76278193B80070272F /* MarshalCompleteProfileStep3Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalCompleteProfileStep3Module.swift; sourceTree = "<group>"; };
-		CA4B9D782781992C0070272F /* MarshalCompleteProfileStep4Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalCompleteProfileStep4Module.swift; sourceTree = "<group>"; };
-		CA4B9D7A27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalCompleteProfileStep5Module.swift; sourceTree = "<group>"; };
-		CA4B9D7C27819EC20070272F /* MarshalCompleteProfileStep6Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalCompleteProfileStep6Module.swift; sourceTree = "<group>"; };
+		CA4B9D72278057890070272F /* UploadImageStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageStep.swift; sourceTree = "<group>"; };
+		CA4B9D74278189D20070272F /* UserLevelModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelModule.swift; sourceTree = "<group>"; };
+		CA4B9D76278193B80070272F /* PertianImformationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PertianImformationStep.swift; sourceTree = "<group>"; };
+		CA4B9D782781992C0070272F /* EnglishInformationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishInformationStep.swift; sourceTree = "<group>"; };
+		CA4B9D7A27819C1E0070272F /* WorkInformationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkInformationStep.swift; sourceTree = "<group>"; };
+		CA4B9D7C27819EC20070272F /* EducationInformationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationInformationStep.swift; sourceTree = "<group>"; };
 		CA4B9D7E27830AB80070272F /* CompleteProfileAllStepModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteProfileAllStepModule.swift; sourceTree = "<group>"; };
 		CA745B99278457F7009CF62A /* MarshalTrendTabPageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTrendTabPageModule.swift; sourceTree = "<group>"; };
 		CA9FB8D6277C685E006D411C /* MarshalTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalTabBar.swift; sourceTree = "<group>"; };
@@ -203,12 +203,12 @@
 			isa = PBXGroup;
 			children = (
 				CA4B9D6E2780390E0070272F /* MarshalCompleteProfileStepBar.swift */,
-				CA4B9D72278057890070272F /* MarshalCompleteProfileStep1Module.swift */,
-				CA4B9D74278189D20070272F /* MarshalCompleteProfileStep2Module.swift */,
-				CA4B9D76278193B80070272F /* MarshalCompleteProfileStep3Module.swift */,
-				CA4B9D782781992C0070272F /* MarshalCompleteProfileStep4Module.swift */,
-				CA4B9D7A27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift */,
-				CA4B9D7C27819EC20070272F /* MarshalCompleteProfileStep6Module.swift */,
+				CA4B9D72278057890070272F /* UploadImageStep.swift */,
+				CA4B9D74278189D20070272F /* UserLevelModule.swift */,
+				CA4B9D76278193B80070272F /* PertianImformationStep.swift */,
+				CA4B9D782781992C0070272F /* EnglishInformationStep.swift */,
+				CA4B9D7A27819C1E0070272F /* WorkInformationStep.swift */,
+				CA4B9D7C27819EC20070272F /* EducationInformationStep.swift */,
 				540B0B96279451950001F3C0 /* UserLevelRow.swift */,
 			);
 			path = completeProfile;
@@ -502,23 +502,23 @@
 				B8F29240277B1A7C004F75A4 /* Home.swift in Sources */,
 				5489A4EB2792EEED0068E122 /* WalletDeposit.swift in Sources */,
 				B8D2C1812779D29600F0C207 /* User.swift in Sources */,
-				CA4B9D75278189D20070272F /* MarshalCompleteProfileStep2Module.swift in Sources */,
+				CA4B9D75278189D20070272F /* UserLevelModule.swift in Sources */,
 				5421EA472790288800DCA41B /* WalletRowModule.swift in Sources */,
 				B8AE1F9C2775F7690090125D /* Splash.swift in Sources */,
 				5482F9B3279413F9004772A4 /* MarshalWalletTabBar.swift in Sources */,
-				CA4B9D732780578A0070272F /* MarshalCompleteProfileStep1Module.swift in Sources */,
+				CA4B9D732780578A0070272F /* UploadImageStep.swift in Sources */,
 				B818C8402784886500740769 /* Photo.swift in Sources */,
 				5421EA4B27902FC800DCA41B /* WalletModel.swift in Sources */,
 				CA9FB8D7277C685E006D411C /* MarshalTabBar.swift in Sources */,
 				CA745B9A278457F7009CF62A /* MarshalTrendTabPageModule.swift in Sources */,
-				CA4B9D7D27819EC20070272F /* MarshalCompleteProfileStep6Module.swift in Sources */,
+				CA4B9D7D27819EC20070272F /* EducationInformationStep.swift in Sources */,
 				B8AE1F932775F6430090125D /* CountryList.swift in Sources */,
 				B818C83E2784879700740769 /* ImagePicker.swift in Sources */,
 				B8AE1FA22775F9DA0090125D /* Status.swift in Sources */,
 				CA9FB8DD277CE9D8006D411C /* MarshalTrendingListEachRow.swift in Sources */,
 				CAD09B3D277DB1EF000BFC13 /* MarshalTopBarType01.swift in Sources */,
 				B8AE1FCD27760F230090125D /* CallApi.swift in Sources */,
-				CA4B9D7B27819C1E0070272F /* MarshalCompleteProfileStep5Module.swift in Sources */,
+				CA4B9D7B27819C1E0070272F /* WorkInformationStep.swift in Sources */,
 				B8AE1F912775F60D0090125D /* MarshalPhoneNumber.swift in Sources */,
 				CA9FB8DB277C9661006D411C /* RoundedCorners.swift in Sources */,
 				5421EA4927902ADC00DCA41B /* WalletCurrency.swift in Sources */,
@@ -528,8 +528,8 @@
 				B8AE1FA02775F9A90090125D /* CountryCodes.swift in Sources */,
 				B8AE1FCF2776110D0090125D /* NetworkManeger.swift in Sources */,
 				B8AE1F972775F6D80090125D /* Submit.swift in Sources */,
-				CA4B9D792781992C0070272F /* MarshalCompleteProfileStep4Module.swift in Sources */,
-				CA4B9D77278193B80070272F /* MarshalCompleteProfileStep3Module.swift in Sources */,
+				CA4B9D792781992C0070272F /* EnglishInformationStep.swift in Sources */,
+				CA4B9D77278193B80070272F /* PertianImformationStep.swift in Sources */,
 				B8AE1FD6277618E60090125D /* FailedMarshal.swift in Sources */,
 				B8F6D2D827871F1E00121964 /* Currency.swift in Sources */,
 				5489A4EF2792FD3E0068E122 /* WalletWithdraw.swift in Sources */,

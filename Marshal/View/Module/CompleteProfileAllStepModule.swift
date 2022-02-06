@@ -21,17 +21,17 @@ struct CompleteProfileAllStepModule: View {
                 
                 switch stepNomber{
                 case 1:
-                    MarshalCompleteProfileStep1Module()
+                    UploadImageStep()
                 case 2:
-                    MarshalCompleteProfileStep2Module()
+                    UserLevelModule()
                 case 3:
-                    MarshalCompleteProfileStep3Module()
+                    PertianImformationStep()
                 case 4:
-                    MarshalCompleteProfileStep4Module()
+                    EnglishInformationStep()
                 case 5:
-                    MarshalCompleteProfileStep5Module()
+                    WorkInformationStep()
                 case 6:
-                    MarshalCompleteProfileStep6Module()
+                    EducationInformationStep()
                     
                 default:
                     Text("")

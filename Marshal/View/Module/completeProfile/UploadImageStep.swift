@@ -8,7 +8,7 @@
 import SwiftUI
 import Mantis
 
-struct MarshalCompleteProfileStep1Module: View {
+struct UploadImageStep: View {
     
     @State var statusOfSubmitBottom : Status = .none
     @State var showImagePickerSheet : Bool = false
@@ -125,9 +125,9 @@ struct MarshalCompleteProfileStep1Module: View {
     }
 }
 
-struct MarshalCompleteProfileStep1Module_Previews: PreviewProvider {
+struct UploadImageStep_Previews: PreviewProvider {
     static var previews: some View {
-        MarshalCompleteProfileStep1Module()
+        UploadImageStep()
             .previewLayout(.sizeThatFits)
             .background(Color("marshal_darkGrey"))
     }
