@@ -25,13 +25,13 @@ struct MarshalTextField: View {
                 // TEXT
                 if showText {
                     Text(title)
-                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 16.0))
+                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
                         .foregroundColor(Color("marshal_White"))
                         .padding(.horizontal, 16.0)
                 }
                 //TEXTFIELD
                 TextField("", text: $text)
-                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 16.0))
+                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
                     .keyboardType(keyboardType)
                     .padding(.horizontal, 16.0)
                     //.multilineTextAlignment(.leading)

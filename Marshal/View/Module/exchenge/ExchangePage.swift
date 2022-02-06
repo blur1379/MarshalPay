@@ -17,7 +17,10 @@ struct ExchangePage: View {
     @State var amountForSell = ""
     @State var amountForBuy = ""
     @State var status : Status = .none
+    @State var statusOfBotton : Status = .none
     @State var pageIndex = 0
+    @State var showAlert = false
+    @State var textAlert = ""
     
     init(currencyId  : String) {
         self.currencyId = currencyId
@@ -254,7 +257,7 @@ struct ExchangePage: View {
             GeometryReader{geometry in
                 HStack{
                     HStack (spacing: 0) {
-                        Text("دلار")
+                        Text(currency.name)
                             .font(Font.custom("IRANSansMobileFaNum Bold", size: 16.0))
                             .padding(.horizontal, 16.0)
                             .foregroundColor(Color("marshal_red"))
@@ -298,9 +301,9 @@ struct ExchangePage: View {
                 Spacer()
             }
             
-            Submit(status: $status, title: "تایید") {
-                
-            }
+            Submit(status: $statusOfBotton, title: "تایید") {
+                exchange(false)
+            }.disabled(amountForSell == "" )
         }//:VSTACK
         .padding(8)
         .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color("marshal_red") , lineWidth: 1))
@@ -409,9 +412,9 @@ struct ExchangePage: View {
                 Spacer()
             }
             
-            Submit(status: $status, title: "تایید") {
-                
-            }
+            Submit(status: $statusOfBotton, title: "تایید") {
+                exchange(true)
+            }.disabled(amountForBuy == "")
         }//:VSTACK
         .padding(8)
         .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color("marshal_red") , lineWidth: 1))
@@ -440,7 +443,10 @@ struct ExchangePage: View {
                 Spacer()
             }//:VSTACK
             .padding()
-           
+            .disabled(statusOfBotton == .InProgress)
+            .alert(isPresented: $showAlert ) {
+                Alert(title: Text(""), message: Text(textAlert), dismissButton: .default(Text("باشه")) )
+            }
             .onAppear{
                 getWalletApi()
             }
@@ -451,16 +457,32 @@ struct ExchangePage: View {
     
     //MARK: -FUNCTION
     func convertToLastPriceBuy(_ firstPrice : String ,_ secendPrice: String)-> String{
-        let doubleFirstPrice : Double = Double(firstPrice) ?? 0.0
-        let doubleSecendPrice : Double = Double(secendPrice) ?? 0.0
+        let doubleFirstPrice : Double = Double(ConstantData().persianNumberToEnglish(text : firstPrice)) ?? 0.0
+        let doubleSecendPrice : Double = Double(ConstantData().persianNumberToEnglish(text : secendPrice)) ?? 0.0
         let lastedPrice = String(doubleFirstPrice * doubleSecendPrice)
         return ConstantData().decimalFormat(text: lastedPrice)
     }
+    
     func convertToLastPricesell(_ firstPrice : String ,_ secendPrice: String)-> String{
-        let doubleFirstPrice : Double = Double(firstPrice) ?? 0.0
-        let doubleSecendPrice : Double = Double(secendPrice) ?? 1.0
+        let doubleFirstPrice : Double = Double(ConstantData().persianNumberToEnglish(text : firstPrice))  ?? 0.0
+        let doubleSecendPrice : Double = Double(ConstantData().persianNumberToEnglish(text : secendPrice))  ?? 1.0
         let lastedPrice = String((doubleFirstPrice / doubleSecendPrice).isNaN ? 0 : (doubleFirstPrice / doubleSecendPrice))
         return ConstantData().decimalFormat(text: lastedPrice)
+    }
+    
+    func convertToLastPriceBuyDouble(_ firstPrice : String ,_ secendPrice: String)-> Double{
+        
+        let doubleFirstPrice : Double = Double(ConstantData().persianNumberToEnglish(text : firstPrice)) ?? 0.0
+        let doubleSecendPrice : Double = Double(ConstantData().persianNumberToEnglish(text : secendPrice)) ?? 0.0
+        let lastedPrice = doubleFirstPrice * doubleSecendPrice
+        return lastedPrice
+    }
+    
+    func convertToLastPricesellDouble(_ firstPrice : String ,_ secendPrice: String)-> Double{
+        let doubleFirstPrice : Double = Double(ConstantData().persianNumberToEnglish(text : firstPrice))  ?? 0.0
+        let doubleSecendPrice : Double = Double(ConstantData().persianNumberToEnglish(text : secendPrice))  ?? 1.0
+        let lastedPrice = (doubleFirstPrice / doubleSecendPrice).isNaN ? 0 : (doubleFirstPrice / doubleSecendPrice)
+        return lastedPrice
     }
     
     func getCurrencyInfo(){
@@ -476,8 +498,12 @@ struct ExchangePage: View {
                         if response.response?.statusCode == 200 || response.response?.statusCode == 201  {
                             currency = ConvertJsonToObject().convertJsonToCurrency(json["data"])
                             self.status = .Successful
+                       
+                            
                         }else{
                             status = .Failure
+                          
+                            
                         }
                         print("v1/users/validation-activation-code")
                         print(response.response?.statusCode ?? 0)
@@ -485,6 +511,7 @@ struct ExchangePage: View {
                         break
                     case let .failure(error):
                         status = .Failure
+                       
                         print(url)
                         if response.response != nil {
                             print(response.response?.statusCode ?? 0 )
@@ -495,6 +522,7 @@ struct ExchangePage: View {
                     }
                 }catch{
                     status = .Failure
+                    
                     print(url)
                     if response.response != nil {
                         print(response.response?.statusCode ?? 0)
@@ -524,6 +552,62 @@ struct ExchangePage: View {
         let amount = wallet.walletCurencies.first(where: {$0.currency._id == currencyId})?.getAmount() ?? "0"
         return amount
     }
+    
+    func exchange(_ exchangeToMarshal : Bool){
+        statusOfBotton = .InProgress
+        let url = "v1/change-currency-transactions/insert-transaction"
+        let parameters: [String: Any] = [
+            "action": exchangeToMarshal ? "toMarshal" : "fromMarshal",
+            "currency": currencyId,
+            "amount": exchangeToMarshal ? convertToLastPriceBuyDouble(amountForBuy, String(currency.currentValue)) : convertToLastPricesellDouble(amountForSell , String(currency.currentValue))
+        ]
+    AF.request(CallApi().baceUrl + url, method: .post, parameters: parameters ,  encoding: JSONEncoding.default){urlRequest in urlRequest.timeoutInterval = TimeInterval(CallApi().timeOut)}.responseJSON { response in
+            do {
+                switch response.result {
+                case .success :
+                    let json = try JSON(data: response.data!)
+                    print("------ send code")
+                    print(json)
+                    print("------- send code")
+                    if response.response?.statusCode == 200 || response.response?.statusCode == 201  {
+                        self.statusOfBotton = .Successful
+                        textAlert = "عملیات با موفقیت انجام شد"
+                        showAlert = true
+                    }else{
+                        statusOfBotton = .Failure
+                        textAlert = "مشکل در برقراری ارتباط"
+                        showAlert = true
+                    }
+                    print("v1/users/validation-activation-code")
+                    print(response.response?.statusCode ?? 0)
+                    
+                    break
+                case let .failure(error):
+                    statusOfBotton = .Failure
+                    textAlert = "مشکل در برقراری ارتباط"
+                    showAlert = true
+                    print(url)
+                    if response.response != nil {
+                        print(response.response?.statusCode ?? 0 )
+                    }
+                    print("failed")
+                    print(error)
+                    break
+                }
+            }catch{
+                statusOfBotton = .Failure
+                textAlert = "مشکل در برقراری ارتباط"
+                showAlert = true
+                print(url)
+                if response.response != nil {
+                    print(response.response?.statusCode ?? 0)
+                }
+                print("nil response")
+            }
+            
+        }
+    }
+    
     
 }
 //MARK: -PREVIEW

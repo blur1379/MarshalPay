@@ -8,6 +8,23 @@
 import Foundation
 import SwiftUI
 struct ConstantData {
+    
+    // pertian number -> english number
+    func persianNumberToEnglish(text: String) -> String {
+        var english : String = ""
+        let p1 = text.replacingOccurrences(of: "۱", with: "1")
+        let p2 = p1.replacingOccurrences(of: "۲", with: "2")
+        let p3 = p2.replacingOccurrences(of: "۳", with: "3")
+        let p4 = p3.replacingOccurrences(of: "۴", with: "4")
+        let p5 = p4.replacingOccurrences(of: "۵", with: "5")
+        let p6 = p5.replacingOccurrences(of: "۶", with: "6")
+        let p7 = p6.replacingOccurrences(of: "۷", with: "7")
+        let p8 = p7.replacingOccurrences(of: "۸", with: "8")
+        let p9 = p8.replacingOccurrences(of: "۹", with: "9")
+        english = p9.replacingOccurrences(of: "۰", with: "0")
+        return english
+    }
+    
     // string -> urlImage
     func stringToURLForImage(url: String) -> (URL) {
         let Url = CallApi().baceUrlDownload + url
