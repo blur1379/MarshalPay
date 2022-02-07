@@ -6,11 +6,12 @@
 //
 
 import Foundation
-class UserLevelModel : Identifiable{
+class UserLevelModel : Identifiable, ObservableObject{
     var _id = ""
     var name = ""
     var label = ""
     var description = ""
     var credit = 0
     var registerLevels = UserLevelPages()
+    @Published var selected = false
 }

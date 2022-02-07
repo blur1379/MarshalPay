@@ -13,31 +13,38 @@ struct UserLevelModule: View {
     @State var userLevels = [UserLevelModel]()
     let callApi = CallApi()
     var body: some View {
-        VStack(alignment: .center, spacing: 16.0) {
-            
-            Spacer().frame(height: 0.0)
+        ScrollView{
+            VStack(alignment: .center, spacing: 16.0) {
+                
+                Spacer().frame(height: 0.0)
 
-            Text("سطح کاربری خود را تعیین کنید")
-                .font(Font.custom("IRANSansMobileFaNum Medium", size: 24.0))
-                .foregroundColor(Color("marshal_White"))
-                .multilineTextAlignment(.trailing)
+                Text("سطح کاربری خود را تعیین کنید")
+                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 24.0))
+                    .foregroundColor(Color("marshal_White"))
+                    .multilineTextAlignment(.trailing)
+                    
+                ForEach(userLevels){ item in
+                    
+                    UserLevelRow(userLevel: item)
+//                        .onTapGesture {
+////                            userLevels.map({$0.selected = false})
+//
+//                        }
+                    
+                }
+
+                Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
+                    print("press")
+                }
                 
-            ForEach(userLevels){ item in
-                
-                UserLevelRow(userLevel: item)
-                
+                Spacer().frame(height: 4.0)
+     
+            }
+            .padding(.horizontal, 16.0)
+            .onAppear {
+                onCreate()
             }
 
-            Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
-                print("press")
-            }
-            
-            Spacer().frame(height: 4.0)
- 
-        }
-        .padding(.horizontal, 16.0)
-        .onAppear {
-            onCreate()
         }
     }
     func onCreate(){

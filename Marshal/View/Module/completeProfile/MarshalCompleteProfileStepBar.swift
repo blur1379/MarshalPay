@@ -13,8 +13,8 @@ struct MarshalCompleteProfileStepBar: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 0.0) {
-            
-                
+            Group{
+                Spacer()
                 Image(pages.imagesLevel ? "upload_Image_selected_ic": "upload_image_ic" )
                     .resizable()
                     .scaledToFit()
@@ -22,12 +22,18 @@ struct MarshalCompleteProfileStepBar: View {
                     .shadow(color: .black, radius: 4, y: pages.imagesLevel  ? 0 : 4)
 //                    .padding(.leading , 2)
                 
+            Spacer()
+            
                 Image(pages.englishLevel ? "english_information_selected_ic": "english_information_ic" )
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40, alignment: .center)
                     .shadow(color: .black, radius: 4, y: pages.englishLevel  ? 0 : 4)
                 
+            
+            Spacer()
+            }
+         
                 Image(pages.persianLevel  ? "pertian_information_selected_ic": "pertian_information_ic" )
                     .resizable()
                     .scaledToFit()
@@ -38,19 +44,20 @@ struct MarshalCompleteProfileStepBar: View {
 
         
             
-            
+            Spacer()
                 
                 Image(pages.jobLevel  ? "work_information_selected_ic": "work_information_ic" )
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40, alignment: .center)
                     .shadow(color: .black, radius: 4, y: pages.jobLevel  ? 0 : 4)
+            Spacer()
                 Image(pages.educationLevel ? "education_information_selected_ic": "education_information_ic" )
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40, alignment: .center)
                     .shadow(color: .black, radius: 4, y: pages.educationLevel  ? 0 : 4)
-            
+            Spacer()
     
         }
         .padding(16.0)

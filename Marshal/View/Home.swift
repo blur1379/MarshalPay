@@ -38,7 +38,7 @@ struct Home: View {
 
                         
                 case .Profile:
-                    CompleteProfileAllStepModule()
+                    UserLevelModule()
                     //.padding(.horizontal, 16.0)
                         .padding(.top, 16.0)
                                      
