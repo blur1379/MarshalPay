@@ -10,6 +10,10 @@
 		540B0B97279451950001F3C0 /* UserLevelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B0B96279451950001F3C0 /* UserLevelRow.swift */; };
 		540B0B9A279452940001F3C0 /* UserLevelPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B0B99279452940001F3C0 /* UserLevelPages.swift */; };
 		540B0B9C2794537F0001F3C0 /* UserLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B0B9B2794537F0001F3C0 /* UserLevelModel.swift */; };
+		540F659627B396EC007756A9 /* ProfileModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F659527B396EC007756A9 /* ProfileModule.swift */; };
+		540F659927B3DA6F007756A9 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 540F659827B3DA6F007756A9 /* URLImage */; };
+		540F659B27B3DA6F007756A9 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 540F659A27B3DA6F007756A9 /* URLImageStore */; };
+		540F659D27B3DB24007756A9 /* DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F659C27B3DB24007756A9 /* DownloadImage.swift */; };
 		5421EA4527900B6E00DCA41B /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5421EA4427900B6E00DCA41B /* RefreshableScrollView.swift */; };
 		5421EA472790288800DCA41B /* WalletRowModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5421EA462790288800DCA41B /* WalletRowModule.swift */; };
 		5421EA4927902ADC00DCA41B /* WalletCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5421EA4827902ADC00DCA41B /* WalletCurrency.swift */; };
@@ -20,6 +24,9 @@
 		5489A4EB2792EEED0068E122 /* WalletDeposit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489A4EA2792EEED0068E122 /* WalletDeposit.swift */; };
 		5489A4ED2792F01B0068E122 /* WalletTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489A4EC2792F01B0068E122 /* WalletTransfer.swift */; };
 		5489A4EF2792FD3E0068E122 /* WalletWithdraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489A4EE2792FD3E0068E122 /* WalletWithdraw.swift */; };
+		54D2481527B262A400538D47 /* InvestmentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D2481427B262A400538D47 /* InvestmentModule.swift */; };
+		54D2481C27B264A500538D47 /* SwiftUIGIF in Frameworks */ = {isa = PBXBuildFile; productRef = 54D2481B27B264A500538D47 /* SwiftUIGIF */; };
+		54D2482027B265A900538D47 /* giif2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 54D2481F27B265A900538D47 /* giif2.gif */; };
 		B80FC7C027858CA100EAEB40 /* ConstantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FC7BF27858CA100EAEB40 /* ConstantData.swift */; };
 		B81807F52782F60300E67616 /* ExchangeTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81807F42782F60200E67616 /* ExchangeTopBar.swift */; };
 		B818C83E2784879700740769 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B818C83D2784879700740769 /* ImagePicker.swift */; };
@@ -91,6 +98,8 @@
 		540B0B96279451950001F3C0 /* UserLevelRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelRow.swift; sourceTree = "<group>"; };
 		540B0B99279452940001F3C0 /* UserLevelPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelPages.swift; sourceTree = "<group>"; };
 		540B0B9B2794537F0001F3C0 /* UserLevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelModel.swift; sourceTree = "<group>"; };
+		540F659527B396EC007756A9 /* ProfileModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModule.swift; sourceTree = "<group>"; };
+		540F659C27B3DB24007756A9 /* DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImage.swift; sourceTree = "<group>"; };
 		5421EA4427900B6E00DCA41B /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		5421EA462790288800DCA41B /* WalletRowModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletRowModule.swift; sourceTree = "<group>"; };
 		5421EA4827902ADC00DCA41B /* WalletCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCurrency.swift; sourceTree = "<group>"; };
@@ -101,6 +110,8 @@
 		5489A4EA2792EEED0068E122 /* WalletDeposit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDeposit.swift; sourceTree = "<group>"; };
 		5489A4EC2792F01B0068E122 /* WalletTransfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTransfer.swift; sourceTree = "<group>"; };
 		5489A4EE2792FD3E0068E122 /* WalletWithdraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletWithdraw.swift; sourceTree = "<group>"; };
+		54D2481427B262A400538D47 /* InvestmentModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentModule.swift; sourceTree = "<group>"; };
+		54D2481F27B265A900538D47 /* giif2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giif2.gif; sourceTree = "<group>"; };
 		B80FC7BF27858CA100EAEB40 /* ConstantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantData.swift; sourceTree = "<group>"; };
 		B81807F42782F60200E67616 /* ExchangeTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTopBar.swift; sourceTree = "<group>"; };
 		B818C83D2784879700740769 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -175,6 +186,9 @@
 				B818C8452784B65C00740769 /* Mantis in Frameworks */,
 				B8AE1FC827760F000090125D /* SwiftyJSON in Frameworks */,
 				B8AE1FCB27760F0B0090125D /* Alamofire in Frameworks */,
+				540F659927B3DA6F007756A9 /* URLImage in Frameworks */,
+				540F659B27B3DA6F007756A9 /* URLImageStore in Frameworks */,
+				54D2481C27B264A500538D47 /* SwiftUIGIF in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,12 +205,29 @@
 			path = enum;
 			sourceTree = "<group>";
 		};
+		540F659427B396D4007756A9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				540F659527B396EC007756A9 /* ProfileModule.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		5421EA4327900B3700DCA41B /* refreshebleScrollView */ = {
 			isa = PBXGroup;
 			children = (
 				5421EA4427900B6E00DCA41B /* RefreshableScrollView.swift */,
 			);
 			path = refreshebleScrollView;
+			sourceTree = "<group>";
+		};
+		54D2481327B2627800538D47 /* Investment */ = {
+			isa = PBXGroup;
+			children = (
+				54D2481427B262A400538D47 /* InvestmentModule.swift */,
+				54D2481F27B265A900538D47 /* giif2.gif */,
+			);
+			path = Investment;
 			sourceTree = "<group>";
 		};
 		B81807F22782F3BC00E67616 /* completeProfile */ = {
@@ -231,6 +262,7 @@
 				B818C83D2784879700740769 /* ImagePicker.swift */,
 				B818C83F2784886500740769 /* Photo.swift */,
 				B818C8412784B50800740769 /* ImageCropper.swift */,
+				540F659C27B3DB24007756A9 /* DownloadImage.swift */,
 			);
 			path = photo;
 			sourceTree = "<group>";
@@ -291,6 +323,8 @@
 		B8AE1F982775F6FB0090125D /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				540F659427B396D4007756A9 /* Profile */,
+				54D2481327B2627800538D47 /* Investment */,
 				5421EA4327900B3700DCA41B /* refreshebleScrollView */,
 				B886F26D278DE2760083ADC7 /* wallet */,
 				B81807F22782F3BC00E67616 /* completeProfile */,
@@ -404,6 +438,9 @@
 				B8AE1FC727760F000090125D /* SwiftyJSON */,
 				B8AE1FCA27760F0B0090125D /* Alamofire */,
 				B818C8442784B65C00740769 /* Mantis */,
+				54D2481B27B264A500538D47 /* SwiftUIGIF */,
+				540F659827B3DA6F007756A9 /* URLImage */,
+				540F659A27B3DA6F007756A9 /* URLImageStore */,
 			);
 			productName = Marshal;
 			productReference = B82313DB2775F0EA00743A42 /* Marshal.app */;
@@ -437,6 +474,8 @@
 				B8AE1FC627760F000090125D /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				B8AE1FC927760F0B0090125D /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B818C8432784B65C00740769 /* XCRemoteSwiftPackageReference "Mantis" */,
+				54D2481A27B264A500538D47 /* XCRemoteSwiftPackageReference "swiftui-gif" */,
+				540F659727B3DA6F007756A9 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = B82313DC2775F0EA00743A42 /* Products */;
 			projectDirPath = "";
@@ -453,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8AE1FBE27760ECE0090125D /* Roboto Italic.ttf in Resources */,
+				54D2482027B265A900538D47 /* giif2.gif in Resources */,
 				B8AE1FB527760ECE0090125D /* IRANSansMobileNoEn UltraLight.ttf in Resources */,
 				B8AE1FB627760ECE0090125D /* IRANSansMobileNoEn Medium.ttf in Resources */,
 				B8AE1FBD27760ECE0090125D /* IRANSansMobileFaNum Light.ttf in Resources */,
@@ -488,6 +528,7 @@
 				CA4B9D7F27830AB80070272F /* CompleteProfileAllStepModule.swift in Sources */,
 				B80FC7C027858CA100EAEB40 /* ConstantData.swift in Sources */,
 				B88AFABF278883DC00E6B450 /* ExchangeList.swift in Sources */,
+				540F659D27B3DB24007756A9 /* DownloadImage.swift in Sources */,
 				5489A4E92792EB830068E122 /* WalletPriceList.swift in Sources */,
 				B8AE1F952775F6720090125D /* MarshalTextField.swift in Sources */,
 				5482F9B527941570004772A4 /* WalletPages.swift in Sources */,
@@ -502,9 +543,11 @@
 				B8F29240277B1A7C004F75A4 /* Home.swift in Sources */,
 				5489A4EB2792EEED0068E122 /* WalletDeposit.swift in Sources */,
 				B8D2C1812779D29600F0C207 /* User.swift in Sources */,
+				540F659627B396EC007756A9 /* ProfileModule.swift in Sources */,
 				CA4B9D75278189D20070272F /* UserLevelModule.swift in Sources */,
 				5421EA472790288800DCA41B /* WalletRowModule.swift in Sources */,
 				B8AE1F9C2775F7690090125D /* Splash.swift in Sources */,
+				54D2481527B262A400538D47 /* InvestmentModule.swift in Sources */,
 				5482F9B3279413F9004772A4 /* MarshalWalletTabBar.swift in Sources */,
 				CA4B9D732780578A0070272F /* UploadImageStep.swift in Sources */,
 				B818C8402784886500740769 /* Photo.swift in Sources */,
@@ -747,6 +790,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		540F659727B3DA6F007756A9 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		54D2481A27B264A500538D47 /* XCRemoteSwiftPackageReference "swiftui-gif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-gif.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		B818C8432784B65C00740769 /* XCRemoteSwiftPackageReference "Mantis" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/guoyingtao/Mantis.git";
@@ -774,6 +833,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		540F659827B3DA6F007756A9 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 540F659727B3DA6F007756A9 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		540F659A27B3DA6F007756A9 /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 540F659727B3DA6F007756A9 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+		54D2481B27B264A500538D47 /* SwiftUIGIF */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54D2481A27B264A500538D47 /* XCRemoteSwiftPackageReference "swiftui-gif" */;
+			productName = SwiftUIGIF;
+		};
 		B818C8442784B65C00740769 /* Mantis */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B818C8432784B65C00740769 /* XCRemoteSwiftPackageReference "Mantis" */;

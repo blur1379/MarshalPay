@@ -6,10 +6,10 @@
 //
 
 import Foundation
-struct User {
-    var userName : String
-    var firstName : (fa: String, en: String)
-    var lastName : (fa: String, en: String)
-    var information : Information
+class User {
+    var userName : String = ""
+    var firstName : (fa: String, en: String) = ("" , "")
+    var lastName : (fa: String, en: String) = ("" , "")
+    var information : Information = Information()
     
 }

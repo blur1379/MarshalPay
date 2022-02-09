@@ -6,10 +6,9 @@
 //
 
 import SwiftUI
-
+import Combine
 struct MarshalTextField: View {
     //MARK: - PROPERTIS
-  
     @State var showText : Bool = true
     @Binding var text: String
     let title : String
@@ -17,7 +16,8 @@ struct MarshalTextField: View {
     var keyboardType : UIKeyboardType = .default
     var limitedItem : Int?
     var heightOfBox : CGFloat = 56
-    
+    var numberType : Bool = false
+    var hasPlasAndMinus = false
     //MARK: - BODY
     var body: some View {
         ZStack{
@@ -30,35 +30,69 @@ struct MarshalTextField: View {
                         .padding(.horizontal, 16.0)
                 }
                 //TEXTFIELD
-                TextField("", text: $text)
-                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
-                    .keyboardType(keyboardType)
-                    .padding(.horizontal, 16.0)
+                HStack(spacing: 0 ){
+                    if hasPlasAndMinus{
+                        VStack{
+                            Spacer()
+                            Image(systemName: "plus")
+                                .frame(width: 4, height: 4, alignment: .center)
+                                .padding(.horizontal, 2)
+                                .foregroundColor(Color("marshal_red"))
+                            Spacer()
+                            Rectangle()
+                                .frame(width: 24,height: 1)
+                            Spacer()
+                            Image(systemName: "minus")
+                                .frame(width: 4, height: 4, alignment: .center)
+                                .padding(.horizontal , 2)
+                                .foregroundColor(Color("marshal_red"))
+                            Spacer()
+                        }
+                        Rectangle()
+                            .frame(width: 1,height: heightOfBox)
+
+                    }
+                                        
+                    TextField("", text: $text)
+                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
+                        .keyboardType(keyboardType)
+                        .padding(.horizontal, 16.0)
                     //.multilineTextAlignment(.leading)
-                    .foregroundColor(Color("marshal_White"))
-                    .onChange(of: text) { newValue in
-                        if text.isEmpty {
-                            showText = true
-                        }else{
-                            showText = false
-                            if limitedItem != 0 {
-                                if limitedItem != nil {
-                                    if text.count > limitedItem! {
-                                        text.removeLast()
+                        .foregroundColor(Color("marshal_White"))
+                        .onReceive(Just(text)) { newValue in
+                            if numberType{
+                                let filtered = newValue.filter { "0123456789.۰۱۲۳۴۵۶۷۸۹".contains($0) }
+                                if filtered != newValue {
+                                    self.text = filtered
+                                }
+                            }
+                            
+                        }
+                        .onChange(of: text) { newValue in
+                            if text.isEmpty {
+                                showText = true
+                            }else{
+                                showText = false
+                                if limitedItem != 0 {
+                                    if limitedItem != nil {
+                                        if text.count > limitedItem! {
+                                            text.removeLast()
+                                        }
                                     }
                                 }
                             }
-                        }
-                        
-                    }//: ONCHANGE
+                            
+                        }//: ONCHANGE
+                }
+             
             }//:ZSTACK
-
+            
             .frame(height: heightOfBox, alignment: .center)
             .background(Color("marshal_surfGrey"))
             .cornerRadius(12)
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color.white, lineWidth: 0.5)
-            
+                     
             )
             .animation(.easeOut, value: showText)
             
@@ -76,18 +110,18 @@ struct MarshalTextField: View {
                         .background(Color("marshal_surfGrey"))
                         .cornerRadius(8.0)
                         .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color("marshal_White"), lineWidth:0.5)
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(Color("marshal_White"), lineWidth:0.5)
                         )
                 }
             }
             .padding(.horizontal, 16.0)
-            .offset(y: -(heightOfBox * 3/7))
+            .offset(y: -(heightOfBox * 4/7))
             .animation(.easeIn, value: showText)
-
+            
             
         }//: ZSTACK
-    
+        
     }
 }
 //MARK: - PREVIEW

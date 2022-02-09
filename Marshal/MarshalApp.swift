@@ -13,6 +13,7 @@ struct MarshalApp: App {
         WindowGroup {
 //           Splash()
             Home()
+//            ProfileModule()
         }
     }
 }

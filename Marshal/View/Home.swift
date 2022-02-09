@@ -43,9 +43,7 @@ struct Home: View {
                         .padding(.top, 16.0)
                                      
                 case .Invest:
-                    VStack{
-                        
-                    }
+                    InvestmentModule()
                 }
                     Divider()
                         .frame(height: 1.0).background(Color("marshal_red"))

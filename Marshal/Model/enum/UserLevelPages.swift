@@ -6,10 +6,17 @@
 //
 
 import Foundation
-class UserLevelPages {
-    var persianLevel = false
-    var englishLevel = false
-    var imagesLevel = false
-    var educationLevel = false
-    var jobLevel = false
+class UserLevelPages : ObservableObject {
+    @Published var persianLevel = false
+    @Published var englishLevel = false
+    @Published var imagesLevel = false
+    @Published var educationLevel = false
+    @Published var jobLevel = false
+    func clearData(){
+        persianLevel = false
+        englishLevel = false
+        imagesLevel = false
+        educationLevel = false
+        jobLevel = false
+    }
 }
