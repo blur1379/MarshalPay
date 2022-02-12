@@ -13,7 +13,30 @@ struct MarshalTabBar: View {
     var body: some View {
         
         HStack(alignment: .center, spacing: 0) {
-            
+
+            Button(action: {
+                //write code 😎
+                pages = .Walet
+                showTabBar = true
+            }) {
+                
+                VStack (alignment: .center, spacing: 4.0){
+                    Image( pages == .Walet ? "kifpol_pink" : "kifpol")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 32, height: 32, alignment: .center)
+                        .foregroundColor(Color("marshal_White"))
+                    if pages == .Walet {
+                        Text("کیف پول")
+                            .foregroundColor(Color("marshal_red"))
+                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
+                    }
+                    
+                    
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                
+            }
             
             Button(action: {
                 //write code 😎
@@ -22,14 +45,14 @@ struct MarshalTabBar: View {
             }) {
                 
                 VStack (alignment: .center, spacing: 4.0){
-                    Image("sarmaye")
+                    Image(pages == .Invest ? "sarmaye_pink" : "sarmaye")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 32, height: 32, alignment: .center)
+                        .frame( height: 32, alignment: .center)
                         .foregroundColor(Color("marshal_White"))
                     if pages == .Invest{
                         Text("سرمایه گذاری")
-                            .foregroundColor(Color("marshal_White"))
+                            .foregroundColor(Color("marshal_red"))
                             .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
                     }
                     
@@ -40,96 +63,13 @@ struct MarshalTabBar: View {
             }
             
             
-            
-            
-            //Spacer()
-            
-            
-            
             Button(action: {
-                //write code 😎
-               
-                pages = .Profile
-                showTabBar = true
-                
-            }) {
-                
-                VStack (alignment: .center, spacing: 4.0){
-                    Image("icon_account_24dp")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32, alignment: .center)
-                        .foregroundColor(Color("marshal_White"))
-                    if pages == .Profile{
-                        Text("کاربر")
-                            .foregroundColor(Color("marshal_White"))
-                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
-                    }
-                }
-                .frame(minWidth: 0, maxWidth: .infinity)
-                
-            }
-            
-            //Spacer()
-            
-            Button(action: {
-                //write code 😎
-                pages = .Walet
-                showTabBar = true
-            }) {
-                
-                VStack (alignment: .center, spacing: 4.0){
-                    Image("kifpol")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32, alignment: .center)
-                        .foregroundColor(Color("marshal_White"))
-                    if pages == .Walet {
-                        Text("کیف پول")
-                            .foregroundColor(Color("marshal_White"))
-                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
-                    }
-                    
-                    
-                }
-                .frame(minWidth: 0, maxWidth: .infinity)
-                
-            }
-            
-            //Spacer()
-            
-            Button(action: {
-                //write code 😎
-                pages = .History
-                showTabBar = true
-            }) {
-                
-                VStack (alignment: .center, spacing: 4.0){
-                    Image("tarakonesh")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32, alignment: .center)
-                        .foregroundColor(Color("marshal_White"))
-                    if pages == .History {
-                        Text("بازار")
-                            .foregroundColor(Color("marshal_White"))
-                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
-                    }
-                }
-                .frame(minWidth: 0, maxWidth: .infinity)
-                
-            }
-            
-            //Spacer()
-            
-            Button(action: {
-                //write code 😎
                 pages = .Exchange
                 showTabBar = true
             }) {
                 
                 VStack (alignment: .center, spacing: 4.0){
-                    Image("dolar")
+                    Image( pages == .Exchange ? "dolar_pink" : "dolar")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 32, height: 32, alignment: .center)
@@ -138,7 +78,7 @@ struct MarshalTabBar: View {
                     if pages == .Exchange {
                         
                         Text("صرافی")
-                            .foregroundColor(Color("marshal_White"))
+                            .foregroundColor(Color("marshal_red"))
                             .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
                         
                         
@@ -149,7 +89,49 @@ struct MarshalTabBar: View {
                 
             }
             
-            //Spacer()
+            Button(action: {
+                //write code 😎
+                pages = .History
+                showTabBar = true
+            }) {
+                
+                VStack (alignment: .center, spacing: 4.0){
+                    Image(pages == .History ? "tarakonesh_pink" : "tarakonesh")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 32, height: 32, alignment: .center)
+                        .foregroundColor(Color("marshal_White"))
+                    if pages == .History {
+                        Text("تاریخچه")
+                            .foregroundColor(Color("marshal_red"))
+                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
+                    }
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                
+            }
+         
+            Button(action: {
+                  pages = .Profile
+                showTabBar = true
+                
+            }) {
+                
+                VStack (alignment: .center, spacing: 4.0){
+                    Image(pages == .Profile ? "p_pink" : "p")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 32, height: 32, alignment: .center)
+                        .foregroundColor(Color("marshal_White"))
+                    if pages == .Profile{
+                        Text("کاربر")
+                            .foregroundColor(Color("marshal_red"))
+                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
+                    }
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                
+            }
             
             
         }

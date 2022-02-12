@@ -18,6 +18,7 @@ struct MarshalTextField: View {
     var heightOfBox : CGFloat = 56
     var numberType : Bool = false
     var hasPlasAndMinus = false
+    
     //MARK: - BODY
     var body: some View {
         ZStack{
@@ -35,7 +36,9 @@ struct MarshalTextField: View {
                         VStack{
                             Spacer()
                             Image(systemName: "plus")
-                                .frame(width: 4, height: 4, alignment: .center)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 10, height: 10, alignment: .center)
                                 .padding(.horizontal, 2)
                                 .foregroundColor(Color("marshal_red"))
                             Spacer()
@@ -43,7 +46,9 @@ struct MarshalTextField: View {
                                 .frame(width: 24,height: 1)
                             Spacer()
                             Image(systemName: "minus")
-                                .frame(width: 4, height: 4, alignment: .center)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 10, height: 10, alignment: .center)
                                 .padding(.horizontal , 2)
                                 .foregroundColor(Color("marshal_red"))
                             Spacer()
@@ -103,16 +108,13 @@ struct MarshalTextField: View {
                 if !showText{
                     //: TEXT TITLE
                     Text(title)
-                        .padding(.horizontal, 16.0)
+                        .padding(.horizontal, 8)
                         .padding(.vertical, 4.0)
                         .foregroundColor(Color("marshal_White"))
                         .font(Font.custom("IRANSansMobileFaNum Light", size: 10))
                         .background(Color("marshal_surfGrey"))
                         .cornerRadius(8.0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 12)
-                                .stroke(Color("marshal_White"), lineWidth:0.5)
-                        )
+                        
                 }
             }
             .padding(.horizontal, 16.0)

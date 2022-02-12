@@ -22,8 +22,8 @@ struct WalletDeposit: View {
                     .foregroundColor(Color("marshal_White"))
                     
                 Text("عکس کارت ملی خود را وارد کنید")
-                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 16.0))
-                    .foregroundColor(Color("marshal_White"))
+                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
+                    .foregroundColor(Color("marshal_gray"))
             }
             .frame(width: UIScreen.main.bounds.width - 32, height: (UIScreen.main.bounds.width - 32) * 2/3)
             .background(Color("marshal_surfGrey"))

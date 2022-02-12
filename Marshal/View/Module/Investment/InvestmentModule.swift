@@ -17,7 +17,7 @@ struct InvestmentModule: View {
         ScrollView(showsIndicators: false){
             VStack(spacing: 18){
                 // sarmaye gozari gif
-                GIFImage(name: "giif2")
+                GIFImage(name: "marshal")
                     .frame(height: 200)
                     .overlay(RoundedRectangle(cornerRadius: 12)
                                 .stroke(Color("marshal_red"), lineWidth: 0.5)

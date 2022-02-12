@@ -22,6 +22,7 @@ struct ProfileModule: View {
                 Image("icon_badge_24dp")
                     .resizable()
                     .frame(width: 40, height: 40, alignment: .center)
+                    .offset(y: -3)
                 
                 
                 Spacer()
@@ -31,27 +32,46 @@ struct ProfileModule: View {
                         .padding(.horizontal, 16.0)
                         .multilineTextAlignment(.trailing)
                         .foregroundColor(Color("marshal_White"))
+                  
                     
-                    Text("ویرایش")
-                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
-                        .padding(.horizontal, 16.0)
-                        .multilineTextAlignment(.trailing)
-                        .foregroundColor(Color("marshal_red"))
+                  
                 }
                 .padding(.top)
                 
-                if user.information.profileImage != "" {
-                    DownloadImage(imageName: user.information.profileImage)
-                        .frame(width: 70, height: 70, alignment: .center)
-                        .offset(y: -28)
+                VStack{
                     
-                }else{
-                    Image("profile")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 70, height: 70, alignment: .center)
-                        .offset(y: -28)
+                    if user.information.profileImage != "" {
+                        DownloadImage(imageName: user.information.profileImage)
+                            .frame(width: 70, height: 70, alignment: .center)
+                        
+                        
+                    }else{
+                        Image("profile_defult")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 70, height: 70, alignment: .center)
+                            
+                    }
+                    
+                    HStack{
+                        Text("ویرایش")
+                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
+                            .padding(.horizontal, 18)
+                            .padding(.vertical , 8)
+                            .multilineTextAlignment(.trailing)
+                            .foregroundColor(Color("marshal_red"))
+                    }
+                   
+                    .background(Color("marshal_surfGrey"))
+                    .cornerRadius(12)
+                    .overlay(RoundedRectangle(cornerRadius: 12)
+                                .stroke(Color("marshal_red"), lineWidth: 0.5)
+                             
+                    )
+                    .shadow(color: .black, radius: 4, y: 4)
+                    .padding(.top)
                 }
+                .offset(y: -28)
             }
             .padding(.horizontal, 30)
             HStack{
@@ -61,7 +81,7 @@ struct ProfileModule: View {
                     .frame(minWidth: 0, maxWidth: .infinity)
                 Text("سطح کاربری ")
                     .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
-                    .padding(.horizontal, 16.0)
+                    .padding(.horizontal, 8)
                     .multilineTextAlignment(.trailing)
                     .foregroundColor(Color("marshal_White"))
                 
@@ -70,19 +90,20 @@ struct ProfileModule: View {
                     .foregroundColor(.white)
                     .frame(minWidth: 0, maxWidth: .infinity)
                 
-            }
+            }.offset(y: -12)
             
             HStack{
                 Spacer()
-                Text("ارتقا سیلور")
+                Text(user.information.userLevel.label)
                     .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
                     .padding(.horizontal, 16.0)
                     .padding()
+                    .padding(.top)
                     .multilineTextAlignment(.trailing)
                     .foregroundColor(Color("marshal_White"))
                 Spacer()
             }.background(Image("backforupgrate").resizable())
-            
+                .offset(y: -12)
         }.background(Color("marshal_darkGrey").cornerRadius(12))
     }
     
@@ -234,7 +255,7 @@ struct ProfileModule: View {
                     .padding()
                     .multilineTextAlignment(.trailing)
             }
-        }
+        }.frame(minWidth: 0, maxWidth: .infinity)
         
         
     }
@@ -328,7 +349,7 @@ struct ProfileModule: View {
                         .multilineTextAlignment(.trailing)
                         .foregroundColor(Color("marshal_red"))
                 }
-            }
+            }.frame(minWidth: 0, maxWidth: .infinity)
             VStack{
                 HStack{
                     Text("last name ")
@@ -414,7 +435,7 @@ struct ProfileModule: View {
                 }
                 
                 
-            }
+            }.frame(minWidth: 0, maxWidth: .infinity)
         }//:HSTACK
     }
     
@@ -505,7 +526,7 @@ struct ProfileModule: View {
                         .foregroundColor(Color("marshal_White"))
                        
                 }
-            }
+            }.frame(minWidth: 0, maxWidth: .infinity)
             VStack{
                 HStack{
                     Text(user.lastName.fa)
@@ -594,7 +615,7 @@ struct ProfileModule: View {
                 }
                 
                 
-            }
+            }.frame(minWidth: 0, maxWidth: .infinity)
         }//:HSTACK
     }
     
@@ -623,7 +644,7 @@ struct ProfileModule: View {
                 
                 Text(user.information.workPlaceAddress.fa)
                     .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
-                    .foregroundColor(Color("marshal_White"))
+                    .foregroundColor(Color("marshal_red"))
                     .padding(.horizontal, 16.0)
                     .padding(.bottom)
                     .padding()
@@ -644,7 +665,7 @@ struct ProfileModule: View {
                 
                 Text(user.information.workPlaceTelephone)
                     .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
-                    .foregroundColor(Color("marshal_White"))
+                    .foregroundColor(Color("marshal_red"))
                     .padding(.horizontal, 16.0)
                     .padding(.bottom)
                     .padding()
@@ -652,6 +673,7 @@ struct ProfileModule: View {
                 
             }
         }//:VSTACK
+        .frame(minWidth: 0, maxWidth: .infinity)
     }
     
     var educationInformation : some View {
@@ -705,6 +727,7 @@ struct ProfileModule: View {
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
                         .foregroundColor(Color("marshal_red"))
                         .padding(.horizontal, 16.0)
+                        .padding(.vertical, 16)
                         .multilineTextAlignment(.trailing)
                     
                     Spacer()
@@ -729,6 +752,7 @@ struct ProfileModule: View {
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
                         .foregroundColor(Color("marshal_White"))
                         .padding(.horizontal, 16.0)
+                        .padding(.vertical, 16)
                         .multilineTextAlignment(.trailing)
                 
                
@@ -754,6 +778,7 @@ struct ProfileModule: View {
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
                         .foregroundColor(Color("marshal_White"))
                         .padding(.horizontal, 16.0)
+                        .padding(.vertical, 16)
                         .multilineTextAlignment(.trailing)
 
                 }//:HSTACK
@@ -761,6 +786,7 @@ struct ProfileModule: View {
             }
             
         }//:VSTACK
+        .frame(minWidth: 0, maxWidth: .infinity)
     }
     
     //MARK: -BODY
@@ -784,9 +810,9 @@ struct ProfileModule: View {
                         HStack{
                             Spacer()
                             Text("مشخصات کاربری")
-                                .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
+                                .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
                                 .padding(.horizontal, 16.0)
-                                .padding(.bottom)
+                                .padding(.bottom , 16)
                                 .padding()
                                 .multilineTextAlignment(.trailing)
                                 .foregroundColor(Color("marshal_White"))
@@ -795,30 +821,33 @@ struct ProfileModule: View {
                         .background(Image("backforinformation").resizable())
                         
                         stepBar
-                        
-                        Group{
-                            if pages.imagesLevel {
-                                identificationCardImage
+                        VStack{
+                            Group{
+                                if pages.imagesLevel {
+                                    identificationCardImage
+                                }
+                                if pages.englishLevel {
+                                    englishInformation
+                                }
+                                if pages.persianLevel{
+                                    pertianInformation
+                                }
                             }
-                            if pages.englishLevel {
-                                englishInformation
+                         
+                            Group{
+                                if pages.educationLevel{
+                                    educationInformation
+                                }
+                                
+                                if pages.jobLevel {
+                                    jabInformation
+                                }
                             }
-                            if pages.persianLevel{
-                                pertianInformation
-                            }
-                        }
+                          
+                            Spacer()
+                        }.background(Image("back_for_information").resizable())
+                            .padding(16)
                      
-                        Group{
-                            if pages.educationLevel{
-                                educationInformation
-                            }
-                            
-                            if pages.jobLevel {
-                                jabInformation
-                            }
-                        }
-                      
-                        Spacer()
                         
                     }
                     .background(Color("marshal_darkGrey"))

@@ -48,6 +48,7 @@ struct Home: View {
                         .frame(height: 1.0).background(Color("marshal_red"))
                     
                     MarshalTabBar(pages: $page)
+                        .padding(.bottom , 8)
 
                 }// VSTACK
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)

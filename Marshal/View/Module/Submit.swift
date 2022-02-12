@@ -13,22 +13,23 @@ struct Submit: View {
     var body: some View {
         Button(action:{onClick()}
         ) {
-            if status == .InProgress {
-                ProgressViewMarshal()
-                    .padding(.horizontal ,56)
-                    .frame(width: 200, height: 40)
-                    .foregroundColor(Color("marshal_White"))
-                    .background(Color("marshal_red"))
-                    .cornerRadius(12)
-            }else{
+            
+            ZStack{
+                if status == .InProgress {
+                    ProgressViewMarshal()
+                }
+              
                 Text(title)
-                    .padding(.horizontal ,56)
-                    .frame(width: 200,height: 40)
-                    .foregroundColor(Color("marshal_White"))
+                    .padding(.horizontal ,50)
+                    .padding(.vertical , 8)
+                    .foregroundColor(Color(status == .InProgress ? "marshal_red" : "marshal_White"))
                     .font(Font.custom("IRANSansMobileFaNum Bold", size: 18))
                     .background(Color("marshal_red"))
                     .cornerRadius(12)
             }
+           
+                
+           
         }.disabled(status == .InProgress)
     }
 }
