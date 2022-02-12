@@ -12,8 +12,8 @@ struct MarshalApp: App {
     var body: some Scene {
         WindowGroup {
 //           Splash()
-//            Home()
-            ProfileModule()
+            Home()
+//            ProfileModule()
         }
     }
 }

@@ -7,9 +7,11 @@
 
 import Foundation
 class User {
+    var _id : String = ""
     var userName : String = ""
-    var firstName : (fa: String, en: String) = ("" , "")
-    var lastName : (fa: String, en: String) = ("" , "")
+    var firstName = (fa: "" ,en: "")
+    var lastName = (fa: "" ,en: "")
+    var mobile = ""
     var information : Information = Information()
     
 }

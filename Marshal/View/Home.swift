@@ -13,7 +13,6 @@ struct Home: View {
     @State var page : HomePages = .Exchange
     //MARK: -BODY
     var body: some View {
-        NavigationView{
             ZStack{
                 // tap view
                 VStack(alignment: .center, spacing: 0.0) {
@@ -38,9 +37,9 @@ struct Home: View {
 
                         
                 case .Profile:
-                    UserLevelModule()
+//                    UserLevelModule()
+                    ProfileModule()
                     //.padding(.horizontal, 16.0)
-                        .padding(.top, 16.0)
                                      
                 case .Invest:
                     InvestmentModule()
@@ -61,8 +60,8 @@ struct Home: View {
             .onAppear{
                 showTabBar = true
             }
-            .navigationBarHidden(true)
-        }
+         
+        
         
     }
 }

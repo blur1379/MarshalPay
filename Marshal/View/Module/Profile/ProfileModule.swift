@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import Foundation
+import SwiftyJSON
+import Alamofire
 
 struct ProfileModule: View {
     //MARK: -PROPERTIES
     @StateObject var pages = UserLevelPages()
     @State var user = User()
-    
+    @State var status = Status.none
     
     var userCard : some View{
         VStack{
@@ -23,7 +26,7 @@ struct ProfileModule: View {
                 
                 Spacer()
                 VStack{
-                    Text(user.firstName.fa + user.lastName.fa)
+                    Text(user.firstName.fa + " " + user.lastName.fa)
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
                         .padding(.horizontal, 16.0)
                         .multilineTextAlignment(.trailing)
@@ -335,7 +338,7 @@ struct ProfileModule: View {
                         .padding()
                         .multilineTextAlignment(.trailing)
                         .foregroundColor(Color("marshal_White"))
-                    Text(user.lastName.fa)
+                    Text(user.lastName.en)
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
                         .padding(.bottom)
                         .padding()
@@ -595,55 +598,299 @@ struct ProfileModule: View {
         }//:HSTACK
     }
     
-    //MARK: -BODY
-    var body: some View {
-        ScrollView {
-            VStack(spacing : 0){
-                HStack{
-                    userCard
-                        .padding(.top,44)
-                        .padding(.horizontal, 24)
-                }
-                .background(Image("backforprofile").resizable())
+    var jabInformation : some View {
+        VStack{
+            if  user.information.identificationCardImage != "" {
+                DownloadImage(imageName: user.information.identificationCardImage)
+            }else{
+                Text("شما هنوز عکس مدارک خود را بارگذاری نکرده‌اید ")
+                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                    .foregroundColor(Color("marshal_White"))
+                    .padding(.horizontal, 16.0)
+                    .padding(.bottom)
+                    .padding()
+                    .multilineTextAlignment(.trailing)
+            }
+            if user.information.workPlaceAddress.fa != "" {
+                Text("آدرس محل کار :")
+                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                    .foregroundColor(Color("marshal_White"))
+                    .padding(.horizontal, 16.0)
+                    .padding(.bottom)
+                    .padding()
+                    .multilineTextAlignment(.trailing)
                 
-                harvestRow
                 
-                depositRow
-                
-                HStack{
-                    Spacer()
-                    Text("مشخصات کاربری")
-                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
-                        .padding(.horizontal, 16.0)
-                        .padding(.bottom)
-                        .padding()
-                        .multilineTextAlignment(.trailing)
-                        .foregroundColor(Color("marshal_White"))
-                    Spacer()
-                }
-                .background(Image("backforinformation").resizable())
-                
-                stepBar
-                if pages.imagesLevel {
-                    identificationCardImage
-                }
-                if pages.englishLevel {
-                    englishInformation
-                }
-                if pages.persianLevel{
-                    pertianInformation
-                }
-             
-                Spacer()
+                Text(user.information.workPlaceAddress.fa)
+                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                    .foregroundColor(Color("marshal_White"))
+                    .padding(.horizontal, 16.0)
+                    .padding(.bottom)
+                    .padding()
+                    .multilineTextAlignment(.trailing)
                 
             }
-            .background(Color("marshal_darkGrey"))
+            
+            
+            if user.information.workPlaceTelephone != "" {
+                Text("تلفن تماس:")
+                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                    .foregroundColor(Color("marshal_White"))
+                    .padding(.horizontal, 16.0)
+                    .padding(.bottom)
+                    .padding()
+                    .multilineTextAlignment(.trailing)
+                
+                
+                Text(user.information.workPlaceTelephone)
+                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                    .foregroundColor(Color("marshal_White"))
+                    .padding(.horizontal, 16.0)
+                    .padding(.bottom)
+                    .padding()
+                    .multilineTextAlignment(.trailing)
+                
+            }
+        }//:VSTACK
+    }
+    
+    var educationInformation : some View {
+        VStack{
+            if user.information.degreeOfEducationImage != "" {
+                DownloadImage(imageName: user.information.degreeOfEducationImage)
+                
+            }else {
+                Text("شما هنوز عکس مدارک خود را بارگذاری نکرده‌اید ")
+                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                    .foregroundColor(Color("marshal_White"))
+                    .padding(.horizontal, 16.0)
+                    .padding(.bottom)
+                    .padding()
+                    .multilineTextAlignment(.trailing)
+            }
+            
+            if user.information.educationStatus != "" {
+                HStack{
+                    
+                    Text(user.information.educationStatus)
+                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                        .foregroundColor(Color("marshal_White"))
+                        .padding(.horizontal, 16.0)
+                        .multilineTextAlignment(.trailing)
+
+                    Image("check-circle")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 15, height: 15, alignment: .center)
+                    
+                    
+                    Spacer()
+                    Text("وضعیت تحصیلی")
+                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                        .foregroundColor(Color("marshal_White"))
+                        .padding(.horizontal, 16.0)
+                        .multilineTextAlignment(.trailing)
+                    
+                   
+                    
+                    
+
+                }//:HSTACK
+            }
+            
+                HStack{
+                    
+                 
+                    Text("کارشناسی")
+                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                        .foregroundColor(Color("marshal_red"))
+                        .padding(.horizontal, 16.0)
+                        .multilineTextAlignment(.trailing)
+                    
+                    Spacer()
+                    
+                    Text("آخرین مدرک تحصیلی")
+                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                        .foregroundColor(Color("marshal_White"))
+                        .padding(.horizontal, 16.0)
+                        .multilineTextAlignment(.trailing)
+                }//:HSTACK
+            if user.information.fieldOfStudy.fa != ""{
+                HStack{
+                    Text(user.information.fieldOfStudy.fa)
+                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                        .foregroundColor(Color("marshal_red"))
+                        .padding(.horizontal, 16.0)
+                        .multilineTextAlignment(.trailing)
+                    Spacer()
+
+                    
+                    Text("رشته تحصیلی")
+                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                        .foregroundColor(Color("marshal_White"))
+                        .padding(.horizontal, 16.0)
+                        .multilineTextAlignment(.trailing)
+                
+               
+                    
+
+                }//:HSTACK
+
+            }
+        
+            if user.information.universityName.fa != ""{
+                HStack{
+                    
+         
+                    Text(user.information.universityName.fa)
+                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                        .foregroundColor(Color("marshal_red"))
+                        .padding(.horizontal, 16.0)
+                        .multilineTextAlignment(.trailing)
+                    
+                    Spacer()
+                    
+                    Text("آخرین دانشگاه محل تحصیل")
+                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
+                        .foregroundColor(Color("marshal_White"))
+                        .padding(.horizontal, 16.0)
+                        .multilineTextAlignment(.trailing)
+
+                }//:HSTACK
+
+            }
+            
+        }//:VSTACK
+    }
+    
+    //MARK: -BODY
+    var body: some View {
+        
+        ZStack(alignment: .center){
+            if status == .Successful {
+                ScrollView {
+                    VStack(spacing : 0){
+                        HStack{
+                            userCard
+                                .padding(.top,44)
+                                .padding(.horizontal, 24)
+                        }
+                        .background(Image("backforprofile").resizable())
+                        
+                        harvestRow
+                        
+                        depositRow
+                        
+                        HStack{
+                            Spacer()
+                            Text("مشخصات کاربری")
+                                .font(Font.custom("IRANSansMobileFaNum Medium", size: 10))
+                                .padding(.horizontal, 16.0)
+                                .padding(.bottom)
+                                .padding()
+                                .multilineTextAlignment(.trailing)
+                                .foregroundColor(Color("marshal_White"))
+                            Spacer()
+                        }
+                        .background(Image("backforinformation").resizable())
+                        
+                        stepBar
+                        
+                        Group{
+                            if pages.imagesLevel {
+                                identificationCardImage
+                            }
+                            if pages.englishLevel {
+                                englishInformation
+                            }
+                            if pages.persianLevel{
+                                pertianInformation
+                            }
+                        }
+                     
+                        Group{
+                            if pages.educationLevel{
+                                educationInformation
+                            }
+                            
+                            if pages.jobLevel {
+                                jabInformation
+                            }
+                        }
+                      
+                        Spacer()
+                        
+                    }
+                    .background(Color("marshal_darkGrey"))
+                }
+            }else if status == .InProgress{
+                
+                ProgressViewMarshal()
+                
+            }else if status == .Failure {
+                FailedMarshal {
+                    getUser()
+                }
+            }
+            Spacer()
+        }.onAppear{
+            getUser()
         }
+        
         
         
     }
     
     //MARK: -FUNCTION
+    
+    //MARK: -CALL API
+    func getUser(){
+        status = .InProgress
+        let url = "v1/users/get-profile"
+        let headers: HTTPHeaders?
+        
+        headers = [
+            "Authorization": "Bearer \(CallApi().acceceToken)"
+        ]
+        AF.request(CallApi().baceUrl + url, method: .get, encoding: JSONEncoding.default,headers: headers){urlRequest in urlRequest.timeoutInterval = TimeInterval(CallApi().timeOut)}.responseJSON { response in
+            do {
+                switch response.result {
+                case .success :
+                    let json = try JSON(data: response.data!)
+                    print("------ send code")
+                    print(json)
+                    print("------- send code")
+                    if response.response?.statusCode == 200 || response.response?.statusCode == 201  {
+                         user = ConvertJsonToObject().convertJsonToUser(json["data"])
+                        status = .Successful
+                    }else{
+                        status = .Failure
+                    }
+                    print( "v1/users/validation-activation-code")
+                    print(response.response?.statusCode ?? 0)
+
+                    break
+                case let .failure(error):
+                    print( "v1/users/validation-activation-code")
+                    status = .Failure
+                    if response.response != nil {
+                        print(response.response?.statusCode ?? 0 )
+                    }
+                    print("failed")
+                    print(error)
+                    break
+                }
+            }catch{
+                print("v1/users/validation-activation-code")
+                status = .Failure
+                if response.response != nil {
+                    print(response.response?.statusCode ?? 0)
+                }
+                print("nil response")
+            }
+            
+        }
+    }
     
 }
 //MARK: -PREVIEW

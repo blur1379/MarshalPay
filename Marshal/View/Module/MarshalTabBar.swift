@@ -48,8 +48,10 @@ struct MarshalTabBar: View {
             
             Button(action: {
                 //write code 😎
+               
                 pages = .Profile
                 showTabBar = true
+                
             }) {
                 
                 VStack (alignment: .center, spacing: 4.0){

@@ -10,6 +10,7 @@ import Alamofire
 import SwiftyJSON
 struct ExchangePage: View {
     //MARK: -PROPERTIES
+    @AppStorage("showTabBar") var showTabBar : Bool = true
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let currencyId : String
     @State var wallet = WalletModel()
@@ -450,7 +451,14 @@ struct ExchangePage: View {
                     Alert(title: Text(""), message: Text(textAlert), dismissButton: .default(Text("باشه")) )
                 }
                 .onAppear{
+                    showTabBar = false
                     getWalletApi()
+                }
+                .onDisappear {
+                    withAnimation {
+                        showTabBar = true
+                    }
+                    
                 }
 
             }

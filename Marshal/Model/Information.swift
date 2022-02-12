@@ -7,23 +7,24 @@
 
 import Foundation
 class Information{
+    var _id = ""
     var nationalCode : String = ""
     var birthDate : String = ""
-    var jab : (fa: String ,en: String) = ("","")
+    var jab  = (fa: "" ,en: "")
     var residencePostalCode : Int = 0
     var residenceTelephone : String = ""
     var alternativeMobile : String = ""
-    var street : (fa : String , en : String) = ("","")
-    var city : (fa : String , en : String) = ("","")
-    var state : (fa: String , en : String) = ("","")
-    var residenceAddress  : (fa: String , en : String) = ("","")
-    var userLevel : String = ""
+    var street  = (fa: "" ,en: "")
+    var city  = (fa: "" ,en: "")
+    var state  = (fa: "" ,en: "")
+    var residenceAddress  = (fa: "" ,en: "")
+    var userLevel : UserLevelModel = UserLevelModel()
     var profileImage : String = ""
     var identificationCardImage : String = ""
-    var workPlaceAddress : (fa: String , en : String) = ("","")
+    var workPlaceAddress  = (fa: "" ,en: "")
     var workPlaceTelephone : String = ""
     var educationStatus : String = ""
-    var fieldOfStudy : (fa: String ,en: String) = ("","")
+    var fieldOfStudy = (fa: "" ,en: "")
     var degreeOfEducationImage : String = ""
-    var universityName : (fa: String ,en: String) = ("","")
+    var universityName = (fa: "" ,en: "")
 }
