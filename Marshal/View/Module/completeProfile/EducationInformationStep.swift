@@ -11,7 +11,7 @@ struct EducationInformationStep: View {
     
     @State var statusOfSubmitBottom : Status = .none
     @State var code : String = ""
-
+    let pageSet : () -> Void
     var body: some View {
         VStack(alignment: .center, spacing: 16.0) {
             
@@ -117,7 +117,7 @@ struct EducationInformationStep: View {
 
 struct MarshalCompleteProfileStep6Module_Previews: PreviewProvider {
     static var previews: some View {
-        EducationInformationStep()
+        EducationInformationStep(pageSet: {})
             .previewLayout(.sizeThatFits)
     }
 }

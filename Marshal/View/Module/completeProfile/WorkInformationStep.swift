@@ -11,7 +11,7 @@ struct WorkInformationStep: View {
     
     @State var statusOfSubmitBottom : Status = .none
     @State var code : String = ""
-    
+    let pageSet : () -> Void
     var body: some View {
         VStack(alignment: .center, spacing: 16.0) {
             
@@ -57,7 +57,7 @@ struct WorkInformationStep: View {
                         .stroke(Color("marshal_White"), lineWidth:0.5))
  
             Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
-                print("press")
+                pageSet()
             }
             
             Spacer().frame(height: 4.0)
@@ -71,7 +71,7 @@ struct WorkInformationStep: View {
 
 struct MarshalCompleteProfileStep5Module_Previews: PreviewProvider {
     static var previews: some View {
-        WorkInformationStep()
+        WorkInformationStep(pageSet: {})
             .previewLayout(.sizeThatFits)
     }
 }

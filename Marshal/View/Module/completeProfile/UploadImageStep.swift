@@ -21,7 +21,7 @@ struct UploadImageStep: View {
     @StateObject var personalImage : Photo = Photo()
     @StateObject var nationalcard : Photo = Photo()
     @State var isFirstImage : Bool = true
-    
+    let pageSet : () -> Void
     var body: some View {
         VStack(alignment: .center, spacing: 16.0) {
             ZStack{
@@ -53,7 +53,7 @@ struct UploadImageStep: View {
                         print(ConstantData().stringToURLForImage(url: personalImage.fileName))
                     }
                         .scaledToFit()
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 2/3)
+                        .frame(width: UIScreen.main.bounds.width - 36 , height: (UIScreen.main.bounds.width - 36) * 2/3)
                 }
             }
             .onTapGesture {
@@ -61,7 +61,7 @@ struct UploadImageStep: View {
                 isFirstImage = true
                 
             }
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 2/3)
+            .frame(width: UIScreen.main.bounds.width - 36 , height: (UIScreen.main.bounds.width - 36) * 2/3)
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("marshal_White"), lineWidth:0.5))
             .actionSheet(isPresented: $showImagePicker) {
@@ -105,7 +105,7 @@ struct UploadImageStep: View {
                 
             }
         
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 2/3)
+            .frame(width: UIScreen.main.bounds.width - 36 , height: (UIScreen.main.bounds.width - 36) * 2/3)
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("marshal_White"), lineWidth:0.5))
             .onTapGesture {
@@ -114,7 +114,7 @@ struct UploadImageStep: View {
                 
             }
             Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
-                print("press")
+                pageSet()
             }
                 
             Spacer().frame(height: 4.0)
@@ -127,7 +127,7 @@ struct UploadImageStep: View {
 
 struct UploadImageStep_Previews: PreviewProvider {
     static var previews: some View {
-        UploadImageStep()
+        UploadImageStep(pageSet: {})
             .previewLayout(.sizeThatFits)
             .background(Color("marshal_darkGrey"))
     }

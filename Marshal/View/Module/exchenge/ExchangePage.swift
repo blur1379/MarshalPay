@@ -207,7 +207,7 @@ struct ExchangePage: View {
             HStack{
                 Spacer()
                 VStack(spacing: 0){
-                    Text("\(currency.currentValue)")
+                    Text(currency.getCurrentValue())
                         .foregroundColor(Color.white)
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
                     Image("arow")
@@ -322,7 +322,7 @@ struct ExchangePage: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 32, height: 60, alignment: .center)
-                    Text("\(currency.currentValue)")
+                    Text(currency.getCurrentValue())
                         .foregroundColor(Color.white)
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 14))
                 }//:VSTACK
@@ -581,7 +581,14 @@ struct ExchangePage: View {
             "currency": currencyId,
             "amount": exchangeToMarshal ? convertToLastPriceBuyDouble(amountForBuy, String(currency.currentValue)) : convertToLastPricesellDouble(amountForSell , String(currency.currentValue))
         ]
-    AF.request(CallApi().baceUrl + url, method: .post, parameters: parameters ,  encoding: JSONEncoding.default){urlRequest in urlRequest.timeoutInterval = TimeInterval(CallApi().timeOut)}.responseJSON { response in
+        
+        
+        var headers: HTTPHeaders?
+        headers = [
+            "Authorization": "Bearer \(CallApi().acceceToken)"
+        ]
+        
+    AF.request(CallApi().baceUrl + url, method: .post, parameters: parameters ,  encoding: JSONEncoding.default,headers: headers){urlRequest in urlRequest.timeoutInterval = TimeInterval(CallApi().timeOut)}.responseJSON { response in
             do {
                 switch response.result {
                 case .success :
@@ -593,7 +600,15 @@ struct ExchangePage: View {
                         self.statusOfBotton = .Successful
                         textAlert = "عملیات با موفقیت انجام شد"
                         showAlert = true
-                    }else{
+                    }else
+                    if response.response?.statusCode == 404{
+                        self.statusOfBotton = .Successful
+                        textAlert = "اعتبار حساب کافی نمی‌باشد"
+                        showAlert = true
+                    }
+                    else
+                    
+                    {
                         statusOfBotton = .Failure
                         textAlert = "مشکل در برقراری ارتباط"
                         showAlert = true

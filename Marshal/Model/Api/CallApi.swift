@@ -127,7 +127,7 @@ struct CallApi{
         var headers: HTTPHeaders?
         
         headers = [
-            "Authorization": "Bearer U2FsdGVkX1+Cci6wP3Vx126n0LHtdWDgcypPY78mQXMZM3xm+UIbNY8TpUQ+oa9HEK2FzyClFHNon8/0HRmXEXhmLzS8Vlz1ODulrVfuBHhBNiKAET1U1dhitIUF5DiWmGZzL7rdcapPmTElMPsLqNd0EsLSNZRtd5kv8b5pIiSEaG1/LE/TO/f7LoNlOKTbxJl2kfnSgTjjlw3c1snVBa5nBkcTS37gzSUV8zegABvW/uQlMb2EwFjZAAz24/ITExuEg1Y+zL7NjtgqjYCxjavW8eb8MXMz5ozhA2EcxzGxjg4er6MCIZwvs0ANvy6kWbgQX+Xevsrzy8e8isYfBM+8KZXAnrr5vQt8JV+0+ruqsMW3CZrB2GhXRVW3arU0LTTo0fvDCxnow+jhgV9I09hZeKr4xSa/rpGCH6lKDii+IUakOJ0YQFwUBbVA/ehU6n5eCGMLkihvWvUni6QVjRLbegPpnC3H+5Pc5Ik5wbT3wqJ2WnuR/HkNzz7PnbnYecS7s/DLKGQedQSAKkZOtXrngA2Ph5RQY13BG6Cgi/Ku3/aizFxfrXcylvGeuH2EV/m+QqxhSQPIfkPEEPT3N33TpYpRURw/rwODbyV7d4L18rc9csYhoCT4DozaN2YN9o8zZw7Kbqpz8rWRECI9C9CPxEyprN4sIZp9jsfEaSm2fDAi9+FO2Egdyy8/r0ZIhGxnM4eAt6McOdoLEvN6TBFXcrfrN1dAefeaAWBUpB1bmdjpWCLTt2BRhJg/ER8mrOQ1qFMS7motG0g6irCOgUQNqS2p2KPwXurViUOzws0="
+            "Authorization": "Bearer \(acceceToken)"
         ]
     status(.InProgress)
     AF.upload(multipartFormData: { multipartFormData in

@@ -200,18 +200,21 @@ struct MarshalWalletTabPageModule: View {
                     case.deposit:
                         WalletDeposit()
                             .padding(.top, 16.0)
+                            .padding(.horizontal , 16)
                             .onAppear{
                                 showTabBar = false
                             }
                     case.transfer:
                         WalletTransfer()
                             .padding(.top, 16.0)
+                            .padding(.horizontal , 16)
                             .onAppear{
                                 showTabBar = false
                             }
                     case.withdraw:
                         WalletWithdraw()
                             .padding(.top, 16.0)
+                            .padding(.horizontal , 16)
                             .onAppear{
                                 showTabBar = false
                             }

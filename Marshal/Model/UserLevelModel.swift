@@ -13,5 +13,4 @@ class UserLevelModel : Identifiable, ObservableObject{
     var description = ""
     var credit = 0
     var registerLevels = UserLevelPages()
-    @Published var selected = false
 }

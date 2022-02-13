@@ -11,10 +11,10 @@ class Currency{
     var name : String = ""
     var key : String = ""
     var marshalKey : String = ""
-    var currentValue : Int = 0
-    var lastChange : Int = 0
-    var minValue : Int = 0
-    var maxValue : Int = 0
+    var currentValue : Double = 0
+    var lastChange : Double = 0
+    var minValue : Double = 0
+    var maxValue : Double = 0
     var order : Int = 0
     var description : String = ""
     var towardsMarshall : Int = 0

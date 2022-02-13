@@ -13,7 +13,7 @@ struct ConvertJsonToObject {
     func convertJsonToCurrency (_ json :JSON) -> Currency{
         let castedCurrency = Currency()
         if json["lastChange"].exists(){
-            castedCurrency.lastChange = json["lastChange"].int!
+            castedCurrency.lastChange = json["lastChange"].double!
         }
         if json["_id"].exists(){
             castedCurrency._id = json["_id"].string!
@@ -29,13 +29,13 @@ struct ConvertJsonToObject {
         }
    
         if json["currentValue"].exists(){
-            castedCurrency.currentValue = json["currentValue"].int!
+            castedCurrency.currentValue = json["currentValue"].double!
         }
         if json["minValue"].exists(){
-            castedCurrency.minValue = json["minValue"].int!
+            castedCurrency.minValue = json["minValue"].double!
         }
         if json["maxValue"].exists(){
-            castedCurrency.maxValue = json["maxValue"].int!
+            castedCurrency.maxValue = json["maxValue"].double!
         }
         if json["order"].exists(){
             castedCurrency.order = json["order"].int!

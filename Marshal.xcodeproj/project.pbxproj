@@ -25,6 +25,7 @@
 		5489A4EB2792EEED0068E122 /* WalletDeposit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489A4EA2792EEED0068E122 /* WalletDeposit.swift */; };
 		5489A4ED2792F01B0068E122 /* WalletTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489A4EC2792F01B0068E122 /* WalletTransfer.swift */; };
 		5489A4EF2792FD3E0068E122 /* WalletWithdraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489A4EE2792FD3E0068E122 /* WalletWithdraw.swift */; };
+		54B028A927B8E30A00D38609 /* HistoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B028A827B8E30A00D38609 /* HistoryModule.swift */; };
 		54D2481527B262A400538D47 /* InvestmentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D2481427B262A400538D47 /* InvestmentModule.swift */; };
 		54D2481C27B264A500538D47 /* SwiftUIGIF in Frameworks */ = {isa = PBXBuildFile; productRef = 54D2481B27B264A500538D47 /* SwiftUIGIF */; };
 		B80FC7C027858CA100EAEB40 /* ConstantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FC7BF27858CA100EAEB40 /* ConstantData.swift */; };
@@ -111,6 +112,7 @@
 		5489A4EA2792EEED0068E122 /* WalletDeposit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDeposit.swift; sourceTree = "<group>"; };
 		5489A4EC2792F01B0068E122 /* WalletTransfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTransfer.swift; sourceTree = "<group>"; };
 		5489A4EE2792FD3E0068E122 /* WalletWithdraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletWithdraw.swift; sourceTree = "<group>"; };
+		54B028A827B8E30A00D38609 /* HistoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModule.swift; sourceTree = "<group>"; };
 		54D2481427B262A400538D47 /* InvestmentModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentModule.swift; sourceTree = "<group>"; };
 		B80FC7BF27858CA100EAEB40 /* ConstantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantData.swift; sourceTree = "<group>"; };
 		B81807F42782F60200E67616 /* ExchangeTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTopBar.swift; sourceTree = "<group>"; };
@@ -221,6 +223,14 @@
 			path = refreshebleScrollView;
 			sourceTree = "<group>";
 		};
+		54B028A727B8E2D900D38609 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				54B028A827B8E30A00D38609 /* HistoryModule.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		54D2481327B2627800538D47 /* Investment */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +333,7 @@
 		B8AE1F982775F6FB0090125D /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				54B028A727B8E2D900D38609 /* History */,
 				540F659427B396D4007756A9 /* Profile */,
 				54D2481327B2627800538D47 /* Investment */,
 				5421EA4327900B3700DCA41B /* refreshebleScrollView */,
@@ -539,6 +550,7 @@
 				B8F6D2DA2787210000121964 /* ConvertJsonToObject.swift in Sources */,
 				5489A4ED2792F01B0068E122 /* WalletTransfer.swift in Sources */,
 				B886A944278899EB007879EB /* HomePages.swift in Sources */,
+				54B028A927B8E30A00D38609 /* HistoryModule.swift in Sources */,
 				540B0B9A279452940001F3C0 /* UserLevelPages.swift in Sources */,
 				B8F29240277B1A7C004F75A4 /* Home.swift in Sources */,
 				5489A4EB2792EEED0068E122 /* WalletDeposit.swift in Sources */,

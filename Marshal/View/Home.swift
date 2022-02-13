@@ -22,28 +22,30 @@ struct Home: View {
                             .frame(height: 1.0).background(Color("marshal_red"))
                     }
                     
-                   
-                    
-                // body
-                switch page {
-                case .Exchange:
-                    MarshalTrendTabPageModule()
-                    
-                case .History:
-                    Spacer()
-                case .Walet:
-                
-                        MarshalWalletTabPageModule()
-
+                    // body
+                    Group{
+                        switch page {
+                        case .Exchange:
+                            MarshalTrendTabPageModule()
+                            
+                        case .History:
+                            UserLevelModule()
+                        case .Walet:
                         
-                case .Profile:
-//                    UserLevelModule()
-                    ProfileModule()
-                    //.padding(.horizontal, 16.0)
-                                     
-                case .Invest:
-                    InvestmentModule()
-                }
+                                MarshalWalletTabPageModule()
+
+                                
+                        case .Profile:
+        //                    UserLevelModule()
+                            ProfileModule()
+                            //.padding(.horizontal, 16.0)
+                                             
+                        case .Invest:
+                            InvestmentModule()
+                        }
+                    }
+                
+
                     Divider()
                         .frame(height: 1.0).background(Color("marshal_red"))
                     
