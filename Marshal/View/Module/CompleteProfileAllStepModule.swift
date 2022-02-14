@@ -10,6 +10,7 @@ import SwiftUI
 struct CompleteProfileAllStepModule: View {
     @State var userLevel : UserLevelModel
     @StateObject var currentUserLevel = UserLevelPages()
+    @StateObject var user = User()
     var body: some View {
         
         VStack(alignment: .center, spacing: 0) {
@@ -20,7 +21,7 @@ struct CompleteProfileAllStepModule: View {
                 
                 if currentUserLevel.imagesLevel{
                     UploadImageStep(pageSet: {
-                        
+                        currentUserLevel.clearData()
                         if userLevel.registerLevels.persianLevel {
                             currentUserLevel.persianLevel = true
                         }else if userLevel.registerLevels.englishLevel {
@@ -34,7 +35,10 @@ struct CompleteProfileAllStepModule: View {
                         .padding()
                 }
                 if currentUserLevel.persianLevel{
-                    PertianImformationStep(pageSet: {
+                    PertianImformationStep(user: user, pageSet: {
+                        
+                        currentUserLevel.clearData()
+                        
                         if userLevel.registerLevels.englishLevel {
                             currentUserLevel.englishLevel = true
                         }else if userLevel.registerLevels.jobLevel {
@@ -46,6 +50,8 @@ struct CompleteProfileAllStepModule: View {
                 }
                 if currentUserLevel.englishLevel{
                     EnglishInformationStep(pageSet: {
+                        
+                        currentUserLevel.clearData()
                         if userLevel.registerLevels.jobLevel {
                             currentUserLevel.jobLevel = true
                         }else if userLevel.registerLevels.educationLevel {
@@ -55,6 +61,7 @@ struct CompleteProfileAllStepModule: View {
                 }
                 if currentUserLevel.jobLevel{
                     WorkInformationStep(pageSet: {
+                        currentUserLevel.clearData()
                         if userLevel.registerLevels.educationLevel {
                             currentUserLevel.educationLevel = true
                         }
@@ -66,6 +73,7 @@ struct CompleteProfileAllStepModule: View {
                     })
                 }
             }
+            .environmentObject(user)
         }
         .navigationBarHidden(true)
         .background(Color("marshal_darkGrey"))

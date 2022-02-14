@@ -6,25 +6,27 @@
 //
 
 import Foundation
-class Information{
-    var _id = ""
-    var nationalCode : String = ""
-    var birthDate : String = ""
-    var jab  = (fa: "" ,en: "")
-    var residencePostalCode : Int = 0
-    var residenceTelephone : String = ""
-    var alternativeMobile : String = ""
-    var street  = (fa: "" ,en: "")
-    var city  = (fa: "" ,en: "")
-    var state  = (fa: "" ,en: "")
-    var residenceAddress  = (fa: "" ,en: "")
-    var userLevel : UserLevelModel = UserLevelModel()
-    var profileImage : String = ""
-    var identificationCardImage : String = ""
-    var workPlaceAddress  = (fa: "" ,en: "")
-    var workPlaceTelephone : String = ""
-    var educationStatus : String = ""
-    var fieldOfStudy = (fa: "" ,en: "")
-    var degreeOfEducationImage : String = ""
-    var universityName = (fa: "" ,en: "")
+class Information : Identifiable , ObservableObject{
+    @Published var _id = ""
+    @Published var nationalCode : String = ""
+    @Published var birthDate : String = ""
+    @Published var jab = Dictionery()
+    @Published var residencePostalCode = ""
+    @Published var residenceTelephone : String = ""
+    @Published var alternativeMobile : String = ""
+    @Published var street = Dictionery()
+    @Published var city = Dictionery()
+    @Published var state = Dictionery()
+    @Published var residenceAddress = Dictionery()
+    @Published var userLevel : UserLevelModel = UserLevelModel()
+    @Published var profileImage : String = ""
+    @Published var identificationCardImage : String = ""
+    @Published var workPlaceAddress  = Dictionery()
+    @Published var workPlaceTelephone : String = ""
+    @Published var educationStatus : String = ""
+    @Published var fieldOfStudy = Dictionery()
+    @Published var degreeOfEducationImage : String = ""
+    @Published var universityName = Dictionery()
+    @Published var cityCode = ""
+    
 }

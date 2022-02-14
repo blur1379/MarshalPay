@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EnglishInformationStep: View {
-    
+    @ObservedObject var user : User
     @State var statusOfSubmitBottom : Status = .none
     @State var code : String = ""
     let pageSet : () -> Void
@@ -74,7 +74,7 @@ struct EnglishInformationStep: View {
 
 struct MarshalCompleteProfileStep4Module_Previews: PreviewProvider {
     static var previews: some View {
-        EnglishInformationStep(pageSet: {})
+        EnglishInformationStep(user: User(), pageSet: {})
             .previewLayout(.sizeThatFits)
     }
 }

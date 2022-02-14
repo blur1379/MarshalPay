@@ -9,7 +9,7 @@ import SwiftUI
 import Mantis
 
 struct UploadImageStep: View {
-    
+    @EnvironmentObject var user : User
     @State var statusOfSubmitBottom : Status = .none
     @State var showImagePickerSheet : Bool = false
     @State var showImagePicker : Bool = false
@@ -114,7 +114,13 @@ struct UploadImageStep: View {
                 
             }
             Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
-                pageSet()
+                if personalImage.fileName != "" && nationalcard.fileName != "" {
+                    user.information.identificationCardImage = nationalcard.fileName
+                    
+                    user.information.profileImage = personalImage.fileName
+                    pageSet()
+                }
+               
             }
                 
             Spacer().frame(height: 4.0)

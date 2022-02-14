@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct EducationInformationStep: View {
-    
+    @EnvironmentObject var user : User
+
     @State var statusOfSubmitBottom : Status = .none
     @State var code : String = ""
     let pageSet : () -> Void

@@ -327,7 +327,7 @@ struct ConvertJsonToObject {
                 }
                 
                 if json["information"]["residencePostalCode"].exists(){
-                    user.information.residencePostalCode = json["information"]["residencePostalCode"].int!
+                    user.information.residencePostalCode = json["information"]["residencePostalCode"].string!
                 }
                 
                 if json["information"]["alternativeMobile"].exists(){
