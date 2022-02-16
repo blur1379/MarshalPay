@@ -57,7 +57,9 @@ struct MarshalTextField: View {
                             .frame(width: 1,height: heightOfBox)
 
                     }
-                                        
+                    if !isEn {
+                        Spacer()
+                    }
                     TextField("", text: $text)
                         .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
                         .keyboardType(keyboardType)
@@ -123,6 +125,13 @@ struct MarshalTextField: View {
             
             
         }//: ZSTACK
+        .onAppear {
+            if text.isEmpty {
+                showText = true
+            }else{
+                showText = false
+            }
+        }
         
     }
 }

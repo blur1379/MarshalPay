@@ -15,6 +15,7 @@ struct MarshalTopBarType01: View {
 //                .frame(width: 40, height: 40, alignment: .leading)
 //                .foregroundColor(Color("marshal_red"))
 //                .imageScale(.large)
+            Spacer()
 
             Text(ConstantData().homePageTitle(page: page))
                 
@@ -24,12 +25,7 @@ struct MarshalTopBarType01: View {
             
             Spacer()
             
-            Image ("marshal_logo-wings")
-                .resizable()
-                .frame(width: 96, height: 22, alignment: .center)
-                .scaledToFit()
-            
-  
+
         }
         .padding(.horizontal, 16.0)
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 56)

@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct EducationInformationStep: View {
-    @EnvironmentObject var user : User
-
+    @ObservedObject var user : User
     @State var statusOfSubmitBottom : Status = .none
     @State var code : String = ""
     let pageSet : () -> Void
@@ -79,10 +78,10 @@ struct EducationInformationStep: View {
             
             
 
-            MarshalTextField(text: $code, title: "رشته تحصیلی", isEn: false, keyboardType: .numberPad)
+            MarshalTextField(text: $user.information.fieldOfStudy.fa, title: "رشته تحصیلی", isEn: false, keyboardType: .numberPad)
                 .padding(.horizontal, 16.0)
             
-            MarshalTextField(text: $code, title: "آخرین دانشگاه محل تحصیل", isEn: false, keyboardType: .numberPad)
+            MarshalTextField(text: $user.information.universityName.fa, title: "آخرین دانشگاه محل تحصیل", isEn: false, keyboardType: .numberPad)
                 .padding(.horizontal, 16.0)
             
             
@@ -118,7 +117,7 @@ struct EducationInformationStep: View {
 
 struct MarshalCompleteProfileStep6Module_Previews: PreviewProvider {
     static var previews: some View {
-        EducationInformationStep(pageSet: {})
+        EducationInformationStep(user: User(), pageSet: {})
             .previewLayout(.sizeThatFits)
     }
 }

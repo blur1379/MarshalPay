@@ -9,11 +9,24 @@ import SwiftUI
 
 @main
 struct MarshalApp: App {
+    @State var showSplash = true
     var body: some Scene {
         WindowGroup {
-//           Splash()
-            Home()
-//            ProfileModule()
+            ZStack{
+                if showSplash{
+                    Splash()
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                    showSplash = false
+                            }
+                        }
+                }else{
+                    Home()
+                }
+               
+            }
+            .background(Color("marshal_darkGrey"))
         }
     }
+
 }

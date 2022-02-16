@@ -26,34 +26,33 @@ struct UploadImageStep: View {
         VStack(alignment: .center, spacing: 16.0) {
             ZStack{
                 if personalImage.fileName == "" {
-                    VStack(alignment: .center, spacing: 24.0) {
-                        Image("icon_add_a_photo_24dp")
-                            .resizable()
-                            .frame(width: 56.0, height: 56.0, alignment: .center)
-                            .scaledToFit()
-                            .foregroundColor(Color("marshal_White"))
+                    if personalImage.uploadStatus == .Failure || personalImage.uploadStatus == .none {
+                        VStack(alignment: .center, spacing: 24.0) {
+                            Image("icon_add_a_photo_24dp")
+                                .resizable()
+                                .frame(width: 56.0, height: 56.0, alignment: .center)
+                                .scaledToFit()
+                                .foregroundColor(Color("marshal_White"))
                             
-                        Text("عکس  خود را وارد کنید")
-                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 16.0))
-                            .foregroundColor(Color("marshal_White"))
+                            Text("عکس  خود را وارد کنید")
+                                .font(Font.custom("IRANSansMobileFaNum Medium", size: 16.0))
+                                .foregroundColor(Color("marshal_White"))
                             
-
-                    }
-                }else{
-                    AsyncImage(url: ConstantData().stringToURLForImage(url: personalImage.fileName)){ phase in
-                        if let image = phase.image {
-                            image // Displays the loaded image.
-                        } else if phase.error != nil {
-                            Color.red // Indicates an error.
-                        } else {
-                            ProgressView()// Acts as a placeholder.
+                            
                         }
+                    }else {
+                        ProgressViewMarshal()
                     }
-                    .onAppear{
-                        print(ConstantData().stringToURLForImage(url: personalImage.fileName))
-                    }
+                    
+                }else{
+                    DownloadImage(imageName: $personalImage.fileName)
+                        .onAppear{
+                            print(ConstantData().stringToURLForImage(url: personalImage.fileName))
+                        }
                         .scaledToFit()
                         .frame(width: UIScreen.main.bounds.width - 36 , height: (UIScreen.main.bounds.width - 36) * 2/3)
+                        .cornerRadius(12)
+                    
                 }
             }
             .onTapGesture {
@@ -89,22 +88,38 @@ struct UploadImageStep: View {
                     .ignoresSafeArea()
             })
             ZStack {
-                VStack(alignment: .center, spacing: 24.0) {
-                    Image("icon_add_a_photo_24dp")
-                        .resizable()
-                        .frame(width: 56.0, height: 56.0, alignment: .center)
+                if nationalcard.fileName == "" {
+                    if nationalcard.uploadStatus == .Failure || nationalcard.uploadStatus == .none {
+                        VStack(alignment: .center, spacing: 24.0) {
+                            Image("icon_add_a_photo_24dp")
+                                .resizable()
+                                .frame(width: 56.0, height: 56.0, alignment: .center)
+                                .scaledToFit()
+                                .foregroundColor(Color("marshal_White"))
+                            
+                            Text("عکس کارت ملی خود را وارد کنید")
+                                .font(Font.custom("IRANSansMobileFaNum Medium", size: 16.0))
+                                .foregroundColor(Color("marshal_White"))
+                            
+                        }
+                    }else{
+                        ProgressViewMarshal()
+                    }
+                }else{
+                    DownloadImage(imageName: $nationalcard.fileName)
+                        .onAppear{
+                            print(ConstantData().stringToURLForImage(url: personalImage.fileName))
+                        }
                         .scaledToFit()
-                        .foregroundColor(Color("marshal_White"))
-                        
-                    Text("عکس کارت ملی خود را وارد کنید")
-                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 16.0))
-                        .foregroundColor(Color("marshal_White"))
-
+                        .frame(width: UIScreen.main.bounds.width - 36 , height: (UIScreen.main.bounds.width - 36) * 2/3)
+                        .cornerRadius(12)
+                    
+                    
                 }
-                nationalcard.image
+                
                 
             }
-        
+            
             .frame(width: UIScreen.main.bounds.width - 36 , height: (UIScreen.main.bounds.width - 36) * 2/3)
             .overlay(RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("marshal_White"), lineWidth:0.5))
@@ -114,15 +129,15 @@ struct UploadImageStep: View {
                 
             }
             Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
-                if personalImage.fileName != "" && nationalcard.fileName != "" {
+                if personalImage.fileName != "" && nationalcard.fileName != "" &&  personalImage.uploadStatus == .Successful && nationalcard.uploadStatus == .Successful {
                     user.information.identificationCardImage = nationalcard.fileName
                     
                     user.information.profileImage = personalImage.fileName
                     pageSet()
                 }
-               
-            }
                 
+            }
+            
             Spacer().frame(height: 4.0)
             
         }

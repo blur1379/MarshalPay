@@ -18,42 +18,40 @@ struct EnglishInformationStep: View {
             Spacer().frame(height: 0.0)
             
             HStack(alignment: .center, spacing: 16.0) {
-                MarshalTextField(text: $code, title: "Name", isEn: true, keyboardType: .default)
+                MarshalTextField(text: $user.firstName.en, title: "Name", isEn: true, keyboardType: .default)
                 
-                MarshalTextField(text: $code, title: "Family name", isEn: true, keyboardType: .default)
+                MarshalTextField(text: $user.lastName.en, title: "Family name", isEn: true, keyboardType: .default)
                   
             }
             
-            MarshalTextField(text: $code, title: "National Code", isEn: true, keyboardType: .numberPad)
+            MarshalTextField(text: $user.information.nationalCode, title: "National Code", isEn: true, keyboardType: .numberPad)
             
             HStack(alignment: .center, spacing: 16.0) {
-                MarshalTextField(text: $code, title: "Date of birth", isEn: true, keyboardType: .default)
+                MarhalDateOfBirth(isEn: true, dateOfBirth: $user.information.birthDate)
                 
-                MarshalTextField(text: $code, title: "Job title", isEn: true, keyboardType: .default)
+                MarshalTextField(text: $user.information.jab.en, title: "Job title", isEn: true, keyboardType: .default)
                   
             }
-
-            MarshalTextField(text: $code, title: "Mobile phone number", isEn: true, keyboardType: .numberPad)
+            
+       
+            MarshalTextField(text: $user.information.residenceTelephone, title: "Tel number", isEn: true, keyboardType: .numberPad,limitedItem: 11)
+                
+             
+                  
+            
             
             HStack(alignment: .center, spacing: 16.0) {
-                MarshalTextField(text: $code, title: "Tel number", isEn: true, keyboardType: .numberPad)
+                MarshalTextField(text: $user.information.state.en, title: "Province", isEn: true, keyboardType: .default)
                 
-                MarshalTextField(text: $code, title: "Tel number code", isEn: true, keyboardType: .numberPad)
-                  
-            }
-            
-            HStack(alignment: .center, spacing: 16.0) {
-                MarshalTextField(text: $code, title: "Province", isEn: true, keyboardType: .numberPad)
-                
-                MarshalTextField(text: $code, title: "City", isEn: true, keyboardType: .numberPad)
+                MarshalTextField(text: $user.information.city.en, title: "City", isEn: true, keyboardType: .default)
                   
             }
             
             
             
-            MarshalTextField(text: $code, title: "Address", isEn: true, keyboardType: .default)
+            MarshalTextField(text: $user.information.residenceAddress.en, title: "Address", isEn: true, keyboardType: .default)
             
-            MarshalTextField(text: $code, title: "Postal code", isEn: true, keyboardType: .numberPad)
+            MarshalTextField(text: $user.information.residencePostalCode, title: "Postal code", isEn: true, keyboardType: .numberPad)
             
             Group {
                 

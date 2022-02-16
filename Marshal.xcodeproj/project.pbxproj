@@ -77,6 +77,8 @@
 		B8CF231C27A5BAD60070F85C /* ExchangePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CF231B27A5BAD60070F85C /* ExchangePage.swift */; };
 		B8D2C1812779D29600F0C207 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2C1802779D29600F0C207 /* User.swift */; };
 		B8D2C183277A411A00F0C207 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2C182277A411A00F0C207 /* Information.swift */; };
+		B8E7B0B927BBDEE100639D59 /* MarshalDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E7B0B827BBDEE100639D59 /* MarshalDatePicker.swift */; };
+		B8E7B0BB27BC05D600639D59 /* MarhalDateOfBirth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E7B0BA27BC05D600639D59 /* MarhalDateOfBirth.swift */; };
 		B8F29240277B1A7C004F75A4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2923F277B1A7C004F75A4 /* Home.swift */; };
 		B8F6D2D62786E51800121964 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F6D2D52786E51800121964 /* Extentions.swift */; };
 		B8F6D2D827871F1E00121964 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F6D2D727871F1E00121964 /* Currency.swift */; };
@@ -163,6 +165,8 @@
 		B8CF231B27A5BAD60070F85C /* ExchangePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePage.swift; sourceTree = "<group>"; };
 		B8D2C1802779D29600F0C207 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B8D2C182277A411A00F0C207 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
+		B8E7B0B827BBDEE100639D59 /* MarshalDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalDatePicker.swift; sourceTree = "<group>"; };
+		B8E7B0BA27BC05D600639D59 /* MarhalDateOfBirth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarhalDateOfBirth.swift; sourceTree = "<group>"; };
 		B8F2923F277B1A7C004F75A4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		B8F6D2D52786E51800121964 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		B8F6D2D727871F1E00121964 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 				CAD09B3C277DB1EF000BFC13 /* MarshalTopBarType01.swift */,
 				CA4B9D7E27830AB80070272F /* CompleteProfileAllStepModule.swift */,
 				CA745B99278457F7009CF62A /* MarshalTrendTabPageModule.swift */,
+				B8E7B0B827BBDEE100639D59 /* MarshalDatePicker.swift */,
+				B8E7B0BA27BC05D600639D59 /* MarhalDateOfBirth.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 				B886A944278899EB007879EB /* HomePages.swift in Sources */,
 				54B028A927B8E30A00D38609 /* HistoryModule.swift in Sources */,
 				540B0B9A279452940001F3C0 /* UserLevelPages.swift in Sources */,
+				B8E7B0BB27BC05D600639D59 /* MarhalDateOfBirth.swift in Sources */,
 				B8F29240277B1A7C004F75A4 /* Home.swift in Sources */,
 				5489A4EB2792EEED0068E122 /* WalletDeposit.swift in Sources */,
 				B8D2C1812779D29600F0C207 /* User.swift in Sources */,
@@ -589,6 +596,7 @@
 				B8AE1F972775F6D80090125D /* Submit.swift in Sources */,
 				CA4B9D792781992C0070272F /* EnglishInformationStep.swift in Sources */,
 				CA4B9D77278193B80070272F /* PertianImformationStep.swift in Sources */,
+				B8E7B0B927BBDEE100639D59 /* MarshalDatePicker.swift in Sources */,
 				B8AE1FD6277618E60090125D /* FailedMarshal.swift in Sources */,
 				B8F6D2D827871F1E00121964 /* Currency.swift in Sources */,
 				5489A4EF2792FD3E0068E122 /* WalletWithdraw.swift in Sources */,
@@ -731,6 +739,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Marshal/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -763,6 +772,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Marshal/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

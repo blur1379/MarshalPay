@@ -57,15 +57,10 @@ struct Home: View {
                 .background(Color("marshal_darkGrey"))
                 .edgesIgnoringSafeArea(.bottom)
                 //tab bar
-                
-                
-            }
+                }
             .onAppear{
                 showTabBar = true
             }
-         
-        
-        
     }
 }
 

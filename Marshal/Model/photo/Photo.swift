@@ -25,16 +25,7 @@ class Photo : Identifiable ,ObservableObject{
         } status: { status in
             self.uploadStatus = status
         }
-//        DispatchQueue.main.async {
-//            callApi.apiForUploadImagePostman(image: self.uiImage) { Status in
-//            self.uploadStatus = Status
-//        } fileName: { fileName in
-//            self.fileName = fileName
-//        }
-//
-//
-//        }
-
+        
     }
     
 }

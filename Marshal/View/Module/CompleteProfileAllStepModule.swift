@@ -49,7 +49,7 @@ struct CompleteProfileAllStepModule: View {
                     })
                 }
                 if currentUserLevel.englishLevel{
-                    EnglishInformationStep(pageSet: {
+                    EnglishInformationStep(user: user, pageSet: {
                         
                         currentUserLevel.clearData()
                         if userLevel.registerLevels.jobLevel {
@@ -60,7 +60,7 @@ struct CompleteProfileAllStepModule: View {
                     })
                 }
                 if currentUserLevel.jobLevel{
-                    WorkInformationStep(pageSet: {
+                    WorkInformationStep(user: user, pageSet: {
                         currentUserLevel.clearData()
                         if userLevel.registerLevels.educationLevel {
                             currentUserLevel.educationLevel = true
@@ -68,7 +68,7 @@ struct CompleteProfileAllStepModule: View {
                     })
                 }
                 if currentUserLevel.educationLevel{
-                    EducationInformationStep(pageSet: {
+                    EducationInformationStep(user: user, pageSet: {
                         
                     })
                 }

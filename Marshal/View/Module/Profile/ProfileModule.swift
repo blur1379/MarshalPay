@@ -41,7 +41,7 @@ struct ProfileModule: View {
                 VStack{
                     
                     if user.information.profileImage != "" {
-                        DownloadImage(imageName: user.information.profileImage)
+                        DownloadImage(imageName: $user.information.profileImage)
                             .frame(width: 70, height: 70, alignment: .center)
                         
                         
@@ -245,7 +245,7 @@ struct ProfileModule: View {
     var identificationCardImage : some View {
         VStack{
             if  user.information.identificationCardImage != "" {
-                DownloadImage(imageName: user.information.identificationCardImage)
+                DownloadImage(imageName: $user.information.identificationCardImage)
             }else{
                 Text("شما هنوز عکس مدارک خود را بارگذاری نکرده‌اید ")
                     .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
@@ -622,7 +622,7 @@ struct ProfileModule: View {
     var jabInformation : some View {
         VStack{
             if  user.information.identificationCardImage != "" {
-                DownloadImage(imageName: user.information.identificationCardImage)
+                DownloadImage(imageName: $user.information.identificationCardImage)
             }else{
                 Text("شما هنوز عکس مدارک خود را بارگذاری نکرده‌اید ")
                     .font(Font.custom("IRANSansMobileFaNum Medium", size: 16))
@@ -679,7 +679,7 @@ struct ProfileModule: View {
     var educationInformation : some View {
         VStack{
             if user.information.degreeOfEducationImage != "" {
-                DownloadImage(imageName: user.information.degreeOfEducationImage)
+                DownloadImage(imageName: $user.information.degreeOfEducationImage)
                 
             }else {
                 Text("شما هنوز عکس مدارک خود را بارگذاری نکرده‌اید ")

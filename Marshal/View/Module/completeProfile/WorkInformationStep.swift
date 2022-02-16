@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct WorkInformationStep: View {
-    @EnvironmentObject var user : User
-
+    @ObservedObject var user : User
     @State var statusOfSubmitBottom : Status = .none
     @State var code : String = ""
     let pageSet : () -> Void
@@ -30,12 +29,12 @@ struct WorkInformationStep: View {
             .padding(.horizontal, 16.0)
             
             
-            MarshalTextField(text: $code, title: "نشانی محل کار", isEn: false, keyboardType: .default)
+            MarshalTextField(text: $user.information.workPlaceAddress.fa, title: "نشانی محل کار", isEn: false, keyboardType: .default)
                 .padding(.horizontal, 16.0)
             
             
 
-            MarshalTextField(text: $code, title: "تلفن تماس", isEn: false, keyboardType: .numberPad)
+            MarshalTextField(text: $user.information.workPlaceTelephone, title: "تلفن تماس", isEn: false, keyboardType: .numberPad)
                 .padding(.horizontal, 16.0)
             
             
@@ -72,7 +71,7 @@ struct WorkInformationStep: View {
 
 struct MarshalCompleteProfileStep5Module_Previews: PreviewProvider {
     static var previews: some View {
-        WorkInformationStep(pageSet: {})
+        WorkInformationStep(user: User(), pageSet: {})
             .previewLayout(.sizeThatFits)
     }
 }

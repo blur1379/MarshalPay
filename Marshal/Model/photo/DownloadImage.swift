@@ -8,7 +8,7 @@
 import SwiftUI
 import URLImage
 struct DownloadImage: View {
-    let imageName : String
+    @Binding var imageName : String
     
     var body: some View {
         URLImage(ConstantData().stringToURLForImage(url: imageName)) {
@@ -16,12 +16,12 @@ struct DownloadImage: View {
             EmptyView()
         } inProgress: { progress in
             // Display progress
-            Text("Loading...")
+            ProgressViewMarshal()
         } failure: { error, retry in
             // Display error and retry button
             VStack {
-                Text(error.localizedDescription)
-                Button("Retry", action: retry)
+//                Text(error.localizedDescription)
+                Button("تلاش مجدد", action: retry)
             }
         } content: { image in
             // Downloaded image
@@ -34,6 +34,6 @@ struct DownloadImage: View {
 
 struct DownloadImage_Previews: PreviewProvider {
     static var previews: some View {
-        DownloadImage(imageName: "")
+        DownloadImage(imageName: .constant(""))
     }
 }
