@@ -12,6 +12,7 @@ struct PertianImformationStep: View {
     @State var statusOfSubmitBottom : Status = .none
     @State var code : String = ""
     let pageSet : () -> Void
+    @State var showAlert = false
     var body: some View {
         
         VStack(alignment: .center, spacing: 16.0) {
@@ -25,12 +26,12 @@ struct PertianImformationStep: View {
                   
             }
             
-            MarshalTextField(text: $user.information.nationalCode, title: "کد ملی", isEn: false, keyboardType: .numberPad)
+            MarshalTextField(text: $user.information.nationalCode, title: "کد ملی", isEn: false, keyboardType: .numberPad,limitedItem: 10)
             
             HStack(alignment: .center, spacing: 16.0) {
                 MarshalTextField(text: $user.information.jab.fa, title: "شغل", isEn: false, keyboardType: .default)
                 
-                MarshalTextField(text: $user.information.birthDate, title: "تاریخ تولد", isEn: false, keyboardType: .default)
+                MarhalDateOfBirth(isEn: false, dateOfBirth: $user.information.birthDate)
                   
             }
                 
@@ -52,8 +53,16 @@ struct PertianImformationStep: View {
             Group {
                 
                 Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
-                    pageSet()
+                    if checkFields(){
+                        pageSet()
+                    }else{
+                        showAlert = true
+                    }
+                    
+                }   .alert(isPresented: $showAlert ) {
+                    Alert(title: Text(""), message: Text("لطفا تمامی فیلد ها را پر کنید  "), dismissButton: .default(Text("باشه")) )
                 }
+                
                     
                 Spacer().frame(height: 4.0)
                 
@@ -62,6 +71,44 @@ struct PertianImformationStep: View {
         }
         .padding(.horizontal, 16.0)
         //.background(Color("marshal_darkGrey"))
+    }
+    
+    
+    //MARK: -FUNCTION
+    func checkFields() -> Bool{
+        var isComplated = true
+        if user.lastName.fa == "" {
+            isComplated = false
+        }
+        if user.firstName.fa == "" {
+            isComplated = false
+        }
+        if user.information.nationalCode == "" {
+            isComplated = false
+        }
+        if user.information.jab.fa == "" {
+            isComplated = false
+        }
+        if user.information.birthDate == "" {
+            isComplated = false
+        }
+        if user.information.residenceTelephone == "" {
+            isComplated = false
+        }
+        if user.information.city.fa == "" {
+            isComplated = false
+        }
+        if user.information.state.fa == "" {
+            isComplated = false
+        }
+        if user.information.residenceAddress.fa == "" {
+            isComplated = false
+        }
+        if user.information.residencePostalCode == "" {
+            isComplated = false
+        }
+        
+        return isComplated
     }
 }
 
