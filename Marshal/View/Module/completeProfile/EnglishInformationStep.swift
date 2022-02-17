@@ -12,6 +12,7 @@ struct EnglishInformationStep: View {
     @State var statusOfSubmitBottom : Status = .none
     @State var code : String = ""
     let pageSet : () -> Void
+    @State var showAlert = false
     var body: some View {
         VStack(alignment: .center, spacing: 16.0) {
             
@@ -56,7 +57,14 @@ struct EnglishInformationStep: View {
             Group {
                 
                 Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
-                    pageSet()
+                    if checkFields(){
+                        pageSet()
+                    }else{
+                        showAlert = true
+                    }
+                    
+                } .alert(isPresented: $showAlert ) {
+                    Alert(title: Text(""), message: Text("لطفا تمامی فیلد ها را پر کنید  "), dismissButton: .default(Text("باشه")) )
                 }
                     
                 Spacer().frame(height: 4.0)
@@ -68,6 +76,42 @@ struct EnglishInformationStep: View {
         //.background(Color("marshal_darkGrey"))
 
     }
+    func checkFields() -> Bool{
+        var isComplated = true
+        if user.lastName.en == "" {
+            isComplated = false
+        }
+        if user.firstName.en == "" {
+            isComplated = false
+        }
+        if user.information.nationalCode == "" {
+            isComplated = false
+        }
+        if user.information.jab.en == "" {
+            isComplated = false
+        }
+        if user.information.birthDate == "" {
+            isComplated = false
+        }
+        if user.information.residenceTelephone == "" {
+            isComplated = false
+        }
+        if user.information.city.en == "" {
+            isComplated = false
+        }
+        if user.information.state.en == "" {
+            isComplated = false
+        }
+        if user.information.residenceAddress.en == "" {
+            isComplated = false
+        }
+        if user.information.residencePostalCode == "" {
+            isComplated = false
+        }
+        
+        return isComplated
+    }
+    
 }
 
 struct MarshalCompleteProfileStep4Module_Previews: PreviewProvider {

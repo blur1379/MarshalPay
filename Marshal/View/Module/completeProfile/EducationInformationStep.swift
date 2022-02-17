@@ -113,6 +113,19 @@ struct EducationInformationStep: View {
         //.background(Color("marshal_darkGrey"))
 
     }
+    
+    func checkFields() -> Bool{
+        var isComplated = true
+        if user.information.fieldOfStudy.fa == "" {
+            isComplated = false
+        }
+        if user.information.universityName.fa == "" {
+            isComplated = false
+        }
+        
+        return isComplated
+    }
+    
 }
 
 struct MarshalCompleteProfileStep6Module_Previews: PreviewProvider {
