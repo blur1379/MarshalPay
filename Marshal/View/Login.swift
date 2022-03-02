@@ -133,7 +133,7 @@ struct Login: View {
         //: VSTACK
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(Color("marshal_darkGrey"))
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.bottom)
         .onTapGesture {
             hideKeyboard()
         }

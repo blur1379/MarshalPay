@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "backforupgrate.png",
+      "filename" : "perple_back_title.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "perple_back_title@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "perple_back_title@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

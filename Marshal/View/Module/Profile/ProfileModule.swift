@@ -15,97 +15,13 @@ struct ProfileModule: View {
     @AppStorage("showLogin") var showLogin = false
     @StateObject var pages = UserLevelPages()
     @State var user = User()
-    @State var status = Status.none
+    @State var status = Status.Successful
     
     var userCard : some View{
-        VStack{
-            HStack(alignment: .top){
-                Image("icon_badge_24dp")
-                    .resizable()
-                    .frame(width: 40, height: 40, alignment: .center)
-                    .offset(y: -3)
-                
-                
-                Spacer()
-                VStack{
-                    Text(user.firstName.fa + " " + user.lastName.fa)
-                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
-                        .padding(.horizontal, 16.0)
-                        .multilineTextAlignment(.trailing)
-                        .foregroundColor(Color("marshal_White"))
-                  
-                    
-                  
-                }
-                .padding(.top)
-                
-                VStack{
-                    
-                    if user.information.profileImage != "" {
-                        DownloadImage(imageName: $user.information.profileImage)
-                            .frame(width: 70, height: 70, alignment: .center)
-                        
-                        
-                    }else{
-                        Image("profile_defult")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 70, height: 70, alignment: .center)
-                            
-                    }
-                    
-                    HStack{
-                        Text("ویرایش")
-                            .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
-                            .padding(.horizontal, 18)
-                            .padding(.vertical , 8)
-                            .multilineTextAlignment(.trailing)
-                            .foregroundColor(Color("marshal_red"))
-                    }
-                   
-                    .background(Color("marshal_surfGrey"))
-                    .cornerRadius(12)
-                    .overlay(RoundedRectangle(cornerRadius: 12)
-                                .stroke(Color("marshal_red"), lineWidth: 0.5)
-                             
-                    )
-                    .shadow(color: .black, radius: 4, y: 4)
-                    .padding(.top)
-                }
-                .offset(y: -28)
-            }
-            .padding(.horizontal, 30)
-            HStack{
-                Rectangle()
-                    .frame(height: 2, alignment: .center)
-                    .foregroundColor(.white)
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                Text("سطح کاربری ")
-                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
-                    .padding(.horizontal, 8)
-                    .multilineTextAlignment(.trailing)
-                    .foregroundColor(Color("marshal_White"))
-                
-                Rectangle()
-                    .frame(height: 2, alignment: .center)
-                    .foregroundColor(.white)
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                
-            }.offset(y: -12)
+        HStack{
             
-            HStack{
-                Spacer()
-                Text(user.information.userLevel.label)
-                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
-                    .padding(.horizontal, 16.0)
-                    .padding()
-                    .padding(.top)
-                    .multilineTextAlignment(.trailing)
-                    .foregroundColor(Color("marshal_White"))
-                Spacer()
-            }.background(Image("backforupgrate").resizable())
-                .offset(y: -12)
-        }.background(Color("marshal_darkGrey").cornerRadius(12))
+        }//:HSTACK
+        
     }
     
     var harvestRow : some View {

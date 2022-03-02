@@ -38,6 +38,7 @@
 		B82313DF2775F0EA00743A42 /* MarshalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82313DE2775F0EA00743A42 /* MarshalApp.swift */; };
 		B82313E32775F0EB00743A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82313E22775F0EB00743A42 /* Assets.xcassets */; };
 		B82313E62775F0EB00743A42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82313E52775F0EB00743A42 /* Preview Assets.xcassets */; };
+		B879DBA727CF65FC005ED5B6 /* FarBank Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B879DBA627CF65FC005ED5B6 /* FarBank Regular.ttf */; };
 		B886A944278899EB007879EB /* HomePages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886A943278899EB007879EB /* HomePages.swift */; };
 		B886F26F278DE3050083ADC7 /* MarshalWalletTabPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886F26E278DE3050083ADC7 /* MarshalWalletTabPageModule.swift */; };
 		B88AFABF278883DC00E6B450 /* ExchangeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88AFABE278883DC00E6B450 /* ExchangeList.swift */; };
@@ -73,6 +74,7 @@
 		B8AE1FD4277617350090125D /* ProgressViewMarshal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1FD3277617350090125D /* ProgressViewMarshal.swift */; };
 		B8AE1FD6277618E60090125D /* FailedMarshal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1FD5277618E60090125D /* FailedMarshal.swift */; };
 		B8AE1FD8277619990090125D /* NetworkFailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE1FD7277619990090125D /* NetworkFailed.swift */; };
+		B8BA97B627CF5E3400BE7E30 /* UserCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA97B527CF5E3400BE7E30 /* UserCart.swift */; };
 		B8CF231C27A5BAD60070F85C /* ExchangePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CF231B27A5BAD60070F85C /* ExchangePage.swift */; };
 		B8D2C1812779D29600F0C207 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2C1802779D29600F0C207 /* User.swift */; };
 		B8D2C183277A411A00F0C207 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2C182277A411A00F0C207 /* Information.swift */; };
@@ -126,6 +128,7 @@
 		B82313DE2775F0EA00743A42 /* MarshalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalApp.swift; sourceTree = "<group>"; };
 		B82313E22775F0EB00743A42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B82313E52775F0EB00743A42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B879DBA627CF65FC005ED5B6 /* FarBank Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FarBank Regular.ttf"; sourceTree = "<group>"; };
 		B886A943278899EB007879EB /* HomePages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePages.swift; sourceTree = "<group>"; };
 		B886F26E278DE3050083ADC7 /* MarshalWalletTabPageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalWalletTabPageModule.swift; sourceTree = "<group>"; };
 		B88AFABE278883DC00E6B450 /* ExchangeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeList.swift; sourceTree = "<group>"; };
@@ -159,6 +162,7 @@
 		B8AE1FD3277617350090125D /* ProgressViewMarshal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewMarshal.swift; sourceTree = "<group>"; };
 		B8AE1FD5277618E60090125D /* FailedMarshal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedMarshal.swift; sourceTree = "<group>"; };
 		B8AE1FD7277619990090125D /* NetworkFailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFailed.swift; sourceTree = "<group>"; };
+		B8BA97B527CF5E3400BE7E30 /* UserCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCart.swift; sourceTree = "<group>"; };
 		B8BD264F2775F41D00213CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B8CF231B27A5BAD60070F85C /* ExchangePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePage.swift; sourceTree = "<group>"; };
 		B8D2C1802779D29600F0C207 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				540F659527B396EC007756A9 /* ProfileModule.swift */,
+				B8BA97B527CF5E3400BE7E30 /* UserCart.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 		B8AE1FA327760EAA0090125D /* font */ = {
 			isa = PBXGroup;
 			children = (
+				B879DBA627CF65FC005ED5B6 /* FarBank Regular.ttf */,
 				B8AE1FAE27760ECE0090125D /* IRANSansMobileFaNum Black.ttf */,
 				B8AE1FAA27760ECD0090125D /* IRANSansMobileFaNum Bold.ttf */,
 				B8AE1FAC27760ECE0090125D /* IRANSansMobileFaNum Light.ttf */,
@@ -515,6 +521,7 @@
 				B82313E62775F0EB00743A42 /* Preview Assets.xcassets in Resources */,
 				B8AE1FBF27760ECE0090125D /* IRANSansMobileFaNum Black.ttf in Resources */,
 				B82313E32775F0EB00743A42 /* Assets.xcassets in Resources */,
+				B879DBA727CF65FC005ED5B6 /* FarBank Regular.ttf in Resources */,
 				B8AE1FC127760ECE0090125D /* Roboto Bold.ttf in Resources */,
 				B8AE1FB727760ECE0090125D /* IRANSansMobileFaNum UltraLight.ttf in Resources */,
 				B8AE1FC227760ECE0090125D /* IRANSansMobileFaNum Medium.ttf in Resources */,
@@ -596,6 +603,7 @@
 				B8E7B0B927BBDEE100639D59 /* MarshalDatePicker.swift in Sources */,
 				B8AE1FD6277618E60090125D /* FailedMarshal.swift in Sources */,
 				B8F6D2D827871F1E00121964 /* Currency.swift in Sources */,
+				B8BA97B627CF5E3400BE7E30 /* UserCart.swift in Sources */,
 				5489A4EF2792FD3E0068E122 /* WalletWithdraw.swift in Sources */,
 				540B0B97279451950001F3C0 /* UserLevelRow.swift in Sources */,
 				B8D2C183277A411A00F0C207 /* Information.swift in Sources */,

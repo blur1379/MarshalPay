@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "background_for_user_leve.png",
+      "filename" : "gold_cart_title.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "background_for_user_leve@2x.png",
+      "filename" : "gold_cart_title@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "background_for_user_leve@3x.png",
+      "filename" : "gold_cart_title@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
