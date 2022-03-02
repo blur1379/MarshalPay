@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct UserCart: View {
-    @State var userLevel = UserLevelModel()
-    @State var userNumber = "6037697531233309"
+    @State var user = User()
     var body: some View {
         VStack{
             HStack{
                 VStack{
                     HStack{
-                        Text("کاربر مارشال پی")
+                        Text(user.firstName.fa == "" ? "کاربر مارشال پی" : user.firstName.fa)
                             .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
                             .padding(16.0)
                             .padding(.leading, 8)
@@ -88,7 +87,7 @@ struct UserCart: View {
          
             }//:HSTACK
             .frame(minWidth: 0 , maxWidth: .infinity)
-            .background(Image(userLevel.getbackForUserCart()).resizable().scaledToFill())
+            .background(Image(user.information.userLevel.getbackForUserCart()).resizable().scaledToFill())
             .cornerRadius(16)
             Spacer()
         }.background(Color("marshal_darkGrey"))

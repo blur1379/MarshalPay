@@ -13,4 +13,5 @@ class User : Identifiable , ObservableObject{
     @Published var lastName = Dictionery()
     @Published var mobile = ""
     @Published var information : Information = Information()
+    @Published var accountNumber = ""
 }

@@ -17,13 +17,6 @@ struct ProfileModule: View {
     @State var user = User()
     @State var status = Status.Successful
     
-    var userCard : some View{
-        HStack{
-            
-        }//:HSTACK
-        
-    }
-    
     var harvestRow : some View {
         HStack{
             Image(systemName: "arrowtriangle.down.fill")
@@ -714,7 +707,7 @@ struct ProfileModule: View {
                 ScrollView {
                     VStack(spacing : 0){
                         HStack{
-                            userCard
+                            UserCart(user: user)
                                 .padding(.top,44)
                                 .padding(.horizontal, 24)
                         }

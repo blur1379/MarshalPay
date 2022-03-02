@@ -13,6 +13,7 @@ class UserLevelModel : Identifiable, ObservableObject{
     var description = ""
     var credit = 0
     var registerLevels = UserLevelPages()
+    var status = ""
     
     func getbackForUserCart()->String{
         if name == "gold"{
