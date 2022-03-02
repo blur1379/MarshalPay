@@ -30,15 +30,59 @@ struct UserCart: View {
                             .padding( 16.0)
                        
                     }//:HSTACK
-                    HStack{
-                        Text("6037697531233309")
-                            .font(Font.custom("FarBank", size: 24))
-                            .padding(16.0)
-                            .padding(.leading, 8)
-                            .multilineTextAlignment(.trailing)
+                    .padding(.bottom , 16)
+                    HStack(spacing: 0){
+                        Text("6037")
+                            .font(Font.custom("FarBank", size: 22))
+                            .frame(maxWidth: .infinity)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color("marshal_White"))
+                    
+                        Text("6037")
+                            .font(Font.custom("FarBank", size: 22))
+                            .multilineTextAlignment(.center)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(Color("marshal_White"))
+                        Text("6037")
+                            .font(Font.custom("FarBank", size: 22))
+                            .multilineTextAlignment(.center)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(Color("marshal_White"))
+                        Text("6037")
+                            .font(Font.custom("FarBank", size: 22))
+                            .multilineTextAlignment(.center)
+                            .frame(maxWidth: .infinity)
                             .foregroundColor(Color("marshal_White"))
                         
                     }//:HSTACK
+                    
+                    HStack{
+                        Spacer()
+                        HStack{
+                           
+                            Text("کاربر مارشال پی")
+                                .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
+                                .padding(.horizontal ,16.0)
+                            
+                                .multilineTextAlignment(.trailing)
+                                .foregroundColor(Color("marshal_White"))
+                            Rectangle()
+                                .frame(width: 1)
+                                .frame(minHeight: 0, maxHeight: .infinity)
+                                .background(Color.white)
+                            Text("اعتبار مارشال")
+                                .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
+                                .padding(.horizontal ,16.0)
+                                .multilineTextAlignment(.trailing)
+                                .foregroundColor(Color("marshal_White"))
+                         
+                            
+                        }//:HSTACK
+                        .background(Color("marshal_darkGrey"))
+                        .cornerRadius(radius: 16, corners: [.topLeft, .bottomLeft])
+                    }//:HSTACK
+                    .padding(.vertical)
+                    
                 }//:VSTACK
               
          

@@ -4,7 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>font/FarBank Regular.ttf</string>
+		<string>Far-Bank.ttf</string>
 		<string>Roboto Thin.ttf</string>
 		<string>Roboto Regular.ttf</string>
 		<string>Roboto Medium.ttf</string>
