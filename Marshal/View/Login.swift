@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Login: View {
     //MARK: - PROPERTIES
+    @AppStorage("showLogin") var showLogin = false
     @State var phoneNumber : String = ""
     @State var countryCode : String = "98"
     @State var code : String = ""
@@ -20,10 +21,79 @@ struct Login: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let callapi = CallApi()
 
+    
+    var topBar : some View {
+        HStack(alignment: .center) {
+            Button {
+               showLogin = false
+            } label: {
+                Image (systemName: "arrow.backward")
+                    .frame(width: 40, height: 40, alignment: .leading)
+                    .foregroundColor(Color("marshal_red"))
+                    .imageScale(.large)
+            }
+
+  
+
+            Spacer()
+            
+            Text("صرافی")
+                
+                .foregroundColor(Color("marshal_White"))
+                .font(Font.custom("IRANSansMobileFaNum Bold", size: 18))
+            
+            
+            
+            
+//            Image ("marshal_logo-wings")
+//                .resizable()
+//                .frame(width: 96, height: 22, alignment: .center)
+//                .scaledToFit()
+            
+  
+        }
+        .padding(.horizontal, 16.0)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 56)
+
+    }
+    
+    
     //MARK: - BODY
     var body: some View {
         VStack(spacing: 16){
+            VStack(spacing: 0){
+                topBar
+                Divider()
+                    .frame(height:1)
+                    .background(Color("marshal_red"))
+            }
+           
+                
+                
+            VStack {
+                VStack(alignment: .center, spacing: 8){
+                    //LOGO
+                    Image("marshal_logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 192, alignment: .center)
+                    // DIVIDER
+                    Divider()
+                        .frame(width: 192,height: 1.0)
+                        .background(Color("marshal_red"))
+                    
+                    //TITLE
+                    Text("بازار آنلاین رمزارز ها")
+                        .foregroundColor(Color("marshal_White"))
+                        .font(Font.custom("IRANSansMobileNoEn Medium", size: 20))
+                        
+                }//: VSTACK
+          
+                         
+            }//: VSTACK
+            .padding(.bottom , 50)
 
+         
         //: PHONE NUMBER
             MarshalPhoneNumber(phoneNumber: $phoneNumber, countryCode: countryCode)
                 .padding(.horizontal, 16)
@@ -54,15 +124,19 @@ struct Login: View {
                 }
             }// : END IF
         //: SUBMIT BOTTOM
+  
             Submit(status: $status, title: "تایید") {
                 submit()
             }
-            
+            Spacer()
          }
         //: VSTACK
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(Color("marshal_darkGrey"))
         .edgesIgnoringSafeArea(.all)
+        .onTapGesture {
+            hideKeyboard()
+        }
     }
     //MARK: -FUNCTION
     func submit() {

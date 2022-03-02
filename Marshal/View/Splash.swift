@@ -16,7 +16,6 @@ extension View {
 struct Splash: View {
     //MARK: - PROPERTIES
     @StateObject var networkConnection = NetworkManeger()
-    @State var showLogin = false
     //MARK: - BODY
     var body: some View {
         
@@ -39,28 +38,10 @@ struct Splash: View {
                         .font(Font.custom("IRANSansMobileNoEn Medium", size: 20))
                         
                 }//: VSTACK
-                if networkConnection.isConnected {
-                    if showLogin {
-                        VStack{
-                            Login()
-                                .frame(height: 400, alignment: .center)
-                        }//: VSTACK
-                    }else{
-                        // go to home
-                        
-                    }//: END IF
-                }else{
-                    // connection failed
-                    NetworkFailed()
-                }//: END IF
+          
+                         
             }//: VSTACK
-            .animation(.easeIn, value: showLogin)
         }//: ZSTACK
-        .onAppear(perform: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                      showLogin = true
-                  }
-        })
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
         .ignoresSafeArea()
         .background(Color("marshal_darkGrey"))

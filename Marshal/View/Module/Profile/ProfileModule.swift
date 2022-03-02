@@ -12,6 +12,7 @@ import Alamofire
 
 struct ProfileModule: View {
     //MARK: -PROPERTIES
+    @AppStorage("showLogin") var showLogin = false
     @StateObject var pages = UserLevelPages()
     @State var user = User()
     @State var status = Status.none
@@ -892,6 +893,9 @@ struct ProfileModule: View {
                     if response.response?.statusCode == 200 || response.response?.statusCode == 201  {
                          user = ConvertJsonToObject().convertJsonToUser(json["data"])
                         status = .Successful
+                    }else if response.response?.statusCode == 401 {
+                        showLogin = true
+                        status = .Failure
                     }else{
                         status = .Failure
                     }

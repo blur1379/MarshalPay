@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct MarshalApp: App {
     @State var showSplash = true
+    @AppStorage("showLogin") var showLogin = false
     var body: some Scene {
         WindowGroup {
             ZStack{
@@ -21,11 +22,19 @@ struct MarshalApp: App {
                             }
                         }
                 }else{
-                    Home()
+                    if showLogin{
+                        Login()
+                            .transition(AnyTransition.slide)
+                            .animation(.default)
+                    }else{
+                        Home()
+                    }
                 }
                
+            }.onAppear{
+                showLogin = false
             }
-            .background(Color("marshal_darkGrey"))
+            .background(Color("marshal_Grey"))
         }
     }
 

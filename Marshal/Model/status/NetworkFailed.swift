@@ -1,7 +1,7 @@
 //
 //  NetworkFailed.swift
 //  Marshal
-//
+// 
 //  Created by Blur on 12/24/21.
 //
 
@@ -17,7 +17,7 @@ struct NetworkFailed: View {
                  Text("اتصال اینترنت خود را برسی کنید.")
                      .font(Font.custom("IRANSansMobileNoEn Medium", size: 12))
                      .frame(maxWidth: .infinity, alignment: .center)
-                     .background(Color("marshal_bg"))
+                     .background(.white)
                      .foregroundColor(Color("marshal_red"))
              }
              Spacer()

@@ -12,12 +12,13 @@ import Alamofire
 import FoundationNetworking
 #endif
 struct CallApi{
+    @AppStorage("showLogin") var showLogin = false
     public var baceUrl = "https://marshal-pay.iran.liara.run/api/"
     public var baceUrlDownload = "https://marshal-pay.iran.liara.run/download/"
     var timeOut = 20
     public static var uploadTimeOut = 30
     let converter = ConvertJsonToObject()
-    @AppStorage("acc") var acceceToken = "U2FsdGVkX18U2sMmMDwpsOZpGposc1CrkPxnT21NrbP3OK0knhgYTcnz871oBsoUsy6DGjdZIWkRw40F2Wp3tY1L0rJScEi3aBwxu8mu1y6C8C6pcP0aBLHSsI2OKnmh6bKvG8WfZJ+5RtPL710b3HYKglNBmC0lFNwn4CTy8H/rjuoZAOP/e4XOwhZlbFYZWg/fPgQcTMBQwe0nDgFJZswbHqSBc8w/YXV5sjOaC8D/ELbhymSbLA2qy8pv+WV7RsIAS8r95zXqvVrQXJ+W/aOAI4sLz1jz/ve3/xr5eIxj1JVreRhOy3V4vYnQsXVlkCw4P847Z+5xCpxw/T4qXbKj4QYVvAyxxwfpL2mB5HPopBxP0byP49koypZVt/PxOrr1NCcj7Q7ETKMjztLgKSBdxP+cAJXvcMjPybuYz94YwRiCnXJZBTDoik4rKh07EyfnUa1X5LZhWGQfbgAjA92zI64IeEw5yRbuKewUuaDdlwu36lURfjhFkSQK4ChKmi8EFj7BwMPV6EpUSTmECf50wU+16vHly4oRctcpTQIK3I8an2zPBsd5QjR+tDLnOVcOsLsZ33LXx7AiBIy5jI/q2tOC/52QxxHJ+yX9FlX/g7LN+HEHAwBDMjv+Ay4QKnD+tnvKUxcPwa9XuMeBHWtt2bCjh4c6lrJLjm+eTOEZBzWNRlVbzOWbqEI0elfNR6gjfwuCJ3wKuQh12OLfkQaxrjnopR8eoyy3OigExSFBCjeO5GoC9XVZ+Tbpq0n72KwGEA0i8Nf/UWtoE29BoQgVaZNea5m/Kx9H0zWjp8o="
+    @AppStorage("acc") var acceceToken = ""
     // for send code
     func SendActivationCode(phoneNumber: String , status : @escaping ((Status)->())){
         var statusApi : Status = .InProgress
@@ -83,6 +84,18 @@ struct CallApi{
                     print(json)
                     print("------- send code ")
                     if response.response?.statusCode == 200 || response.response?.statusCode == 201  {
+                        if json["data"].exists(){
+                            if json["data"]["tokens"].exists(){
+                                if json["data"]["tokens"].exists(){
+                                    if json["data"]["tokens"]["accessToken"].exists(){
+                                        acceceToken = json["data"]["tokens"]["accessToken"].string!
+                                        showLogin = false
+                                    }
+                                    if json["data"]["tokens"]["refreshToken"].exists(){
+                                    }
+                                }
+                            }
+                        }
                         status(.Successful)
                         
                     }else{
@@ -152,6 +165,10 @@ struct CallApi{
                     apiPhoto(innerPhoto)
                     status(.Successful)
             
+                }else if response.response?.statusCode == 401{
+                    showLogin = true
+                    status(.Failure)
+                    print(response)
                 }else {
                     status(.Failure)
                     print(response)
@@ -251,6 +268,10 @@ struct CallApi{
                         let apiWallet = converter.convrtJsonToWallet(json["data"])
                         wallet(apiWallet)
                         status(.Successful)
+                    }else if response.response?.statusCode == 401{
+                        showLogin = true
+                        status(.Failure)
+                        print(response)
                     }else{
                         status(.Failure)
                     }
@@ -279,7 +300,6 @@ struct CallApi{
             
         }
     }
-    
     
     // get user levels
     func getUserLevels(userLevels: @escaping (([UserLevelModel])->Void), status: @escaping((Status)->Void)){
@@ -302,7 +322,11 @@ struct CallApi{
                         let apiUserLevels = converter.convertJsonToUserLevels(json["data"]["docs"])
                         userLevels(apiUserLevels)
                         status(.Successful)
-                    }else{
+                    }else if response.response?.statusCode == 401{
+                        showLogin = true
+                        status(.Failure)
+                        print(response)
+                    }else {
                         status(.Failure)
                     }
                     print(baceUrl + "v1/users/validation-activation-code")
@@ -331,6 +355,110 @@ struct CallApi{
         }
     }
     
-    
+    // insert user information
+    func updateProfile(user : User , status: @escaping((Status)->Void)){
+        let url = "v1/users/update-profile"
+        let headers: HTTPHeaders?
+        
+        headers = [
+            "Authorization": "Bearer \(acceceToken)"
+        ]
+        
+        let parameters: [String: Any] = [
+        "firstName": [
+            "fa" : user.firstName.fa,
+            "en" : user.firstName.en
+          ],
+          "lastName": [
+            "fa" : user.lastName.fa,
+            "en" : user.lastName.en
+          ],
+        "userName" : user.userName,
+          "information": [
+            "nationalCode" : user.information.nationalCode,
+            "birthDate" : user.information.birthDate,
+            "job": [
+                "fa" : user.information.jab.fa,
+                "en" : user.information.jab.en
+            ],
+            "residencePostalCode" : user.information.residencePostalCode,
+            "residenceTelephone": user.information.residenceTelephone,
+            "alternativeMobile": user.information.alternativeMobile,
+            "street": [
+                "fa": user.information.street.fa,
+                "en": user.information.street.en
+            ],
+            "city": [
+                "fa": user.information.city.fa,
+                "en": user.information.city.en
+            ],
+            "state": [
+                "fa": user.information.state.fa,
+                "en": user.information.state.en
+            ],
+            "residenceAddress": [
+                "fa": user.information.residenceAddress.fa,
+                "en": user.information.residenceAddress.en
+            ],
+            "profileImage": user.information.profileImage,
+            "identificationCardImage": user.information.identificationCardImage,
+            "workPlaceAddress": [
+                "fa": user.information.workPlaceAddress.fa,
+                "en": user.information.workPlaceAddress.en
+            ],
+            "workPlaceTelephone": user.information.workPlaceTelephone,
+            "educationStatus": user.information.educationStatus,
+            "fieldOfStudy": [
+                "fa": user.information.fieldOfStudy.fa,
+            ],
+            "degreeOfEducationImage": user.information.degreeOfEducationImage,
+            "universityName": [
+                "fa": user.information.universityName.fa,
+            ]
+          ]]
+
+        AF.request(baceUrl + url, method: .post,parameters: parameters , encoding: JSONEncoding.default,headers: headers){urlRequest in urlRequest.timeoutInterval = TimeInterval(timeOut)}.responseJSON { response in
+            do {
+                switch response.result {
+                case .success :
+                    let json = try JSON(data: response.data!)
+                    print("------ send code")
+                    print(json)
+                    print("------- send code")
+                    
+                    if response.response?.statusCode == 200 || response.response?.statusCode == 201  {
+                        status(.Successful)
+                    }else if response.response?.statusCode == 401{
+                        showLogin = true
+                        status(.Failure)
+                        print(response)
+                    }else {
+                        status(.Failure)
+                    }
+                    print(baceUrl + "v1/users/validation-activation-code")
+                    print(response.response?.statusCode ?? 0)
+
+                    break
+                case let .failure(error):
+                    print(baceUrl + "v1/users/validation-activation-code")
+                    status(.Failure)
+                    if response.response != nil {
+                        print(response.response?.statusCode ?? 0 )
+                    }
+                    print("failed")
+                    print(error)
+                    break
+                }
+            }catch{
+                print(baceUrl + "v1/users/validation-activation-code")
+                status(.Failure)
+                if response.response != nil {
+                    print(response.response?.statusCode ?? 0)
+                }
+                print("nil response")
+            }
+            
+        }
+    }
     
 }

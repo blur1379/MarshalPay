@@ -17,6 +17,8 @@ struct Submit: View {
             ZStack{
                 if status == .InProgress {
                     ProgressViewMarshal()
+                        .frame(height: 52, alignment: .center)
+                        .zIndex(2)
                 }
               
                 Text(title)

@@ -17,9 +17,10 @@ struct FailedMarshal: View {
                 
             }) {
                 Text("تلاش مجدد")
+                    .foregroundColor(.white)
                     .font(Font.custom("IRANSansMobileNoEn Medium", size: 12))
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .background(Color("marshal_bg"))
+                    .background(Color("marshal_Grey"))
             }
             Spacer()
         }

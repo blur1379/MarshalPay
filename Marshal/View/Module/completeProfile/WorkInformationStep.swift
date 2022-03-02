@@ -37,27 +37,11 @@ struct WorkInformationStep: View {
             MarshalTextField(text: $user.information.workPlaceTelephone, title: "تلفن تماس", isEn: false, keyboardType: .numberPad)
                 .padding(.horizontal, 16.0)
             
-            
-            VStack(alignment: .center, spacing: 24.0) {
-                Image("icon_add_a_photo_24dp")
-                    .resizable()
-                    .frame(width: 56.0, height: 56.0, alignment: .center)
-                    .scaledToFit()
-                    .foregroundColor(Color("marshal_White"))
-                    
-                Text("تصویر مدارک شغلی خود را وارد کنید")
-                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 16.0))
-                    .foregroundColor(Color("marshal_White"))
-
-            }
-            .frame(width: UIScreen.main.bounds.width - 32, height: (UIScreen.main.bounds.width - 32) * 2/3)
-            .background(Color("marshal_surfGrey"))
-            .cornerRadius(12.0)
-            .overlay(RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color("marshal_White"), lineWidth:0.5))
  
             Submit(status: $statusOfSubmitBottom, title: "مرحله بعد") {
-                pageSet()
+                if checkFields(){
+                    pageSet()
+                }
             }
             
             Spacer().frame(height: 4.0)
@@ -67,6 +51,18 @@ struct WorkInformationStep: View {
         //.background(Color("marshal_darkGrey"))
 
     }
+    func checkFields() -> Bool{
+        var isComplated = true
+        if user.information.workPlaceAddress.fa == "" {
+            isComplated = false
+        }
+        if user.information.workPlaceTelephone == "" {
+            isComplated = false
+        }
+        
+        return isComplated
+    }
+    
 }
 
 struct MarshalCompleteProfileStep5Module_Previews: PreviewProvider {
