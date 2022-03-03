@@ -20,6 +20,7 @@
 		5421EA4B27902FC800DCA41B /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5421EA4A27902FC800DCA41B /* WalletModel.swift */; };
 		543EDD1827BA46380005E23D /* Dictionery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543EDD1727BA46380005E23D /* Dictionery.swift */; };
 		5462A6AC27B7986B007059D3 /* marshal.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5462A6AB27B7986B007059D3 /* marshal.gif */; };
+		5470E3B327CF8E4A009A0F27 /* Far-Bank.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5470E3B227CF8E4A009A0F27 /* Far-Bank.ttf */; };
 		5482F9B3279413F9004772A4 /* MarshalWalletTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482F9B2279413F9004772A4 /* MarshalWalletTabBar.swift */; };
 		5482F9B527941570004772A4 /* WalletPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482F9B427941570004772A4 /* WalletPages.swift */; };
 		5489A4E92792EB830068E122 /* WalletPriceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489A4E82792EB830068E122 /* WalletPriceList.swift */; };
@@ -38,7 +39,6 @@
 		B82313DF2775F0EA00743A42 /* MarshalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82313DE2775F0EA00743A42 /* MarshalApp.swift */; };
 		B82313E32775F0EB00743A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82313E22775F0EB00743A42 /* Assets.xcassets */; };
 		B82313E62775F0EB00743A42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82313E52775F0EB00743A42 /* Preview Assets.xcassets */; };
-		B879DBA727CF65FC005ED5B6 /* FarBank Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B879DBA627CF65FC005ED5B6 /* FarBank Regular.ttf */; };
 		B886A944278899EB007879EB /* HomePages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886A943278899EB007879EB /* HomePages.swift */; };
 		B886F26F278DE3050083ADC7 /* MarshalWalletTabPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886F26E278DE3050083ADC7 /* MarshalWalletTabPageModule.swift */; };
 		B88AFABF278883DC00E6B450 /* ExchangeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88AFABE278883DC00E6B450 /* ExchangeList.swift */; };
@@ -111,6 +111,7 @@
 		5421EA4A27902FC800DCA41B /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
 		543EDD1727BA46380005E23D /* Dictionery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionery.swift; sourceTree = "<group>"; };
 		5462A6AB27B7986B007059D3 /* marshal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = marshal.gif; sourceTree = "<group>"; };
+		5470E3B227CF8E4A009A0F27 /* Far-Bank.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Far-Bank.ttf"; sourceTree = "<group>"; };
 		5482F9B2279413F9004772A4 /* MarshalWalletTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalWalletTabBar.swift; sourceTree = "<group>"; };
 		5482F9B427941570004772A4 /* WalletPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPages.swift; sourceTree = "<group>"; };
 		5489A4E82792EB830068E122 /* WalletPriceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPriceList.swift; sourceTree = "<group>"; };
@@ -128,7 +129,6 @@
 		B82313DE2775F0EA00743A42 /* MarshalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalApp.swift; sourceTree = "<group>"; };
 		B82313E22775F0EB00743A42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B82313E52775F0EB00743A42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B879DBA627CF65FC005ED5B6 /* FarBank Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FarBank Regular.ttf"; sourceTree = "<group>"; };
 		B886A943278899EB007879EB /* HomePages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePages.swift; sourceTree = "<group>"; };
 		B886F26E278DE3050083ADC7 /* MarshalWalletTabPageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalWalletTabPageModule.swift; sourceTree = "<group>"; };
 		B88AFABE278883DC00E6B450 /* ExchangeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeList.swift; sourceTree = "<group>"; };
@@ -399,7 +399,7 @@
 		B8AE1FA327760EAA0090125D /* font */ = {
 			isa = PBXGroup;
 			children = (
-				B879DBA627CF65FC005ED5B6 /* FarBank Regular.ttf */,
+				5470E3B227CF8E4A009A0F27 /* Far-Bank.ttf */,
 				B8AE1FAE27760ECE0090125D /* IRANSansMobileFaNum Black.ttf */,
 				B8AE1FAA27760ECD0090125D /* IRANSansMobileFaNum Bold.ttf */,
 				B8AE1FAC27760ECE0090125D /* IRANSansMobileFaNum Light.ttf */,
@@ -521,7 +521,7 @@
 				B82313E62775F0EB00743A42 /* Preview Assets.xcassets in Resources */,
 				B8AE1FBF27760ECE0090125D /* IRANSansMobileFaNum Black.ttf in Resources */,
 				B82313E32775F0EB00743A42 /* Assets.xcassets in Resources */,
-				B879DBA727CF65FC005ED5B6 /* FarBank Regular.ttf in Resources */,
+				5470E3B327CF8E4A009A0F27 /* Far-Bank.ttf in Resources */,
 				B8AE1FC127760ECE0090125D /* Roboto Bold.ttf in Resources */,
 				B8AE1FB727760ECE0090125D /* IRANSansMobileFaNum UltraLight.ttf in Resources */,
 				B8AE1FC227760ECE0090125D /* IRANSansMobileFaNum Medium.ttf in Resources */,

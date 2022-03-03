@@ -351,6 +351,8 @@ struct ConvertJsonToObject {
                 }
                 
                 if json["information"]["userLevel"].exists(){
+                    let userLevels = json["information"]["userLevel"].array!
+                    
                     user.information.userLevel = convertJsonToUserLevel(json["information"]["userLevel"])
                 }
                 
