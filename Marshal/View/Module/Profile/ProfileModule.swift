@@ -15,7 +15,8 @@ struct ProfileModule: View {
     @AppStorage("showLogin") var showLogin = false
     @StateObject var pages = UserLevelPages()
     @State var user = User()
-    @State var status = Status.Successful
+    @State var status = Status.none
+    
     
     var harvestRow : some View {
         HStack{

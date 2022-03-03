@@ -14,7 +14,7 @@ struct UserCart: View {
             HStack{
                 VStack{
                     HStack{
-                        Text(user.firstName.fa == "" ? "کاربر مارشال پی" : user.firstName.fa)
+                        Text(user.firstName.fa == "" ? "کاربر مارشال پی" : user.firstName.fa + user.lastName.fa)
                             .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
                             .padding(16.0)
                             .padding(.leading, 8)
@@ -62,23 +62,25 @@ struct UserCart: View {
                             Text("کاربر مارشال پی")
                                 .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
                                 .padding(.horizontal ,16.0)
-                            
+                                .padding(.vertical , 12)
                                 .multilineTextAlignment(.trailing)
                                 .foregroundColor(Color("marshal_White"))
                             Rectangle()
                                 .frame(width: 1)
                                 .frame(minHeight: 0, maxHeight: .infinity)
                                 .background(Color.white)
-                            Text("اعتبار مارشال")
+                                .padding(.vertical , 4)
+                            Text(String(user.information.userLevel.credit))
                                 .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
                                 .padding(.horizontal ,16.0)
+                                .padding(.vertical , 12)
                                 .multilineTextAlignment(.trailing)
                                 .foregroundColor(Color("marshal_White"))
                          
                             
                         }//:HSTACK
                         .background(Color("marshal_darkGrey"))
-                        .cornerRadius(radius: 16, corners: [.topLeft, .bottomLeft])
+                        .cornerRadius(radius: 12, corners: [.topLeft, .bottomLeft])
                     }//:HSTACK
                     .padding(.vertical)
                     
@@ -90,7 +92,7 @@ struct UserCart: View {
             .background(Image(user.information.userLevel.getbackForUserCart()).resizable().scaledToFill())
             .cornerRadius(16)
             Spacer()
-        }.background(Color("marshal_darkGrey"))
+        }
        
     }
 }
