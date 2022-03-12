@@ -16,8 +16,11 @@ struct MarshalTabBar: View {
 
             Button(action: {
                 //write code 😎
-                pages = .Walet
-                showTabBar = true
+                if pages != .Walet{
+                    pages = .Walet
+                    showTabBar = true
+                }
+             
             }) {
                 
                 VStack (alignment: .center, spacing: 4.0){
@@ -40,8 +43,11 @@ struct MarshalTabBar: View {
             
             Button(action: {
                 //write code 😎
-                pages = .Invest
-                showTabBar = true
+                if pages != .Invest{
+                    pages = .Invest
+                    showTabBar = true
+                }
+              
             }) {
                 
                 VStack (alignment: .center, spacing: 4.0){
@@ -64,8 +70,11 @@ struct MarshalTabBar: View {
             
             
             Button(action: {
-                pages = .Exchange
-                showTabBar = true
+                if pages != .Exchange{
+                    pages = .Exchange
+                    showTabBar = true
+                }
+         
             }) {
                 
                 VStack (alignment: .center, spacing: 4.0){
@@ -91,8 +100,11 @@ struct MarshalTabBar: View {
             
             Button(action: {
                 //write code 😎
-                pages = .History
-                showTabBar = true
+                if pages != .History{
+                    pages = .History
+                    showTabBar = true
+                }
+             
             }) {
                 
                 VStack (alignment: .center, spacing: 4.0){
@@ -112,9 +124,12 @@ struct MarshalTabBar: View {
             }
          
             Button(action: {
-                  pages = .Profile
-                showTabBar = true
-                
+                if pages != .Profile{
+                    pages = .Profile
+                  showTabBar = true
+                  
+                }
+               
             }) {
                 
                 VStack (alignment: .center, spacing: 4.0){

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MarshalTrendTabPageModule: View {
     var body: some View {
-        NavigationView{
             VStack(alignment: .center, spacing: 0.0) {
                 HStack{
                     Group{
@@ -61,7 +60,7 @@ struct MarshalTrendTabPageModule: View {
             .background(Color("marshal_darkGrey"))
             .frame(minHeight: 0.0, maxHeight: .infinity, alignment: .center)
             .navigationBarHidden(true)
-        }
+        
     
     }
 }

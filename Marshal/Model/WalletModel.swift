@@ -7,9 +7,9 @@
 
 import Foundation
 class WalletModel : ObservableObject {
-    @Published var currentCredit : Int = 0
-    @Published var validityCredit = 0
-    @Published var debtCredit = 0
+    @Published var currentCredit : Double = 0
+    @Published var validityCredit : Double = 0
+    @Published var debtCredit : Double = 0
     @Published var walletCurencies = [WalletCurrency]()
     func getCurrentCredit()->String {
         if currentCredit != 0 {

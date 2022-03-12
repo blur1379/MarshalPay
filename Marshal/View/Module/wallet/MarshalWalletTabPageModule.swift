@@ -15,6 +15,7 @@ struct MarshalWalletTabPageModule: View {
     @State var selectedPage : WalletPages = .wallet
     @AppStorage("showTabBar") var showTabBar = true
     let callApi = CallApi()
+    
     var tabsOnTop: some View {
         
         HStack(alignment: .center, spacing: 8.0) {
@@ -248,22 +249,22 @@ struct MarshalWalletTabPageModule: View {
           
         }
         .onAppear {
-            statusOfPage = .InProgress
-            callApi.getWallet { wallet in
-                self.wallet.validityCredit = wallet.validityCredit
-                self.wallet.walletCurencies = wallet.walletCurencies
-                self.wallet.currentCredit = wallet.currentCredit
-                self.wallet.debtCredit = wallet.debtCredit
-            } status: { status in
-                
-                self.statusOfPage = status
-            }
-
+           onCreate()
         }
         
     }
     func onCreate(){
-        
+        statusOfPage = .InProgress
+        callApi.getWallet { wallet in
+            self.wallet.validityCredit = wallet.validityCredit
+            self.wallet.walletCurencies = wallet.walletCurencies
+            self.wallet.currentCredit = wallet.currentCredit
+            self.wallet.debtCredit = wallet.debtCredit
+        } status: { status in
+            
+            self.statusOfPage = status
+        }
+
     }
 }
 

@@ -103,13 +103,13 @@ struct ConvertJsonToObject {
         if json.exists(){
             if json["inventory"].exists(){
                 if json["inventory"]["currentCredit"].exists(){
-                    walletModel.currentCredit = json["inventory"]["currentCredit"].int!
+                    walletModel.currentCredit = json["inventory"]["currentCredit"].double!
                 }
                 if json["inventory"]["validityCredit"].exists(){
-                    walletModel.validityCredit = json["inventory"]["validityCredit"].int!
+                    walletModel.validityCredit = json["inventory"]["validityCredit"].double!
                 }
                 if json["inventory"]["debtCredit"].exists(){
-                    walletModel.debtCredit = json["inventory"]["debtCredit"].int!
+                    walletModel.debtCredit = json["inventory"]["debtCredit"].double!
                 }
             }
             if json["currencies"].exists(){
@@ -213,6 +213,11 @@ struct ConvertJsonToObject {
             if json["userName"].exists(){
                 user.userName = json["userName"].string!
             }
+            
+            if json["accountNumber"].exists(){
+                user.accountNumber = json["accountNumber"].string!
+            }
+            
             
             if json["information"].exists(){
 
@@ -352,11 +357,18 @@ struct ConvertJsonToObject {
                 
                 if json["information"]["userLevel"].exists(){
                     let userLevels = json["information"]["userLevel"].array!
-                    
-                    user.information.userLevel = convertJsonToUserLevel(json["information"]["userLevel"])
+                    for userLevel in userLevels {
+                        if userLevel["status"].exists(){
+                            if userLevel["status"].string! == "accepted"{
+                                user.information.userLevel = convertJsonToUserLevel(userLevel["level"])
+                            }
+                            
+                        }
+                        
+                    }
+
                 }
-                
-                
+            
             }
             
         }
