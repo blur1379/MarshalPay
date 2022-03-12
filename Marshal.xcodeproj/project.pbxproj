@@ -84,6 +84,8 @@
 		B8F6D2D62786E51800121964 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F6D2D52786E51800121964 /* Extentions.swift */; };
 		B8F6D2D827871F1E00121964 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F6D2D727871F1E00121964 /* Currency.swift */; };
 		B8F6D2DA2787210000121964 /* ConvertJsonToObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F6D2D92787210000121964 /* ConvertJsonToObject.swift */; };
+		C1F8A8A427DCCB1500EDDE2D /* HistoyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F8A8A327DCCB1500EDDE2D /* HistoyRow.swift */; };
+		C1F8A8A627DCCC3800EDDE2D /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F8A8A527DCCC3800EDDE2D /* HistoryModel.swift */; };
 		CA4B9D6F2780390F0070272F /* MarshalCompleteProfileStepBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D6E2780390E0070272F /* MarshalCompleteProfileStepBar.swift */; };
 		CA4B9D732780578A0070272F /* UploadImageStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D72278057890070272F /* UploadImageStep.swift */; };
 		CA4B9D75278189D20070272F /* UserLevelModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B9D74278189D20070272F /* UserLevelModule.swift */; };
@@ -173,6 +175,8 @@
 		B8F6D2D52786E51800121964 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		B8F6D2D727871F1E00121964 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		B8F6D2D92787210000121964 /* ConvertJsonToObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertJsonToObject.swift; sourceTree = "<group>"; };
+		C1F8A8A327DCCB1500EDDE2D /* HistoyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoyRow.swift; sourceTree = "<group>"; };
+		C1F8A8A527DCCC3800EDDE2D /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		CA4B9D6E2780390E0070272F /* MarshalCompleteProfileStepBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshalCompleteProfileStepBar.swift; sourceTree = "<group>"; };
 		CA4B9D72278057890070272F /* UploadImageStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageStep.swift; sourceTree = "<group>"; };
 		CA4B9D74278189D20070272F /* UserLevelModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelModule.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				54B028A827B8E30A00D38609 /* HistoryModule.swift */,
+				C1F8A8A327DCCB1500EDDE2D /* HistoyRow.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 				5421EA4A27902FC800DCA41B /* WalletModel.swift */,
 				540B0B9B2794537F0001F3C0 /* UserLevelModel.swift */,
 				543EDD1727BA46380005E23D /* Dictionery.swift */,
+				C1F8A8A527DCCC3800EDDE2D /* HistoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 				B818C8422784B50800740769 /* ImageCropper.swift in Sources */,
 				CA4B9D7F27830AB80070272F /* CompleteProfileAllStepModule.swift in Sources */,
 				B80FC7C027858CA100EAEB40 /* ConstantData.swift in Sources */,
+				C1F8A8A627DCCC3800EDDE2D /* HistoryModel.swift in Sources */,
 				B88AFABF278883DC00E6B450 /* ExchangeList.swift in Sources */,
 				540F659D27B3DB24007756A9 /* DownloadImage.swift in Sources */,
 				5489A4E92792EB830068E122 /* WalletPriceList.swift in Sources */,
@@ -579,6 +586,7 @@
 				B818C8402784886500740769 /* Photo.swift in Sources */,
 				5421EA4B27902FC800DCA41B /* WalletModel.swift in Sources */,
 				CA9FB8D7277C685E006D411C /* MarshalTabBar.swift in Sources */,
+				C1F8A8A427DCCB1500EDDE2D /* HistoyRow.swift in Sources */,
 				CA745B9A278457F7009CF62A /* MarshalTrendTabPageModule.swift in Sources */,
 				CA4B9D7D27819EC20070272F /* EducationInformationStep.swift in Sources */,
 				B8AE1F932775F6430090125D /* CountryList.swift in Sources */,
