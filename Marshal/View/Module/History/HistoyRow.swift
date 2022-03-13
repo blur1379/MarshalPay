@@ -14,14 +14,23 @@ struct HistoyRow: View {
             HStack{
                 // marshal payment
                 HStack{
+                    Text("مارشال")
+                    Divider()
+                        .background(Color.white)
+                    Text("۳۹۰۰۰۰")
                     
                 }
+                .padding()
                 
                 
                 // currency payment
                 HStack{
+                    Text("مارشال")
+                    Divider()
+                        .background(Color.white)
+                    Text("۳۹۰۰۰۰")
                     
-                }
+                }.padding()
                 
             } // :HSTACK
             
