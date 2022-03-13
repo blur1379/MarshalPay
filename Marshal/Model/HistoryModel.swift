@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-class HistoryModel {
+class HistoryModel : Identifiable{
     var id = ""
     var name = ""
     var date = ""

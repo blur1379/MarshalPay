@@ -22,7 +22,6 @@ struct ExchangeList: View {
             RefreshableScrollView(height: 70, refreshing: $loading){
                 LazyVStack(spacing: 0){
                     ForEach(currencies , id: \._id){currency in
-                        
                             
                                 NavigationLink {
                                     ExchangePage(currencyId: currency._id)
