@@ -13,12 +13,23 @@ struct HistoryModule: View {
     @State var loading = false
     @State var histories = [HistoryModel]()
     @State var statusOfPage : Status = .none
+    @State var nummberOfPage : Int = 0
     var body: some View {
         RefreshableScrollView(height: 70, refreshing: $loading) {
             LazyVStack{
-                ForEach(histories){item in
-                    HistoyRow(history: item)
-                }// end loop
+                if histories.isEmpty {
+                    Text("شما هیج تراکنشی انجام نداده‌اید")
+                        .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
+                        .multilineTextAlignment(.trailing)
+                        .padding()
+                        .foregroundColor(Color("marshal_red"))
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                }else{
+                    ForEach(histories){item in
+                        HistoyRow(history: item)
+                    }// end loop
+                }
+            
                 
                 if statusOfPage == .InProgress {
                     ProgressViewMarshal()
@@ -27,7 +38,7 @@ struct HistoryModule: View {
                     loadMore()
                 }
             }
-        }
+        }.background(Color("marshal_darkGrey"))
         .onChange(of: loading, perform: { newValue in
             if loading == true {
                 
@@ -40,18 +51,24 @@ struct HistoryModule: View {
 
     }
     //MARK: -FUNCTION
+    
     func onCreate(){
-        
+        nummberOfPage = 0
+        histories.removeAll()
+        loadMore()
     }
+    
     func loadMore(){
         
+        nummberOfPage += 1
         
         let headers: HTTPHeaders?
         
         headers = [
             "Authorization": "Bearer \(CallApi().acceceToken)"
         ]
-        AF.request(CallApi().baceUrl , method: .get, encoding: JSONEncoding.default , headers: headers){urlRequest in urlRequest.timeoutInterval = TimeInterval(CallApi().timeOut)}.responseJSON { response in
+        
+        AF.request(CallApi().baceUrl + "v1/change-currency-transactions/search?pageNumber=" + String(nummberOfPage), method: .get, encoding: JSONEncoding.default , headers: headers){urlRequest in urlRequest.timeoutInterval = TimeInterval(CallApi().timeOut)}.responseJSON { response in
             do {
                 switch response.result {
                 case .success :
@@ -60,8 +77,7 @@ struct HistoryModule: View {
                     print(json)
                     print("------- send code")
                     if response.response?.statusCode == 200 || response.response?.statusCode == 201  {
-//                      converter.convertJsonToCurrenies(json["data"]["docs"])
-                    
+                        histories += ConvertJsonToObject().convertJsonToHistores(json["data"])
                         statusOfPage = .Successful
                     }else{
                         statusOfPage = .Failure

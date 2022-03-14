@@ -14,6 +14,7 @@ struct ProfileModule: View {
     //MARK: -PROPERTIES
     @AppStorage("showLogin") var showLogin = false
     @AppStorage("showTabBar") var showTabBar : Bool = true
+    @AppStorage("acc") var acceceToken = ""
     @StateObject var pages = UserLevelPages()
     @State var user = User()
     @State var status = Status.none
@@ -75,6 +76,9 @@ struct ProfileModule: View {
 }
     
     var userInformation : some View {
+        
+    
+        
     HStack{
 
         Spacer()
@@ -121,7 +125,11 @@ struct ProfileModule: View {
         )
         .padding(.horizontal , 16)
         .padding(.vertical , 8)
-    
+        .onTapGesture {
+            
+            acceceToken = ""
+            showLogin = true
+        }
     
 }
     

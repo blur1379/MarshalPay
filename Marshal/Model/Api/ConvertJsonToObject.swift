@@ -375,4 +375,104 @@ struct ConvertJsonToObject {
         
         return user
     }
+    
+    func convertJsonToHistory(_ json : JSON) -> HistoryModel {
+        let history = HistoryModel()
+        if json.exists(){
+            if json["currency"].exists(){
+                if json["currency"]["name"].exists(){
+                    history.currencyName =  json["currency"]["name"].string!
+                }
+            }
+            if json["insertDate"].exists(){
+                history.date = json["insertDate"].string!
+      
+            }
+            if json["amount"].exists(){
+                history.currencyAmount = json["amount"].string!
+            }
+            if json["marshalAmount"].exists(){
+                history.marshalAmount = json["marshalAmount"].string!
+            }
+            if json["action"].exists(){
+                
+                    history.toMarshal = json["action"].string! != "from-marshal"
+                
+            }
+            
+        }
+        
+        
+        
+        return history
+    }
+    
+    func convertJsonToHistores(_ json : JSON) -> [HistoryModel]{
+        var histories = [HistoryModel]()
+        
+        if json.exists(){
+            if json["docs"].exists(){
+               let jsonhistories = json["docs"].array!
+                for item in jsonhistories {
+                    if item.exists(){
+                        histories.append(convertJsonToHistory(item)) 
+                    }
+                    
+                }
+            }
+        }
+        
+        return histories
+    }
+    
+    func convertJsonTotransaction(_ json : JSON) -> Transaction {
+        let transaction = Transaction()
+        if json.exists(){
+            if json["insertDate"].exists(){
+                    transaction.date =  json["insertDate"].string!
+            }
+            if json["amount"].exists(){
+                transaction.amount = json["amount"].string!
+            }
+            
+            if json["status"].string! == "completed" {
+                transaction.status = "کامل شده"
+                transaction.colorOfBorder = "marshal_green"
+                
+            }else if json["status"].string! == "requested" {
+                transaction.status = "درخواست"
+                transaction.colorOfBorder = "marshal_orenge"
+            }else if json["status"].string! == "pending" {
+                transaction.status = "در حال بررسی"
+                transaction.colorOfBorder = "marshal_gray"
+            }else if json["status"].string! == "accepted"{
+                transaction.status = "تایید شده"
+                transaction.colorOfBorder = "marshal_lightBlue"
+            }else {
+                transaction.status = "رد شده"
+                transaction.colorOfBorder = "marshal_red"
+            }
+        }
+        
+        return transaction
+    }
+    
+    func convertJsonToTransactions(_ json : JSON) -> [Transaction]{
+        var transactions = [Transaction]()
+        
+        if json.exists(){
+            if json["docs"].exists(){
+               let jsonhistories = json["docs"].array!
+                for item in jsonhistories {
+                    if item.exists(){
+                        transactions.append(convertJsonTotransaction(item))
+                    }
+                    
+                }
+            }
+        }
+        
+        return transactions
+    }
+    
 }
