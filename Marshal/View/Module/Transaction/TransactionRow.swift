@@ -45,10 +45,17 @@ struct TransactionRow: View {
                 .padding()
                 .foregroundColor(Color.white)
                 .frame(minWidth: 0, maxWidth: .infinity)
+            
 
         }
+       
+        .cornerRadius(16)
+        padding(.horizontal , 8)
+        
         .background(Color("marshal_darkGrey"))
+        
     }
+    
 }
 
 struct TransactionRow_Previews: PreviewProvider {

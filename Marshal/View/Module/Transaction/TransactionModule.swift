@@ -9,13 +9,43 @@ import SwiftUI
 import Alamofire
 import SwiftyJSON
 struct TransactionModule: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var increase : Bool
     @State var loading = false
     @State var transactions = [Transaction]()
     @State var statusOfPage : Status = .none
     @State var nummberOfPage : Int = 0
+    
+    var topBar : some View {
+        HStack(alignment: .center) {
+            Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Image (systemName: "arrow.backward")
+                    .frame(width: 40, height: 40, alignment: .leading)
+                    .foregroundColor(Color("marshal_red"))
+                    .imageScale(.large)
+            }
+
+  
+
+            Spacer()
+            
+            Text("صرافی")
+                
+                .foregroundColor(Color("marshal_White"))
+                .font(Font.custom("IRANSansMobileFaNum Bold", size: 18))
+            
+  
+        }
+        .padding(.horizontal, 16.0)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 56)
+
+    }
+    
     var body: some View {
         VStack{
+            
             
             
             
@@ -31,6 +61,8 @@ struct TransactionModule: View {
                     }else{
                         ForEach(transactions){item in
                             TransactionRow(transaction: item)
+                                .shadow(color: Color.black, radius: 2, x: 4, y: 4  )
+                                .padding(.vertical, 8)
                         }// end loop
                     }
                 

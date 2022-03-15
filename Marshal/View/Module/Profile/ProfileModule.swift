@@ -21,6 +21,10 @@ struct ProfileModule: View {
     
     
     var harvestRow : some View {
+        NavigationLink {
+           TransactionModule(increase: false)
+                .navigationBarHidden(true)
+        } label: {
         HStack{
 
             Spacer()
@@ -44,34 +48,41 @@ struct ProfileModule: View {
             .padding(.horizontal , 16)
             .padding(.vertical , 8)
             
-        
+        }
         
     }
     
     var depositRow : some View {
-    HStack{
-        
-        Spacer()
-        
-        Text("لیست واریز ها")
-            .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
-            .padding(.horizontal, 16.0)
-            .padding()
-            .multilineTextAlignment(.trailing)
-            .foregroundColor(Color("marshal_White"))
-        
-        Spacer()
-        
-    } .frame(height: 50, alignment: .center)
-        .background(Color("marshal_surfGrey"))
-        .cornerRadius(12)
-        .overlay(RoundedRectangle(cornerRadius: 12)
-                    .stroke(Color("marshal_red"), lineWidth: 0.5)
-                    
-        )
-        .padding(.horizontal , 16)
-        .padding(.vertical , 8)
-    
+        NavigationLink {
+           TransactionModule(increase: true)
+                .navigationBarHidden(true)
+        } label: {
+            HStack{
+                
+                Spacer()
+                
+                Text("لیست واریز ها")
+                    .font(Font.custom("IRANSansMobileFaNum Medium", size: 14.0))
+                    .padding(.horizontal, 16.0)
+                    .padding()
+                    .multilineTextAlignment(.trailing)
+                    .foregroundColor(Color("marshal_White"))
+                
+                Spacer()
+                
+            } .frame(height: 50, alignment: .center)
+                .background(Color("marshal_surfGrey"))
+                .cornerRadius(12)
+                .overlay(RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color("marshal_red"), lineWidth: 0.5)
+                            
+                )
+                .padding(.horizontal , 16)
+                .padding(.vertical , 8)
+            
+             
+
+        }
     
 }
     
